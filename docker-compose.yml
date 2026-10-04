@@ -1,0 +1,18 @@
+# Vývoj webu jen v Dockeru – nic se neinstaluje do Windows
+#   spustit:   docker compose up -d        → http://localhost:3000
+#   zastavit:  docker compose down
+#   build:     docker compose run --rm web npm run build   → složka out/
+services:
+  web:
+    image: node:22
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    environment:
+      # Na Windows Docker nehlásí změny souborů sám – hlídání přes polling
+      WATCHPACK_POLLING: "true"
+      CHOKIDAR_USEPOLLING: "true"
+      NEXT_TELEMETRY_DISABLED: "1"
+    command: sh -c "npm install && npm run dev -- -H 0.0.0.0 -p 3000"

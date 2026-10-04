@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "title": "Niky's Kitchen",
+    "description": "Healthy recipes, articles and an app that tells you what to eat today and how much. No food logging, no guilt."
+  },
+  "skip": "Skip to content",
+  "nav": {
+    "label": "Main menu",
+    "home": "Home",
+    "recipes": "Recipes",
+    "articles": "Articles",
+    "app": "App",
+    "shop": "Shop",
+    "about": "About me",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu"
+  },
+  "language": {
+    "label": "Language",
+    "switchTo": "Čeština",
+    "switchToShort": "CZ"
+  },
+  "home": {
+    "title": "Eat with joy, not with guilt.",
+    "lead": "We work out how much you need. Cook one base and give it a different twist every day."
+  },
+  "pages": {
+    "recipes": { "title": "Recipes", "lead": "Savoury, sweet and drinks. One base, three variations." },
+    "articles": { "title": "Articles", "lead": "The short version first, more if you want it." },
+    "app": { "title": "Food from A to Z", "lead": "Calculator, My day, Fridge and shopping list." },
+    "shop": { "title": "Shop", "lead": "Meal plans, e-books and courses. Coming soon." },
+    "about": { "title": "About me", "lead": "Who Niky is and why she does this." }
+  },
+  "placeholder": "This page is coming soon.",
+  "footer": {
+    "note": "This is not medical advice. If you have health problems, talk to your doctor.",
+    "rights": "Niky's Kitchen"
+  }
+}

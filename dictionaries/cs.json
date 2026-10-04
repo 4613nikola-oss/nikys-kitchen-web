@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "title": "Niky's Kitchen",
+    "description": "Zdravé recepty, články a appka, která ti řekne, co dnes jíst a kolik. Bez zapisování a bez výčitek."
+  },
+  "skip": "Přeskočit na obsah",
+  "nav": {
+    "label": "Hlavní menu",
+    "home": "Domů",
+    "recipes": "Recepty",
+    "articles": "Články",
+    "app": "Aplikace",
+    "shop": "Obchod",
+    "about": "O mně",
+    "menuOpen": "Otevřít menu",
+    "menuClose": "Zavřít menu"
+  },
+  "language": {
+    "label": "Jazyk",
+    "switchTo": "English",
+    "switchToShort": "EN"
+  },
+  "home": {
+    "title": "Jez s radostí, ne s výčitkami.",
+    "lead": "Spočítáme, kolik potřebuješ. Uvaříš jeden základ a každý den ho jinak dochutíš."
+  },
+  "pages": {
+    "recipes": { "title": "Recepty", "lead": "Slané, sladké a nápoje. Jeden základ, tři varianty." },
+    "articles": { "title": "Články", "lead": "Krátce v kostce, víc po rozkliknutí." },
+    "app": { "title": "Jídlo od A–Z", "lead": "Kalkulačka, Můj den, Lednička a nákupní seznam." },
+    "shop": { "title": "Obchod", "lead": "Plány, e-booky a kurzy. Připravujeme." },
+    "about": { "title": "O mně", "lead": "Kdo je Niky a proč to dělá." }
+  },
+  "placeholder": "Tato stránka se připravuje.",
+  "footer": {
+    "note": "Nejde o lékařskou radu. Při zdravotních potížích se poraď s lékařem.",
+    "rights": "Niky's Kitchen"
+  }
+}
