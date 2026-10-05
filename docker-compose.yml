@@ -1,13 +1,16 @@
 # Vývoj webu jen v Dockeru – nic se neinstaluje do Windows
 #   spustit:   docker compose up -d        → http://localhost:3000
 #   zastavit:  docker compose down
-#   build:     docker compose run --rm web npm run build   → složka out/
+#   build:     docker compose exec web npx next build   → složka out/
 services:
   web:
     image: node:22
     working_dir: /app
     volumes:
       - .:/app
+      # node_modules a .next uvnitř Dockeru (ne na disku Windows) – stránky se skládají mnohem rychleji
+      - node_modules:/app/node_modules
+      - next_cache:/app/.next
     ports:
       - "3000:3000"
     environment:
@@ -16,3 +19,7 @@ services:
       CHOKIDAR_USEPOLLING: "true"
       NEXT_TELEMETRY_DISABLED: "1"
     command: sh -c "npm install && npm run dev -- -H 0.0.0.0 -p 3000"
+
+volumes:
+  node_modules:
+  next_cache:
