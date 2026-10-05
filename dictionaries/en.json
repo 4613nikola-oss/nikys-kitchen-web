@@ -12,28 +12,106 @@
     "app": "App",
     "shop": "Shop",
     "about": "About me",
-    "menuOpen": "Open menu",
-    "menuClose": "Close menu"
+    "menuOpen": "Menu",
+    "menuClose": "Close"
   },
-  "language": {
-    "label": "Language",
-    "switchTo": "Čeština",
-    "switchToShort": "CZ"
-  },
+  "language": { "label": "Language", "switchTo": "Čeština", "switchToShort": "CZ" },
+  "categories": { "slane": "Savoury", "sladke": "Sweet", "napoje": "Drinks" },
   "home": {
     "title": "Eat with joy, not with guilt.",
-    "lead": "We work out how much you need. Cook one base and give it a different twist every day."
+    "lead": "We work out how much you need. Cook one base and give it a different twist every day. And a sweet treat is part of the plan.",
+    "ctaRecipes": "Browse recipes",
+    "ctaApp": "Work out your intake",
+    "baseTitle": "One base, three variations",
+    "baseLead": "On Sunday, roast one tray of vegetables with quinoa and give it a new twist every day. Less cooking, less shopping, no waste.",
+    "baseCta": "Full recipe",
+    "recipesTitle": "Recipes",
+    "recipesAll": "All recipes",
+    "articlesTitle": "A few minutes' read",
+    "articlesAll": "All articles",
+    "appTitle": "Food from A to Z app",
+    "appLead": "Works out your daily intake, splits it into meals, finds recipes from your fridge and builds a shopping list. Free, no sign-up.",
+    "appCta": "Open the app",
+    "aboutTitle": "Who is Niky",
+    "aboutLead": "I cook healthy food without guilt. I test recipes in my own kitchen and write the way I'd advise a friend.",
+    "aboutCta": "More about me"
   },
-  "pages": {
-    "recipes": { "title": "Recipes", "lead": "Savoury, sweet and drinks. One base, three variations." },
-    "articles": { "title": "Articles", "lead": "The short version first, more if you want it." },
-    "app": { "title": "Food from A to Z", "lead": "Calculator, My day, Fridge and shopping list." },
-    "shop": { "title": "Shop", "lead": "Meal plans, e-books and courses. Coming soon." },
-    "about": { "title": "About me", "lead": "Who Niky is and why she does this." }
+  "recipes": {
+    "title": "Recipes",
+    "lead": "Savoury, sweet and drinks. Simple, with calories and no complicated counting.",
+    "filterLabel": "Categories",
+    "inShort": "In short",
+    "time": "Time",
+    "portions": "Servings",
+    "less": "Fewer servings",
+    "more": "More servings",
+    "kcal": "kcal per serving",
+    "kcalApprox": "approx.",
+    "kcalMissing": "coming soon",
+    "allergens": "Allergens",
+    "noAllergens": "None of the 14 main EU allergens",
+    "ingredients": "Ingredients",
+    "steps": "Method",
+    "variantsTitle": "One base, three variations",
+    "variantsLead": "Cook the base once and change it up every day:",
+    "tip": "Niky's tip",
+    "draft": "Sample recipe – Niky will test and fine-tune it.",
+    "aiPhoto": "Illustrative images created with AI. Real photos coming soon.",
+    "toApp": "How much should you eat? Work it out in the app",
+    "related": "Read more",
+    "back": "Back to recipes"
+  },
+  "articles": {
+    "title": "Articles",
+    "lead": "The short version first, more if you want it.",
+    "readTime": "{n} min read",
+    "inShort": "In short",
+    "more": "Tell me more",
+    "sources": "Sources",
+    "related": "Recipes for this article",
+    "back": "Back to articles"
+  },
+  "app": {
+    "title": "Food from A to Z",
+    "lead": "An app that tells you what to eat today and how much. No food logging.",
+    "features": [
+      "Calculator: works out your daily intake by goal (lose, maintain, gain)",
+      "My day: splits your intake into breakfast, lunch, dinner and a snack",
+      "Fridge: finds recipes from what you have at home",
+      "Shopping: builds a shopping list"
+    ],
+    "cta": "Open the app",
+    "note": "The app currently runs at a separate address. It will soon live right here on the website. The app itself is in Czech for now."
+  },
+  "shop": {
+    "title": "Shop",
+    "lead": "Meal plans, e-books and courses that go deeper. Coming soon.",
+    "items": [
+      { "name": "7-day plan", "text": "One base, three variations and a shopping list for the whole week." },
+      { "name": "Online cookbook", "text": "Plans and recipes tailored to your intake." },
+      { "name": "Cook-ahead course", "text": "4 weeks with live online sessions." },
+      { "name": "E-book for older people and their families", "text": "PDF and print, can be given as a gift." }
+    ],
+    "soon": "Coming soon"
+  },
+  "about": {
+    "title": "About me",
+    "lead": "Hi, I'm Niky.",
+    "text": [
+      "I cook healthy food without guilt and without counting every bite. I want healthy eating to be simple, even for people with no time.",
+      "That's why I came up with one base, three variations, a sweet treat as part of the plan, and an app that works out how much to eat.",
+      "My full story is coming soon."
+    ]
+  },
+  "notFound": {
+    "title": "Oops, this page isn't here",
+    "text": "It may have moved, or there's a typo in the address. No harm done.",
+    "cta": "Back to home"
   },
   "placeholder": "This page is coming soon.",
   "footer": {
     "note": "This is not medical advice. If you have health problems, talk to your doctor.",
-    "rights": "Niky's Kitchen"
+    "rights": "Niky's Kitchen",
+    "mascot": "Tečka, the Niky's Kitchen mascot"
   }
 }

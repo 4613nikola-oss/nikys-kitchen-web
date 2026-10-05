@@ -12,28 +12,106 @@
     "app": "Aplikace",
     "shop": "Obchod",
     "about": "O mně",
-    "menuOpen": "Otevřít menu",
-    "menuClose": "Zavřít menu"
+    "menuOpen": "Menu",
+    "menuClose": "Zavřít"
   },
-  "language": {
-    "label": "Jazyk",
-    "switchTo": "English",
-    "switchToShort": "EN"
-  },
+  "language": { "label": "Jazyk", "switchTo": "English", "switchToShort": "EN" },
+  "categories": { "slane": "Slané", "sladke": "Sladké", "napoje": "Nápoje" },
   "home": {
     "title": "Jez s radostí, ne s výčitkami.",
-    "lead": "Spočítáme, kolik potřebuješ. Uvaříš jeden základ a každý den ho jinak dochutíš."
+    "lead": "Spočítáme, kolik potřebuješ. Uvaříš jeden základ a každý den ho jinak dochutíš. A sladká tečka je součást plánu.",
+    "ctaRecipes": "Prohlédnout recepty",
+    "ctaApp": "Spočítej si příjem",
+    "baseTitle": "Jeden základ, tři varianty",
+    "baseLead": "V neděli upeč jeden plech zeleniny s quinoou a každý den ho dochuť jinak. Méně vaření, méně nákupu, nic se nevyhodí.",
+    "baseCta": "Celý recept",
+    "recipesTitle": "Recepty",
+    "recipesAll": "Všechny recepty",
+    "articlesTitle": "Čtení na pár minut",
+    "articlesAll": "Všechny články",
+    "appTitle": "Appka Jídlo od A–Z",
+    "appLead": "Spočítá tvůj denní příjem, rozdělí ho do jídel, najde recepty podle ledničky a sestaví nákupní seznam. Zdarma a bez registrace.",
+    "appCta": "Otevřít appku",
+    "aboutTitle": "Kdo je Niky",
+    "aboutLead": "Vařím zdravě, ale bez výčitek. Recepty zkouším ve vlastní kuchyni a píšu tak, jak bych radila kamarádce.",
+    "aboutCta": "Víc o mně"
   },
-  "pages": {
-    "recipes": { "title": "Recepty", "lead": "Slané, sladké a nápoje. Jeden základ, tři varianty." },
-    "articles": { "title": "Články", "lead": "Krátce v kostce, víc po rozkliknutí." },
-    "app": { "title": "Jídlo od A–Z", "lead": "Kalkulačka, Můj den, Lednička a nákupní seznam." },
-    "shop": { "title": "Obchod", "lead": "Plány, e-booky a kurzy. Připravujeme." },
-    "about": { "title": "O mně", "lead": "Kdo je Niky a proč to dělá." }
+  "recipes": {
+    "title": "Recepty",
+    "lead": "Slané, sladké a nápoje. Jednoduše, s kcal a bez složitého počítání.",
+    "filterLabel": "Kategorie",
+    "inShort": "V kostce",
+    "time": "Čas",
+    "portions": "Porce",
+    "less": "Méně porcí",
+    "more": "Víc porcí",
+    "kcal": "kcal na porci",
+    "kcalApprox": "orientačně",
+    "kcalMissing": "doplníme",
+    "allergens": "Alergeny",
+    "noAllergens": "Žádný ze 14 hlavních alergenů EU",
+    "ingredients": "Suroviny",
+    "steps": "Postup",
+    "variantsTitle": "Jeden základ, tři varianty",
+    "variantsLead": "Základ uvaříš jednou, každý den ho dochutíš jinak:",
+    "tip": "Tip od Niky",
+    "draft": "Ukázkový recept – Niky ho ještě vyzkouší a doladí.",
+    "aiPhoto": "Ilustrační obrázky vytvořené pomocí AI. Brzy je nahradí skutečné fotky.",
+    "toApp": "Kolik z toho sníst? Spočítej si to v appce",
+    "related": "Přečti si k tomu",
+    "back": "Zpět na recepty"
+  },
+  "articles": {
+    "title": "Články",
+    "lead": "Krátce v kostce, víc po rozkliknutí.",
+    "readTime": "čtení na {n} min",
+    "inShort": "V kostce",
+    "more": "Chci vědět víc",
+    "sources": "Zdroje",
+    "related": "Recepty k článku",
+    "back": "Zpět na články"
+  },
+  "app": {
+    "title": "Jídlo od A–Z",
+    "lead": "Appka, která ti řekne, co dnes jíst a kolik. Bez zapisování.",
+    "features": [
+      "Kalkulačka: spočítá tvůj denní příjem podle cíle (hubnout, udržet, nabrat)",
+      "Můj den: rozdělí příjem do snídaně, oběda, večeře a svačiny",
+      "Lednička: najde recepty z toho, co máš doma",
+      "Nákup: sestaví nákupní seznam"
+    ],
+    "cta": "Otevřít appku",
+    "note": "Appka zatím běží na samostatné adrese. Brzy bude přímo tady na webu."
+  },
+  "shop": {
+    "title": "Obchod",
+    "lead": "Plány, e-booky a kurzy, které jdou do hloubky. Připravujeme.",
+    "items": [
+      { "name": "Plán na 7 dní", "text": "Jeden základ, tři varianty a nákupní seznam na celý týden." },
+      { "name": "Online kuchařka", "text": "Plány a recepty na míru tvému příjmu." },
+      { "name": "Kurz vaření dopředu", "text": "4 týdny se živými online setkáními." },
+      { "name": "E-book pro starší a jejich blízké", "text": "V PDF i v tisku, jde darovat." }
+    ],
+    "soon": "Připravujeme"
+  },
+  "about": {
+    "title": "O mně",
+    "lead": "Ahoj, jsem Niky.",
+    "text": [
+      "Vařím zdravě, ale bez výčitek a bez počítání každého sousta. Chci, aby zdravé jídlo bylo jednoduché i pro lidi, kteří nemají čas.",
+      "Proto jsem vymyslela princip jeden základ, tři varianty, sladkou tečku jako součást plánu a appku, která spočítá, kolik jíst.",
+      "Svůj příběh sem brzy doplním."
+    ]
+  },
+  "notFound": {
+    "title": "Jejda, tahle stránka tu není",
+    "text": "Možná se přesunula, nebo je v adrese překlep. Nic se neděje.",
+    "cta": "Zpět na úvod"
   },
   "placeholder": "Tato stránka se připravuje.",
   "footer": {
     "note": "Nejde o lékařskou radu. Při zdravotních potížích se poraď s lékařem.",
-    "rights": "Niky's Kitchen"
+    "rights": "Niky's Kitchen",
+    "mascot": "Tečka, maskot Niky's Kitchen"
   }
 }
