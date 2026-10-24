@@ -33,6 +33,20 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# soukromé věci – nikdy na GitHub
+soukrome/
+*.key
+*heslo*
+*hesla*
+*password*
+*secret*
+*.zip
+*.sql
+*.db
+*.bak
+Thumbs.db
+desktop.ini
+
 # vercel
 .vercel
 
