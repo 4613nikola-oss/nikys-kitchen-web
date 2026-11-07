@@ -20,12 +20,32 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # Dočasná databáze jen pro sestavení webu – po skončení zmizí.
+    # Heslo není tajné: databáze existuje pár minut a není dostupná z internetu.
+    services:
+      db:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: build
+          POSTGRES_PASSWORD: build
+          POSTGRES_DB: nikys_kitchen
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 3s
+          --health-timeout 3s
+          --health-retries 20
+    env:
+      DATABASE_URL: postgres://build:build@localhost:5432/nikys_kitchen
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
+      # Tabulky a data z repozitáře → do dočasné databáze
+      - run: psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f db/init/01-tabulky.sql -f db/init/02-data.sql
       - run: npm ci
       - run: npm run build
         env:

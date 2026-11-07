@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getDictionary, getLang } from "@/lib/i18n";
-import { categories, recipesByCategory, getArticles, getRecipe } from "@/lib/content";
+import { categories, getRecipes, getArticles, getRecipe } from "@/lib/content";
 import RecipeCard from "@/components/RecipeCard";
 import ArticleCard from "@/components/ArticleCard";
 import Tecka from "@/components/Tecka";
@@ -11,7 +11,9 @@ export default async function HomePage() {
   const dict = await getDictionary();
   const lang = await getLang();
   const h = dict.home;
-  const base = getRecipe("pecena-zelenina-s-quinoou");
+  const base = await getRecipe("pecena-zelenina-s-quinoou");
+  const recipes = await getRecipes();
+  const articles = await getArticles();
 
   return (
     <>
@@ -55,7 +57,7 @@ export default async function HomePage() {
           <div key={cat} className="category-row">
             <h3 className="category-title">{dict.categories[cat]}</h3>
             <div className="grid">
-              {recipesByCategory(cat).slice(0, 3).map((r) => (
+              {recipes.filter((r) => r.kategorie === cat).slice(0, 3).map((r) => (
                 <RecipeCard key={r.slug} recipe={r} lang={lang} dict={dict} />
               ))}
             </div>
@@ -70,7 +72,7 @@ export default async function HomePage() {
           <Link href={`/${lang}/clanky/`}>{h.articlesAll} →</Link>
         </div>
         <div className="grid">
-          {getArticles().slice(0, 3).map((a) => (
+          {articles.slice(0, 3).map((a) => (
             <ArticleCard key={a.slug} article={a} lang={lang} dict={dict} />
           ))}
         </div>

@@ -10,12 +10,13 @@ export async function generateMetadata() {
 export default async function ArticlesPage() {
   const dict = await getDictionary();
   const lang = await getLang();
+  const articles = await getArticles();
   return (
     <>
       <h1>{dict.articles.title}</h1>
       <p className="lead">{dict.articles.lead}</p>
       <div className="grid">
-        {getArticles().map((a) => (
+        {articles.map((a) => (
           <ArticleCard key={a.slug} article={a} lang={lang} dict={dict} />
         ))}
       </div>

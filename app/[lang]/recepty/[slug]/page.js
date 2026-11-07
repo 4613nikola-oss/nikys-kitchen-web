@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getDictionary, getLang } from "@/lib/i18n";
-import { getRecipes, getRecipe, articlesFor, allergenNames } from "@/lib/content";
+import { getRecipes, getRecipe, articlesFor, getAllergenNames } from "@/lib/content";
 import { asset } from "@/lib/asset";
 import PortionCalculator from "@/components/PortionCalculator";
 import ArticleCard from "@/components/ArticleCard";
@@ -11,27 +11,28 @@ import Tecka from "@/components/Tecka";
 const APP_URL = "https://4613nikola-oss.github.io/jidlo-od-a-z/";
 
 export const dynamicParams = false;
-export function generateStaticParams() {
-  return getRecipes().map((r) => ({ slug: r.slug }));
+export async function generateStaticParams() {
+  return (await getRecipes()).map((r) => ({ slug: r.slug }));
 }
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const lang = await getLang();
-  const r = getRecipe(slug);
+  const r = await getRecipe(slug);
   return r ? { title: r[lang].nazev, description: r[lang].uvod } : {};
 }
 
 export default async function RecipePage({ params }) {
   const { slug } = await params;
-  const recipe = getRecipe(slug);
+  const recipe = await getRecipe(slug);
   if (!recipe) notFound();
 
   const dict = await getDictionary();
   const lang = await getLang();
   const t = recipe[lang];
   const d = dict.recipes;
-  const related = articlesFor(recipe);
+  const related = await articlesFor(recipe);
+  const allergenNames = await getAllergenNames();
 
   return (
     <article className="recipe">

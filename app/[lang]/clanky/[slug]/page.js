@@ -5,14 +5,14 @@ import { getArticles, getArticle, recipesFor } from "@/lib/content";
 import RecipeCard from "@/components/RecipeCard";
 
 export const dynamicParams = false;
-export function generateStaticParams() {
-  return getArticles().map((a) => ({ slug: a.slug }));
+export async function generateStaticParams() {
+  return (await getArticles()).map((a) => ({ slug: a.slug }));
 }
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const lang = await getLang();
-  const a = getArticle(slug);
+  const a = await getArticle(slug);
   return a ? { title: a[lang].nazev, description: a[lang].perex } : {};
 }
 
@@ -25,14 +25,14 @@ function Block({ b }) {
 
 export default async function ArticlePage({ params }) {
   const { slug } = await params;
-  const article = getArticle(slug);
+  const article = await getArticle(slug);
   if (!article) notFound();
 
   const dict = await getDictionary();
   const lang = await getLang();
   const t = article[lang];
   const d = dict.articles;
-  const related = recipesFor(article);
+  const related = await recipesFor(article);
 
   return (
     <article className="article">

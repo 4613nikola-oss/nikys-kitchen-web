@@ -1,0 +1,3 @@
+# Skripty pro databázi běží v Linuxu (Docker) – vždy unixové konce řádků
+*.sh  text eol=lf
+*.sql text eol=lf

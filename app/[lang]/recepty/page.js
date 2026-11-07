@@ -1,5 +1,5 @@
 import { getDictionary, getLang } from "@/lib/i18n";
-import { categories, recipesByCategory } from "@/lib/content";
+import { categories, getRecipes } from "@/lib/content";
 import RecipeCard from "@/components/RecipeCard";
 
 export async function generateMetadata() {
@@ -11,6 +11,8 @@ export async function generateMetadata() {
 export default async function RecipesPage() {
   const dict = await getDictionary();
   const lang = await getLang();
+  const recipes = await getRecipes();
+  const byCat = (cat) => recipes.filter((r) => r.kategorie === cat);
 
   return (
     <>
@@ -20,7 +22,7 @@ export default async function RecipesPage() {
       <nav aria-label={dict.recipes.filterLabel} className="chips-nav">
         {categories.map((cat) => (
           <a key={cat} href={`#${cat}`} className="chip chip-link">
-            {dict.categories[cat]} ({recipesByCategory(cat).length})
+            {dict.categories[cat]} ({byCat(cat).length})
           </a>
         ))}
       </nav>
@@ -29,7 +31,7 @@ export default async function RecipesPage() {
         <section key={cat} id={cat} className="category-row" aria-labelledby={`h-${cat}`}>
           <h2 id={`h-${cat}`}>{dict.categories[cat]}</h2>
           <div className="grid">
-            {recipesByCategory(cat).map((r) => (
+            {byCat(cat).map((r) => (
               <RecipeCard key={r.slug} recipe={r} lang={lang} dict={dict} />
             ))}
           </div>

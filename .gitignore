@@ -32,6 +32,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # soukromé věci – nikdy na GitHub
 soukrome/
@@ -42,6 +43,8 @@ soukrome/
 *secret*
 *.zip
 *.sql
+# výjimka: struktura a obsah databáze patří do repozitáře
+!db/init/*.sql
 *.db
 *.bak
 Thumbs.db

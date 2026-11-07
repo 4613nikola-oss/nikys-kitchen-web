@@ -1,7 +1,9 @@
 # Vývoj webu jen v Dockeru – nic se neinstaluje do Windows
-#   spustit:   docker compose up -d        → http://localhost:3000
-#   zastavit:  docker compose down
+#   spustit:   docker compose up -d        → web http://localhost:3000/cs/
+#                                            databáze v prohlížeči http://localhost:8081
+#   zastavit:  docker compose down          (data v databázi zůstanou)
 #   build:     docker compose exec web npx next build   → složka out/
+# Heslo k databázi je v souboru .env (na GitHub se nenahrává, vzor je v .env.example)
 services:
   web:
     image: node:22
@@ -18,8 +20,45 @@ services:
       WATCHPACK_POLLING: "true"
       CHOKIDAR_USEPOLLING: "true"
       NEXT_TELEMETRY_DISABLED: "1"
+      # Adresa databáze: uživatel:heslo@služba:port/název
+      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+    depends_on:
+      db:
+        condition: service_healthy
     command: sh -c "npm install && npm run dev -- -H 0.0.0.0 -p 3000"
+
+  # Databáze PostgreSQL – recepty, články, newsletter, obchod
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:?chybí soubor .env}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?chybí soubor .env}
+      POSTGRES_DB: ${POSTGRES_DB:?chybí soubor .env}
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      # Při prvním startu (prázdná databáze) se spustí 01-tabulky.sql a 02-data.sql
+      - ./db/init:/docker-entrypoint-initdb.d:ro
+      # Sem se ukládá záloha dat (viz README)
+      - ./db:/db
+    ports:
+      - "127.0.0.1:5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  # Adminer – prohlížení a úpravy databáze v prohlížeči
+  adminer:
+    image: adminer:4.8.1
+    ports:
+      - "127.0.0.1:8081:8080"
+    environment:
+      ADMINER_DEFAULT_SERVER: db
+    depends_on:
+      - db
 
 volumes:
   node_modules:
   next_cache:
+  db_data:
