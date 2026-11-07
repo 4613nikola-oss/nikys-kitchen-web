@@ -4,7 +4,7 @@
 
 Nový web značky **Niky's Kitchen**: recepty (slané, sladké, nápoje) a krátké články o výživě, česky i anglicky. Časem tu bude i appka a obchod – všechno v jednom projektu.
 
-![Niky's Kitchen – web na počítači a v mobilu, vpravo appka Jídlo od A–Z](docs/ukazky/ukazka-niky-web.webp)
+![Úvodní stránka Niky's Kitchen na počítači, tabletu a mobilu](docs/ukazky/ukazka-niky-web.webp)
 
 **Technologie:** Next.js 16 (React 19), PostgreSQL 17, Docker, GitHub Actions + GitHub Pages, čeština a angličtina, přístupnost (WCAG).
 
@@ -60,6 +60,10 @@ Na webu: odkazy z receptů a článků vedou do appky (stránka Aplikace) a do o
 - Čeština a angličtina (`/cs/`, `/en/`), responzivní, přístupnost (WCAG), maskot Tečka
 
 ## Ukázky
+
+**Responzivní design:** stejná stránka na počítači, tabletu i mobilu.
+
+![Recept Koláč od Niky na počítači, tabletu a mobilu](docs/ukazky/responzivita-recept.webp)
 
 | Recept na počítači | Přehled receptů |
 |---|---|
