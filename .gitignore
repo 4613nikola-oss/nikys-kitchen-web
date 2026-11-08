@@ -45,6 +45,7 @@ soukrome/
 *.sql
 # výjimka: struktura a obsah databáze patří do repozitáře
 !db/init/*.sql
+!db/migrace/*.sql
 *.db
 *.bak
 Thumbs.db
