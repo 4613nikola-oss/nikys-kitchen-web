@@ -15,8 +15,16 @@
     "menuOpen": "Menu",
     "menuClose": "Zavřít"
   },
-  "language": { "label": "Jazyk", "switchTo": "English", "switchToShort": "EN" },
-  "categories": { "slane": "Slané", "sladke": "Sladké", "napoje": "Nápoje" },
+  "language": {
+    "label": "Jazyk",
+    "switchTo": "English",
+    "switchToShort": "EN"
+  },
+  "categories": {
+    "slane": "Slané",
+    "sladke": "Sladké",
+    "napoje": "Nápoje"
+  },
   "home": {
     "title": "Jez s radostí, ne s výčitkami.",
     "lead": "Spočítáme, kolik potřebuješ. Uvaříš jeden základ a každý den ho jinak dochutíš. A sladká tečka je součást plánu.",
@@ -85,14 +93,60 @@
   },
   "shop": {
     "title": "Obchod",
-    "lead": "Plány, e-booky a kurzy, které jdou do hloubky. Připravujeme.",
-    "items": [
-      { "name": "Plán na 7 dní", "text": "Jeden základ, tři varianty a nákupní seznam na celý týden." },
-      { "name": "Online kuchařka", "text": "Plány a recepty na míru tvému příjmu." },
-      { "name": "Kurz vaření dopředu", "text": "4 týdny se živými online setkáními." },
-      { "name": "E-book pro starší a jejich blízké", "text": "V PDF i v tisku, jde darovat." }
+    "lead": "Plány, e-booky a kurzy, které jdou do hloubky. Všechno digitální: stáhneš a hned používáš.",
+    "soon": "Připravujeme",
+    "free": "Zdarma",
+    "freeNote": "za přihlášení k newsletteru",
+    "perMonth": "/ měsíc",
+    "currency": "Kč",
+    "launchPrice": "zaváděcí cena",
+    "types": {
+      "darek": "Dárek",
+      "plan": "Plán",
+      "ebook": "E-book",
+      "kurz": "Kurz",
+      "predplatne": "Předplatné"
+    },
+    "forWho": "Pro koho",
+    "inside": "Co v něm najdeš",
+    "format": "Formát",
+    "notify": "Zatím ho připravujeme. Až bude hotový, dáme vědět v newsletteru.",
+    "newsletterTitle": "Dárek za přihlášení",
+    "newsletterText": "Startovací knížka se 7 recepty a 10% sleva na první nákup. Newsletter chodí jednou za 14 dní: recept, tip a občas akce.",
+    "newsletterSoon": "Přihlášení k newsletteru spustíme brzy.",
+    "sampleDayTitle": "Ukázka: jeden den z plánu",
+    "sampleDayLead": "Takhle vypadá jeden den. V plánu je jich sedm a každé jídlo má tři varianty.",
+    "sampleRecipesTitle": "Ukázka: 3 ze 7 receptů",
+    "sampleBaseTitle": "Ukázka: jeden základ a jeho tři varianty",
+    "samplePdf": "Stáhnout ukázku v PDF",
+    "shoppingList": "Nákupní seznam na tento den (1 porce)",
+    "meals": {
+      "snidane": "Snídaně",
+      "obed": "Oběd",
+      "svacina": "Svačina",
+      "vecere": "Večeře"
+    },
+    "recipeLink": "Celý recept",
+    "faqTitle": "Časté otázky",
+    "faq": [
+      {
+        "q": "Jak produkt dostanu?",
+        "a": "Po zaplacení ti přijde e-mail s odkazem ke stažení. Nic nemusíš instalovat."
+      },
+      {
+        "q": "Na čem ho otevřu?",
+        "a": "PDF otevřeš v mobilu, tabletu i počítači a můžeš si ho vytisknout."
+      },
+      {
+        "q": "Je to lékařská rada?",
+        "a": "Ne. Jsou to recepty a tipy pro zdravé dospělé. Pokud se léčíš, poraď se s lékařem nebo nutričním terapeutem."
+      },
+      {
+        "q": "Kdy bude produkt hotový?",
+        "a": "Pracujeme na něm. Kdo se přihlásí k newsletteru, dozví se to jako první."
+      }
     ],
-    "soon": "Připravujeme"
+    "back": "Zpět do obchodu"
   },
   "about": {
     "title": "O mně",

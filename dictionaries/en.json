@@ -15,8 +15,16 @@
     "menuOpen": "Menu",
     "menuClose": "Close"
   },
-  "language": { "label": "Language", "switchTo": "Čeština", "switchToShort": "CZ" },
-  "categories": { "slane": "Savoury", "sladke": "Sweet", "napoje": "Drinks" },
+  "language": {
+    "label": "Language",
+    "switchTo": "Čeština",
+    "switchToShort": "CZ"
+  },
+  "categories": {
+    "slane": "Savoury",
+    "sladke": "Sweet",
+    "napoje": "Drinks"
+  },
   "home": {
     "title": "Eat with joy, not with guilt.",
     "lead": "We work out how much you need. Cook one base and give it a different twist every day. And a sweet treat is part of the plan.",
@@ -85,14 +93,60 @@
   },
   "shop": {
     "title": "Shop",
-    "lead": "Meal plans, e-books and courses that go deeper. Coming soon.",
-    "items": [
-      { "name": "7-day plan", "text": "One base, three variations and a shopping list for the whole week." },
-      { "name": "Online cookbook", "text": "Plans and recipes tailored to your intake." },
-      { "name": "Cook-ahead course", "text": "4 weeks with live online sessions." },
-      { "name": "E-book for older people and their families", "text": "PDF and print, can be given as a gift." }
+    "lead": "Meal plans, e-books and courses that go deeper. All digital: download and start right away.",
+    "soon": "Coming soon",
+    "free": "Free",
+    "freeNote": "when you join the newsletter",
+    "perMonth": "/ month",
+    "currency": "CZK",
+    "launchPrice": "launch price",
+    "types": {
+      "darek": "Gift",
+      "plan": "Plan",
+      "ebook": "E-book",
+      "kurz": "Course",
+      "predplatne": "Subscription"
+    },
+    "forWho": "Who it's for",
+    "inside": "What's inside",
+    "format": "Format",
+    "notify": "We're still working on it. We'll let you know in the newsletter when it's ready.",
+    "newsletterTitle": "A gift for joining",
+    "newsletterText": "A starter booklet with 7 recipes and 10% off your first order. The newsletter comes every two weeks: a recipe, a tip and the occasional offer.",
+    "newsletterSoon": "Newsletter sign-up is coming soon.",
+    "sampleDayTitle": "Sample: one day from the plan",
+    "sampleDayLead": "This is what one day looks like. The plan has seven, and every meal comes in three versions.",
+    "sampleRecipesTitle": "Sample: 3 of the 7 recipes",
+    "sampleBaseTitle": "Sample: one base and its three versions",
+    "samplePdf": "Download the sample PDF",
+    "shoppingList": "Shopping list for this day (1 serving)",
+    "meals": {
+      "snidane": "Breakfast",
+      "obed": "Lunch",
+      "svacina": "Snack",
+      "vecere": "Dinner"
+    },
+    "recipeLink": "Full recipe",
+    "faqTitle": "Questions",
+    "faq": [
+      {
+        "q": "How do I get it?",
+        "a": "After payment you'll get an email with a download link. Nothing to install."
+      },
+      {
+        "q": "What can I open it on?",
+        "a": "The PDF works on your phone, tablet and computer, and you can print it."
+      },
+      {
+        "q": "Is this medical advice?",
+        "a": "No. These are recipes and tips for healthy adults. If you're being treated for something, talk to your doctor or a dietitian."
+      },
+      {
+        "q": "When will it be ready?",
+        "a": "We're working on it. Newsletter subscribers will be the first to know."
+      }
     ],
-    "soon": "Coming soon"
+    "back": "Back to the shop"
   },
   "about": {
     "title": "About me",

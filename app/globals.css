@@ -225,6 +225,60 @@ main section { margin-bottom: 3rem; }
 .not-found p { margin-left: auto; margin-right: auto; }
 .about-teaser { border-top: 1px solid var(--color-border); padding-top: 2rem; }
 
+/* Obchod: obálky produktů („knížka“ v barvách značky) */
+.cover { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 1rem; background: var(--color-honey-faint); }
+.cover-book {
+  position: relative; display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 0.3rem;
+  width: 62%; max-width: 13rem; aspect-ratio: 3 / 4; padding: 0.9rem 0.8rem 0.7rem 1.1rem; border-radius: 0.35rem 0.8rem 0.8rem 0.35rem;
+  color: #fff; text-align: center; box-shadow: 0 10px 22px rgba(44, 44, 44, 0.22);
+}
+/* hřbet knížky */
+.cover-book::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 0.45rem; border-radius: 0.35rem 0 0 0.35rem; background: rgba(0, 0, 0, 0.22); }
+.cover-type { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.9; }
+.cover-title { font-family: var(--font-heading-stack); font-weight: 700; font-size: 1.05rem; line-height: 1.15; }
+.cover-tecka { width: 45%; height: auto; }
+.cover-brand { font-size: 0.65rem; opacity: 0.85; }
+.cover-sage .cover-book { background: var(--color-sage); }
+.cover-primary .cover-book { background: var(--color-primary); }
+.cover-terra .cover-book { background: var(--color-terracotta); }
+.cover-honey .cover-book { background: #8a7550; } /* tmavší med kvůli kontrastu bílého textu */
+/* v kartě: knížka se řídí výškou rámečku, aby nic nepřetékalo */
+.product-card .card-media { aspect-ratio: 4 / 3; }
+.product-card .cover-book { height: 88%; width: auto; max-width: none; }
+.cover .cover-book img.cover-tecka { width: 60%; height: auto; object-fit: contain; }
+.cover-large { aspect-ratio: 4 / 3; border-radius: var(--radius); }
+.cover-large .cover-book { height: 86%; width: auto; max-width: none; }
+.cover-large .cover-title { font-size: 1.4rem; }
+.cover-large .cover-type { font-size: 0.8rem; }
+
+.price { font-size: 1.15rem; margin: 0.75rem 0 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.4rem; }
+.price strong { color: var(--color-primary); font-size: 1.3rem; }
+.price-note { margin: 0; }
+.product-card .card-body p:not(.price) { margin-bottom: 0.25rem; }
+.product .recipe-head h1 { margin-top: 0.5rem; }
+.newsletter-box { margin-top: 3rem; }
+.faq .more { margin: 0.75rem 0; }
+.faq .more summary { border-width: 1px; }
+
+/* Ukázka dne z plánu */
+.sample-meals { list-style: none; padding: 0; display: grid; gap: 1rem; grid-template-columns: 1fr; margin: 1rem 0; }
+@media (min-width: 640px) { .sample-meals { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .sample-meals { grid-template-columns: repeat(4, 1fr); } }
+.sample-meals .h3 { margin: 0.25rem 0; }
+.sample-list { margin-bottom: 1rem; }
+.sample-list .ingredients { columns: 2 14rem; }
+
+/* Tisk do PDF: jen obsah, bez hlavičky a patičky */
+@media print {
+  .site-header, .site-footer, .skip-link, .breadcrumb { display: none !important; }
+  body { background: #fff; font-size: 11pt; }
+  main.container { padding: 0; min-height: 0; }
+  .card { box-shadow: none; break-inside: avoid; }
+  .sample-meals { grid-template-columns: repeat(2, 1fr); }
+  .sample-meals a { display: none; } /* odkaz na recept na papíře nedává smysl */
+  a { color: inherit; text-decoration: none; }
+}
+
 /* Patička */
 .site-footer { border-top: 1px solid var(--color-border); background: var(--color-card); padding: 1.5rem 0; font-size: 0.95rem; }
 .footer-inner { display: flex; gap: 1rem; align-items: center; }

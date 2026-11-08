@@ -127,19 +127,29 @@ CREATE TABLE newsletter (
 -- ─────────────── OBCHOD (připraveno, zatím prázdné) ───────────────
 
 CREATE TABLE produkty (
-  slug        text PRIMARY KEY,
-  typ         text NOT NULL CHECK (typ IN ('plan', 'ebook', 'kurz')),
-  cena_kc     numeric(10, 2) NOT NULL CHECK (cena_kc >= 0),
-  soubor      text,                               -- PDF ke stažení po zaplacení
-  aktivni     boolean NOT NULL DEFAULT false,     -- false = zatím se neprodává
-  vytvoreno   timestamptz NOT NULL DEFAULT now()
+  slug         text PRIMARY KEY,
+  typ          text NOT NULL CHECK (typ IN ('darek', 'plan', 'ebook', 'kurz', 'predplatne')),
+  cena_kc      numeric(10, 2) NOT NULL CHECK (cena_kc >= 0),   -- 0 = zdarma (za e-mail)
+  cena_puvodni numeric(10, 2) CHECK (cena_puvodni >= 0),       -- přeškrtnutá cena (zaváděcí sleva)
+  za_mesic     boolean NOT NULL DEFAULT false,                 -- předplatné: cena je za měsíc
+  stav         text NOT NULL DEFAULT 'pripravujeme' CHECK (stav IN ('pripravujeme', 'v_prodeji')),
+  tecka        text,                                -- podoba maskota na obálce
+  barva        text,                                -- barva obálky (sage, honey, terra, primary)
+  ukazka       jsonb,                               -- ukázka zdarma, např. jeden den plánu
+  soubor       text,                                -- PDF ke stažení po zaplacení
+  aktivni      boolean NOT NULL DEFAULT false,      -- false = zatím se neprodává
+  poradi       integer NOT NULL DEFAULT 0,
+  vytvoreno    timestamptz NOT NULL DEFAULT now()
 );
 
 CREATE TABLE produkty_texty (
-  produkt  text NOT NULL REFERENCES produkty (slug) ON DELETE CASCADE ON UPDATE CASCADE,
-  jazyk    text NOT NULL CHECK (jazyk IN ('cs', 'en')),
-  nazev    text NOT NULL,
-  popis    text NOT NULL,
+  produkt   text NOT NULL REFERENCES produkty (slug) ON DELETE CASCADE ON UPDATE CASCADE,
+  jazyk     text NOT NULL CHECK (jazyk IN ('cs', 'en')),
+  nazev     text NOT NULL,
+  popis     text NOT NULL,                          -- jedna věta na kartu
+  pro_koho  text,
+  obsah     jsonb NOT NULL DEFAULT '[]',            -- co v něm najdeš (body)
+  format    text,                                   -- PDF, počet stran, online…
   PRIMARY KEY (produkt, jazyk)
 );
 
