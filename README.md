@@ -56,7 +56,7 @@ Na webu: odkazy z receptů a článků vedou do appky (stránka Aplikace) a do o
 
 - **Recepty** – 17 receptů ve třech kategoriích, přepočet porcí, alergeny (14 podle EU), varianty, tip od maskota Tečky
 - **Články** – krátce „v kostce“, víc po rozkliknutí, se zdroji
-- **Aplikace, Obchod, O mně** – představení dalších částí
+- **Obchod** – 6 digitálních produktů z databáze s obálkou, cenou a ukázkou zdarma (u týdenního plánu celý den + PDF)`n- **Aplikace, O mně** – představení dalších částí
 - Čeština a angličtina (`/cs/`, `/en/`), responzivní, přístupnost (WCAG), maskot Tečka
 
 ## Ukázky
