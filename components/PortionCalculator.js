@@ -3,12 +3,16 @@
 import { useState } from "react";
 
 // Suroviny s přepočtem porcí (tlačítka − a +). Množství se zaokrouhlí rozumně.
-function format(n, lang) {
-  const rounded = n >= 10 ? Math.round(n / 5) * 5 : Math.round(n * 10) / 10;
+const KUSY = ["ks", "pc", "pcs", "stroužky", "cloves"];
+function format(n, lang, jednotka) {
+  // kusy na půlky (2,5 ks cukety), gramy a ml na pětky, malá čísla na desetiny
+  const rounded = KUSY.includes(jednotka)
+    ? Math.max(0.5, Math.round(n * 2) / 2)
+    : n >= 10 ? Math.round(n / 5) * 5 : Math.round(n * 10) / 10;
   return rounded.toLocaleString(lang === "cs" ? "cs-CZ" : "en-GB");
 }
 
-export default function PortionCalculator({ ingredients, basePortions, labels, lang }) {
+export default function PortionCalculator({ ingredients, basePortions, kcal, labels, lang }) {
   const [portions, setPortions] = useState(basePortions);
   const factor = portions / basePortions;
 
@@ -20,12 +24,18 @@ export default function PortionCalculator({ ingredients, basePortions, labels, l
         <output aria-live="polite">{portions}</output>
         <button type="button" onClick={() => setPortions(Math.min(20, portions + 1))} aria-label={labels.more}>+</button>
       </div>
+      {kcal && (
+        <p className="portions-kcal" aria-live="polite">
+          {labels.total}: <strong>~{format(kcal * portions, lang)} kcal</strong>{" "}
+          <span className="muted">({kcal} kcal {labels.perPortion})</span>
+        </p>
+      )}
       <ul className="ingredients">
         {ingredients.map((i, idx) => (
           <li key={idx}>
             {i.mnozstvi != null && (
               <strong>
-                {format(i.mnozstvi * factor, lang)} {i.jednotka}{" "}
+                {format(i.mnozstvi * factor, lang, i.jednotka)} {i.jednotka}{" "}
               </strong>
             )}
             {i.co}

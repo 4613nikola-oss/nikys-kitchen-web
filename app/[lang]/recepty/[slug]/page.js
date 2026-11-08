@@ -54,12 +54,21 @@ export default async function RecipePage({ params }) {
                 <dd>{recipe.kcal ? `~${recipe.kcal} (${d.kcalApprox})` : d.kcalMissing}</dd>
               </div>
             </dl>
-            <p className="allergens">
-              <strong>{d.allergens}:</strong>{" "}
-              {recipe.alergeny.length
-                ? recipe.alergeny.map((a) => allergenNames[lang][a]).join(", ")
-                : d.noAllergens}
-            </p>
+            {/* Alergeny: žlutý rámeček s výstražným trojúhelníkem (nejen barva – i pro lidi, kteří barvy nerozliší) */}
+            {recipe.alergeny.length ? (
+              <p className="allergens allergens-warn">
+                <svg className="warn-icon" viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
+                  <path d="M12 3 L22 20 H2 Z" fill="#f59e0b" stroke="#2c2c2c" strokeWidth="1.6" strokeLinejoin="round" />
+                  <path d="M12 9 V14" stroke="#2c2c2c" strokeWidth="2" strokeLinecap="round" />
+                  <circle cx="12" cy="17" r="1.2" fill="#2c2c2c" />
+                </svg>
+                <span>
+                  <strong>{d.allergens}:</strong> {recipe.alergeny.map((a) => allergenNames[lang][a]).join(", ")}
+                </span>
+              </p>
+            ) : (
+              <p className="allergens"><strong>{d.allergens}:</strong> {d.noAllergens}</p>
+            )}
           </section>
           {recipe.status === "ukazka" && <p className="note">{d.draft}</p>}
         </div>
@@ -78,7 +87,8 @@ export default async function RecipePage({ params }) {
           <PortionCalculator
             ingredients={t.suroviny}
             basePortions={recipe.porce}
-            labels={{ portions: d.portions, less: d.less, more: d.more }}
+            kcal={recipe.kcal}
+            labels={{ portions: d.portions, less: d.less, more: d.more, total: d.kcalTotal, perPortion: d.kcalPerPortion }}
             lang={lang}
           />
         </section>
@@ -103,11 +113,20 @@ export default async function RecipePage({ params }) {
         <section className="band band-sage" aria-labelledby="varianty">
           <h2 id="varianty">{d.variantsTitle}</h2>
           <p>{d.variantsLead}</p>
-          <ul className="variant-list">
-            {t.varianty.map((v) => (
-              <li key={v.nazev}><strong>{v.nazev}:</strong> {v.text}</li>
-            ))}
-          </ul>
+          {/* Každá varianta jako výrazná karta na jiný den: v neděli upečeš základ, pak každý den jinak */}
+          <ol className="variant-cards">
+            {t.varianty.map((v, i) => {
+              const [pismeno, ...nazev] = v.nazev.split(" – ");
+              return (
+                <li key={v.nazev} className={`card pad variant-card variant-${i}`}>
+                  <span className="variant-day">{d.variantDays[i] || ""}</span>
+                  <span className="variant-letter" aria-hidden="true">{pismeno}</span>
+                  <h3>{nazev.join(" – ") || v.nazev}</h3>
+                  <p>{v.text}</p>
+                </li>
+              );
+            })}
+          </ol>
         </section>
       )}
 

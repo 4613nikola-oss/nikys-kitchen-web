@@ -1,42 +1,42 @@
 import { getDictionary, getLang } from "@/lib/i18n";
-import { categories, getRecipes } from "@/lib/content";
-import RecipeCard from "@/components/RecipeCard";
+import { getRecipes, getAllergenNames } from "@/lib/content";
+import RecipeBrowser from "@/components/RecipeBrowser";
 
 export async function generateMetadata() {
   const dict = await getDictionary();
   return { title: dict.recipes.title, description: dict.recipes.lead };
 }
 
-// Přehled receptů: rychlé skoky na kategorie a pod nimi karty
+// Štítky se odvozují z dat receptu, nic se nevymýšlí ručně
+const MASO = /kuř|maso|šunk|ryb|tuňák|slanin/i;
+function stitkyReceptu(r) {
+  const t = [...(r.jidla || [])];
+  if (r.cas <= 15) t.push("rychle");
+  if (!r.cs.suroviny.some((s) => MASO.test(s.co))) t.push("vegetarianske");
+  return t;
+}
+const TAGY = ["snidane", "obed", "svacina", "vecere", "rychle", "vegetarianske"];
+const ALERGENY = ["lepek", "mleko", "vejce", "orechy"];
+
+// Přehled receptů: hledání, filtry a postupné načítání (RecipeBrowser)
 export default async function RecipesPage() {
   const dict = await getDictionary();
   const lang = await getLang();
-  const recipes = await getRecipes();
-  const byCat = (cat) => recipes.filter((r) => r.kategorie === cat);
+  const recipes = (await getRecipes()).map((r) => ({ ...r, stitky: stitkyReceptu(r) }));
+  const allergenNames = (await getAllergenNames())[lang];
 
   return (
     <>
       <h1>{dict.recipes.title}</h1>
       <p className="lead">{dict.recipes.lead}</p>
-
-      <nav aria-label={dict.recipes.filterLabel} className="chips-nav">
-        {categories.map((cat) => (
-          <a key={cat} href={`#${cat}`} className="chip chip-link">
-            {dict.categories[cat]} ({byCat(cat).length})
-          </a>
-        ))}
-      </nav>
-
-      {categories.map((cat) => (
-        <section key={cat} id={cat} className="category-row" aria-labelledby={`h-${cat}`}>
-          <h2 id={`h-${cat}`}>{dict.categories[cat]}</h2>
-          <div className="grid">
-            {byCat(cat).map((r) => (
-              <RecipeCard key={r.slug} recipe={r} lang={lang} dict={dict} />
-            ))}
-          </div>
-        </section>
-      ))}
+      <RecipeBrowser
+        recipes={recipes}
+        lang={lang}
+        dict={dict}
+        tagKeys={TAGY}
+        allergenKeys={ALERGENY}
+        allergenNames={allergenNames}
+      />
     </>
   );
 }

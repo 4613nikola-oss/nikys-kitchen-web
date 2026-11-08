@@ -61,13 +61,40 @@
     "ingredients": "Ingredients",
     "steps": "Method",
     "variantsTitle": "One base, three variations",
-    "variantsLead": "Cook the base once and change it up every day:",
+    "variantsLead": "Cook the base on Sunday and give it a different twist every day:",
     "tip": "Niky's tip",
     "draft": "Sample recipe – Niky will test and fine-tune it.",
     "aiPhoto": "Illustrative images created with AI. Real photos coming soon.",
     "toApp": "How much should you eat? Work it out in the app",
     "related": "Read more",
-    "back": "Back to recipes"
+    "back": "Back to recipes",
+    "kcalTotal": "Total",
+    "kcalPerPortion": "per serving",
+    "variantDays": [
+      "Monday",
+      "Tuesday",
+      "Wednesday"
+    ],
+    "filters": {
+      "search": "Search recipes",
+      "searchPlaceholder": "Search a recipe or ingredient, e.g. “eggs”",
+      "tags": "Tags",
+      "tagNames": {
+        "snidane": "breakfast",
+        "obed": "lunch",
+        "svacina": "snack",
+        "vecere": "dinner",
+        "rychle": "under15min",
+        "vegetarianske": "vegetarian"
+      },
+      "without": "Without",
+      "results": "Recipes found: {n}",
+      "clear": "Clear filters",
+      "loadMore": "Load more ({n} left)",
+      "empty": "Nothing matches these filters. Try turning one off.",
+      "emptyQuery": "I couldn't find “{q}”.",
+      "didYouMean": "Maybe you're looking for:"
+    }
   },
   "articles": {
     "title": "Articles",

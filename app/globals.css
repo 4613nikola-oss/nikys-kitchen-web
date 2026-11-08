@@ -225,6 +225,52 @@ main section { margin-bottom: 3rem; }
 .not-found p { margin-left: auto; margin-right: auto; }
 .about-teaser { border-top: 1px solid var(--color-border); padding-top: 2rem; }
 
+/* Alergeny: žlutý rámeček + trojúhelník, aby je nikdo nepřehlédl */
+.allergens-warn {
+  display: flex; gap: 0.6rem; align-items: center;
+  background: #fef3c7; border: 2px solid #f59e0b; border-radius: var(--radius); padding: 0.6rem 0.9rem; max-width: none;
+}
+.warn-icon { flex: none; }
+.portions-kcal { margin: 0 0 1rem; }
+
+/* Varianty jako výrazné karty po dnech */
+.variant-cards { list-style: none; padding: 0; display: grid; gap: 1rem; grid-template-columns: 1fr; margin: 1rem 0 0; }
+@media (min-width: 800px) { .variant-cards { grid-template-columns: repeat(3, 1fr); } }
+.variant-card { position: relative; border-top: 6px solid var(--color-sage); }
+.variant-card.variant-1 { border-top-color: var(--color-terracotta); }
+.variant-card.variant-2 { border-top-color: var(--color-honey); }
+.variant-card h3 { margin: 0.3rem 0; }
+.variant-card h3::first-letter { text-transform: uppercase; }
+.variant-card p { margin: 0; }
+.variant-day { font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-muted); }
+.variant-letter {
+  position: absolute; top: 0.9rem; right: 1rem; width: 2.4rem; height: 2.4rem; border-radius: 50%;
+  display: grid; place-items: center; font-family: var(--font-heading-stack); font-weight: 700; font-size: 1.2rem;
+  background: var(--color-sage-faint); color: var(--color-primary);
+}
+
+/* Filtry receptů */
+.filters { margin: 1rem 0 1.5rem; display: grid; gap: 0.75rem; }
+.search-field input {
+  width: 100%; font: inherit; font-size: 1.05rem; padding: 0.75rem 1rem; min-height: 48px;
+  border: 2px solid var(--color-border); border-radius: 999px; background: var(--color-bg); color: var(--color-text);
+}
+.search-field input:focus { border-color: var(--color-primary); outline: none; }
+.filter-row { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+.filter-label { font-weight: 700; color: var(--color-muted); }
+.chip-filter {
+  font: inherit; font-size: 0.95rem; font-weight: 700; cursor: pointer; min-height: 44px; padding: 0.4rem 1rem; margin: 0;
+  border: 2px solid var(--color-border); background: var(--color-card); color: var(--color-primary);
+}
+.chip-filter:hover { border-color: var(--color-primary); }
+.chip-filter.is-on { background: var(--color-primary); border-color: var(--color-primary); color: #fff; }
+.filter-foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; color: var(--color-muted); }
+.btn-ghost { background: var(--color-card); color: var(--color-primary); border-color: var(--color-primary); }
+.btn-ghost:hover { background: var(--color-primary); color: #fff; }
+.load-more { text-align: center; margin-top: 1.5rem; max-width: none; }
+.empty-state { text-align: center; }
+.empty-state p { margin-left: auto; margin-right: auto; }
+
 /* Obchod: obálky produktů („knížka“ v barvách značky) */
 .cover { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 1rem; background: var(--color-honey-faint); }
 .cover-book {

@@ -61,13 +61,40 @@
     "ingredients": "Suroviny",
     "steps": "Postup",
     "variantsTitle": "Jeden základ, tři varianty",
-    "variantsLead": "Základ uvaříš jednou, každý den ho dochutíš jinak:",
+    "variantsLead": "V neděli uvaříš základ a každý den ho dochutíš jinak:",
     "tip": "Tip od Niky",
     "draft": "Ukázkový recept – Niky ho ještě vyzkouší a doladí.",
     "aiPhoto": "Ilustrační obrázky vytvořené pomocí AI. Brzy je nahradí skutečné fotky.",
     "toApp": "Kolik z toho sníst? Spočítej si to v appce",
     "related": "Přečti si k tomu",
-    "back": "Zpět na recepty"
+    "back": "Zpět na recepty",
+    "kcalTotal": "Celkem",
+    "kcalPerPortion": "na porci",
+    "variantDays": [
+      "Pondělí",
+      "Úterý",
+      "Středa"
+    ],
+    "filters": {
+      "search": "Hledat recept",
+      "searchPlaceholder": "Hledej recept nebo surovinu, třeba „vejce“",
+      "tags": "Štítky",
+      "tagNames": {
+        "snidane": "snídaně",
+        "obed": "oběd",
+        "svacina": "svačina",
+        "vecere": "večeře",
+        "rychle": "do15minut",
+        "vegetarianske": "vegetariánské"
+      },
+      "without": "Bez",
+      "results": "Nalezeno receptů: {n}",
+      "clear": "Vymazat filtry",
+      "loadMore": "Načíst další (zbývá {n})",
+      "empty": "S těmito filtry jsem nic nenašla. Zkus některý vypnout.",
+      "emptyQuery": "„{q}“ jsem nenašla.",
+      "didYouMean": "Možná hledáš tohle:"
+    }
   },
   "articles": {
     "title": "Články",

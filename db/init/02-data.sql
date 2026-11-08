@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict xOZUMu1gQyrDcNmMDzLCtG7TUO7525jJ4cAMVdsGZ2gd0fCfMfQdf2rA8Wn0yCW
+\restrict R6chT1zyU1GrgWItGb0ajtOzVz0Qk4imytAAcGdAZP3agaD0dHDUFBSLrdJUw6e
 
 -- Dumped from database version 17.11
 -- Dumped by pg_dump version 17.11
@@ -127,7 +127,6 @@ INSERT INTO public.produkty_texty (produkt, jazyk, nazev, popis, pro_koho, obsah
 -- Data for Name: recepty; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-INSERT INTO public.recepty (slug, kategorie, stav, cas_min, porce, kcal, jidla, obrazek, obrazek_ai, tecka, poradi, zverejneno, vytvoreno, upraveno) VALUES ('kolac-od-niky', 'slane', 'niky', 60, 4, NULL, '{obed,vecere}', 'kolac-hotovy.webp', true, 'kolac', 1, true, '2026-11-07 14:57:43.376064+00', '2026-11-07 14:57:43.376064+00');
 INSERT INTO public.recepty (slug, kategorie, stav, cas_min, porce, kcal, jidla, obrazek, obrazek_ai, tecka, poradi, zverejneno, vytvoreno, upraveno) VALUES ('pecena-zelenina-s-quinoou', 'slane', 'ukazka', 40, 3, 390, '{obed,vecere}', NULL, false, 'talir', 2, true, '2026-11-07 14:57:43.406909+00', '2026-11-07 14:57:43.406909+00');
 INSERT INTO public.recepty (slug, kategorie, stav, cas_min, porce, kcal, jidla, obrazek, obrazek_ai, tecka, poradi, zverejneno, vytvoreno, upraveno) VALUES ('kureci-salat-s-quinoou', 'slane', 'ukazka', 25, 2, 480, '{obed}', NULL, false, 'talir', 3, true, '2026-11-07 14:57:43.423004+00', '2026-11-07 14:57:43.423004+00');
 INSERT INTO public.recepty (slug, kategorie, stav, cas_min, porce, kcal, jidla, obrazek, obrazek_ai, tecka, poradi, zverejneno, vytvoreno, upraveno) VALUES ('cockovy-salat-s-fetou', 'slane', 'ukazka', 30, 2, 450, '{obed,vecere}', NULL, false, 'talir', 4, true, '2026-11-07 14:57:43.443591+00', '2026-11-07 14:57:43.443591+00');
@@ -138,12 +137,13 @@ INSERT INTO public.recepty (slug, kategorie, stav, cas_min, porce, kcal, jidla, 
 INSERT INTO public.recepty (slug, kategorie, stav, cas_min, porce, kcal, jidla, obrazek, obrazek_ai, tecka, poradi, zverejneno, vytvoreno, upraveno) VALUES ('tvarohovy-dezert-s-jahodami', 'sladke', 'ukazka', 10, 2, 190, '{svacina}', NULL, false, 'zakusek', 9, true, '2026-11-07 14:57:43.535055+00', '2026-11-07 14:57:43.535055+00');
 INSERT INTO public.recepty (slug, kategorie, stav, cas_min, porce, kcal, jidla, obrazek, obrazek_ai, tecka, poradi, zverejneno, vytvoreno, upraveno) VALUES ('datlove-kulicky', 'sladke', 'ukazka', 15, 4, 180, '{svacina}', NULL, false, 'zakusek', 10, true, '2026-11-07 14:57:43.549698+00', '2026-11-07 14:57:43.549698+00');
 INSERT INTO public.recepty (slug, kategorie, stav, cas_min, porce, kcal, jidla, obrazek, obrazek_ai, tecka, poradi, zverejneno, vytvoreno, upraveno) VALUES ('jogurtovy-ovocny-pohar', 'sladke', 'ukazka', 10, 2, 230, '{snidane,svacina}', NULL, false, 'pohar', 11, true, '2026-11-07 14:57:43.563766+00', '2026-11-07 14:57:43.563766+00');
-INSERT INTO public.recepty (slug, kategorie, stav, cas_min, porce, kcal, jidla, obrazek, obrazek_ai, tecka, poradi, zverejneno, vytvoreno, upraveno) VALUES ('ledova-kava-s-vanilkou', 'napoje', 'niky', 5, 1, NULL, '{svacina}', NULL, false, 'sklenice', 12, true, '2026-11-07 14:57:43.582509+00', '2026-11-07 14:57:43.582509+00');
-INSERT INTO public.recepty (slug, kategorie, stav, cas_min, porce, kcal, jidla, obrazek, obrazek_ai, tecka, poradi, zverejneno, vytvoreno, upraveno) VALUES ('okurkova-limonada', 'napoje', 'niky', 10, 4, NULL, '{svacina}', NULL, false, 'sklenice', 13, true, '2026-11-07 14:57:43.5966+00', '2026-11-07 14:57:43.5966+00');
-INSERT INTO public.recepty (slug, kategorie, stav, cas_min, porce, kcal, jidla, obrazek, obrazek_ai, tecka, poradi, zverejneno, vytvoreno, upraveno) VALUES ('ginger-shot', 'napoje', 'niky', 10, 4, NULL, '{svacina}', NULL, false, 'sklenice', 14, true, '2026-11-07 14:57:43.607913+00', '2026-11-07 14:57:43.607913+00');
 INSERT INTO public.recepty (slug, kategorie, stav, cas_min, porce, kcal, jidla, obrazek, obrazek_ai, tecka, poradi, zverejneno, vytvoreno, upraveno) VALUES ('zelene-smoothie', 'napoje', 'ukazka', 5, 1, 150, '{snidane,svacina}', NULL, false, 'sklenice', 15, true, '2026-11-07 14:57:43.622524+00', '2026-11-07 14:57:43.622524+00');
 INSERT INTO public.recepty (slug, kategorie, stav, cas_min, porce, kcal, jidla, obrazek, obrazek_ai, tecka, poradi, zverejneno, vytvoreno, upraveno) VALUES ('ledovy-caj-s-matou', 'napoje', 'ukazka', 10, 4, 40, '{svacina}', NULL, false, 'sklenice', 16, true, '2026-11-07 14:57:43.638074+00', '2026-11-07 14:57:43.638074+00');
 INSERT INTO public.recepty (slug, kategorie, stav, cas_min, porce, kcal, jidla, obrazek, obrazek_ai, tecka, poradi, zverejneno, vytvoreno, upraveno) VALUES ('latte-s-ovesnym-mlekem', 'napoje', 'ukazka', 5, 1, 120, '{snidane,svacina}', NULL, false, 'sklenice', 17, true, '2026-11-07 14:57:43.655094+00', '2026-11-07 14:57:43.655094+00');
+INSERT INTO public.recepty (slug, kategorie, stav, cas_min, porce, kcal, jidla, obrazek, obrazek_ai, tecka, poradi, zverejneno, vytvoreno, upraveno) VALUES ('kolac-od-niky', 'slane', 'niky', 60, 4, 520, '{obed,vecere}', 'kolac-hotovy.webp', true, 'kolac', 1, true, '2026-11-07 14:57:43.376064+00', '2026-11-08 12:27:18.581205+00');
+INSERT INTO public.recepty (slug, kategorie, stav, cas_min, porce, kcal, jidla, obrazek, obrazek_ai, tecka, poradi, zverejneno, vytvoreno, upraveno) VALUES ('ledova-kava-s-vanilkou', 'napoje', 'niky', 5, 1, 100, '{svacina}', NULL, false, 'sklenice', 12, true, '2026-11-07 14:57:43.582509+00', '2026-11-08 12:27:18.581205+00');
+INSERT INTO public.recepty (slug, kategorie, stav, cas_min, porce, kcal, jidla, obrazek, obrazek_ai, tecka, poradi, zverejneno, vytvoreno, upraveno) VALUES ('okurkova-limonada', 'napoje', 'niky', 10, 4, 30, '{svacina}', NULL, false, 'sklenice', 13, true, '2026-11-07 14:57:43.5966+00', '2026-11-08 12:27:18.581205+00');
+INSERT INTO public.recepty (slug, kategorie, stav, cas_min, porce, kcal, jidla, obrazek, obrazek_ai, tecka, poradi, zverejneno, vytvoreno, upraveno) VALUES ('ginger-shot', 'napoje', 'niky', 10, 4, 40, '{svacina}', NULL, false, 'sklenice', 14, true, '2026-11-07 14:57:43.607913+00', '2026-11-08 12:27:18.581205+00');
 
 
 --
@@ -456,5 +456,5 @@ SELECT pg_catalog.setval('public.suroviny_id_seq', 186, true);
 -- PostgreSQL database dump complete
 --
 
-\unrestrict xOZUMu1gQyrDcNmMDzLCtG7TUO7525jJ4cAMVdsGZ2gd0fCfMfQdf2rA8Wn0yCW
+\unrestrict R6chT1zyU1GrgWItGb0ajtOzVz0Qk4imytAAcGdAZP3agaD0dHDUFBSLrdJUw6e
 
