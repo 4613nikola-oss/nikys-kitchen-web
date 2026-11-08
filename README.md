@@ -56,7 +56,8 @@ Na webu: odkazy z receptů a článků vedou do appky (stránka Aplikace) a do o
 
 - **Recepty** – 17 receptů ve třech kategoriích, přepočet porcí, alergeny (14 podle EU), varianty, tip od maskota Tečky
 - **Články** – krátce „v kostce“, víc po rozkliknutí, se zdroji
-- **Obchod** – 6 digitálních produktů z databáze s obálkou, cenou a ukázkou zdarma (u týdenního plánu celý den + PDF)`n- **Aplikace, O mně** – představení dalších částí
+- **Obchod** – 6 digitálních produktů z databáze s obálkou, cenou a ukázkou zdarma (u týdenního plánu celý den + PDF)
+- **Aplikace, O mně** – představení dalších částí
 - Čeština a angličtina (`/cs/`, `/en/`), responzivní, přístupnost (WCAG), maskot Tečka
 
 ## Ukázky
@@ -96,7 +97,8 @@ flowchart LR
 |---|---|
 | ![Seznam tabulek v Admineru](docs/ukazky/databaze-tabulky.webp) | ![Pohled appka_recepty: recepty v podobě, jakou potřebuje appka](docs/ukazky/databaze-appka.webp) |
 
-**Tabulky:** `recepty`, `recepty_texty` (cs/en), `suroviny`, `alergeny` + `recepty_alergeny` (14 alergenů EU), `clanky`, `clanky_texty`, `recepty_clanky`, `newsletter`, obchod (`produkty`, `produkty_texty`, `slevove_kody`, `objednavky`, `objednavky_polozky`) a pohled `appka_recepty`.
+**Tabulky:** `recepty`, `recepty_texty` (cs/en), `suroviny`, `alergeny` + `recepty_alergeny` (14 alergenů EU), `clanky`, `clanky_texty`, `recepty_clanky`, 
+ewsletter`, obchod (`produkty`, `produkty_texty`, `slevove_kody`, `objednavky`, `objednavky_polozky`) a pohled `appka_recepty`.
 ## Spuštění
 
 Všechno se spouští **jen v Dockeru**, nic se neinstaluje do Windows.
