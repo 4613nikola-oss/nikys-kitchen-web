@@ -2,7 +2,7 @@
 
 **🌐 Web:** https://4613nikola-oss.github.io/nikys-kitchen-web/ · **📱 Appka:** https://4613nikola-oss.github.io/jidlo-od-a-z/
 
-Nový web značky **Niky's Kitchen**: recepty (slané, sladké, nápoje) a krátké články o výživě, česky i anglicky. Časem tu bude i appka a obchod – všechno v jednom projektu.
+Nový web značky **Niky's Kitchen**: recepty (slané, sladké, nápoje) a krátké články o výživě, česky i anglicky. Je tu i obchod s digitálními produkty (zatím s ukázkami, prodej se připravuje). Časem sem přibude i appka – všechno v jednom projektu.
 
 ![Úvodní stránka Niky's Kitchen na počítači, tabletu a mobilu](docs/ukazky/ukazka-niky-web.webp)
 
@@ -46,7 +46,7 @@ Niky's Kitchen má tři části. Cíl je pořád stejný: ulehčit lidem zdravé
 |------|----------|------|
 | 🌐 **Web s blogem** (tento projekt) | recepty a články, každý recept má základ a varianty (zhubnout / udržet / nabrat) | online: https://4613nikola-oss.github.io/nikys-kitchen-web/ |
 | 📱 **Appka Jídlo od A–Z** | kalkulačka příjmu, plán jídel, recepty z ledničky, nákupní seznam | online: https://4613nikola-oss.github.io/jidlo-od-a-z/ |
-| 🛒 **Obchod** | digitální produkty: e-booky, online kuchařka, jídelní plány, kurzy | připravujeme |
+| 🛒 **Obchod** | digitální produkty: e-booky, online kuchařka, jídelní plány, kurzy | stránka obchodu s ukázkami je online, prodej připravujeme |
 
 **Jak na sebe navazují:** web přivede čtenáře (recept, článek, sociální sítě) → appka mu pomůže v praxi (co a kolik jíst, z čeho uvařit) → obchod nabídne placené plány a e-booky pro ty, kdo chtějí víc.
 
@@ -54,11 +54,12 @@ Na webu: odkazy z receptů a článků vedou do appky (stránka Aplikace) a do o
 
 ## Co na webu je
 
-- **Recepty** – 17 receptů ve třech kategoriích, přepočet porcí, alergeny (14 podle EU), varianty, tip od maskota Tečky
+- **Recepty** – 17 receptů ve třech kategoriích, hledání (zvládne i překlepy), filtry podle jídla a alergenů, přepočet porcí i kcal, alergeny (14 podle EU), varianty po dnech, tisk do PDF, tip od maskota Tečky
 - **Články** – krátce „v kostce“, víc po rozkliknutí, se zdroji
 - **Obchod** – 6 digitálních produktů z databáze s obálkou, cenou a ukázkou zdarma (u týdenního plánu celý den + PDF)
 - **Aplikace, O mně** – představení dalších částí
-- Čeština a angličtina (`/cs/`, `/en/`), responzivní, přístupnost (WCAG), maskot Tečka
+- **Ochrana soukromí a prohlášení o přístupnosti** – vlastní stránky, odkaz v patičce
+- Čeština a angličtina (`/cs/`, `/en/`), responzivní, přístupnost (WCAG), SEO (mapa webu, náhledy při sdílení, data receptů pro Google), maskot Tečka
 
 ## Ukázky
 
@@ -68,7 +69,11 @@ Na webu: odkazy z receptů a článků vedou do appky (stránka Aplikace) a do o
 
 | Recept na počítači | Přehled receptů |
 |---|---|
-| ![Recept Koláč od Niky: suroviny s přepočtem porcí, postup s fotkami, alergeny](docs/ukazky/web-recept.webp) | ![Přehled receptů rozdělený na slané, sladké a nápoje](docs/ukazky/web-recepty.webp) |
+| ![Recept Koláč od Niky: suroviny s přepočtem porcí, postup s fotkami, alergeny](docs/ukazky/web-recept.webp) | ![Přehled receptů s hledáním a filtry podle kategorie, jídla a alergenů](docs/ukazky/web-recepty.webp) |
+
+| Obchod | Detail produktu |
+|---|---|
+| ![Obchod: 6 digitálních produktů s obálkami a cenami](docs/ukazky/web-obchod.webp) | ![Týdenní jídelní plán: cena, pro koho, co v něm najdeš](docs/ukazky/web-produkt.webp) |
 
 | Web v mobilu | Recept v mobilu | Appka: Můj den |
 |---|---|---|
