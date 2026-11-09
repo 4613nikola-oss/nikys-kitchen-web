@@ -7,6 +7,8 @@ import { asset } from "@/lib/asset";
 import PortionCalculator from "@/components/PortionCalculator";
 import ArticleCard from "@/components/ArticleCard";
 import Tecka from "@/components/Tecka";
+import PrintButton from "@/components/PrintButton";
+import { SITE_URL, alternates } from "@/lib/site";
 
 const APP_URL = "https://4613nikola-oss.github.io/jidlo-od-a-z/";
 
@@ -19,7 +21,39 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const lang = await getLang();
   const r = await getRecipe(slug);
-  return r ? { title: r[lang].nazev, description: r[lang].uvod } : {};
+  if (!r) return {};
+  return {
+    title: r[lang].nazev,
+    description: r[lang].uvod,
+    alternates: alternates(lang, `recepty/${slug}/`),
+    openGraph: {
+      type: "article",
+      title: r[lang].nazev,
+      description: r[lang].uvod,
+      ...(r.obrazek ? { images: [{ url: `${SITE_URL}/images/recepty/${r.obrazek}`, alt: r[lang].nazev }] } : {}),
+    },
+  };
+}
+
+// Data receptu pro Google (schema.org/Recipe): čas, porce, kcal, suroviny a postup ve výsledcích hledání
+function receptProGoogle(recipe, lang, kategorie) {
+  const t = recipe[lang];
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Recipe",
+    name: t.nazev,
+    description: t.uvod,
+    author: { "@type": "Person", name: "Niky" },
+    inLanguage: lang,
+    recipeCategory: kategorie,
+    recipeYield: String(recipe.porce),
+    totalTime: `PT${recipe.cas}M`,
+    recipeIngredient: t.suroviny.map((s) => [s.mnozstvi, s.jednotka, s.co].filter(Boolean).join(" ")),
+    recipeInstructions: t.postup.map((s) => ({ "@type": "HowToStep", text: s.text })),
+  };
+  if (recipe.kcal) data.nutrition = { "@type": "NutritionInformation", calories: `${recipe.kcal} kcal` };
+  if (recipe.obrazek) data.image = [`${SITE_URL}/images/recepty/${recipe.obrazek}`];
+  return JSON.stringify(data).replace(/</g, "\\u003c");
 }
 
 export default async function RecipePage({ params }) {
@@ -36,9 +70,13 @@ export default async function RecipePage({ params }) {
 
   return (
     <article className="recipe">
-      <p className="breadcrumb">
-        <Link href={`/${lang}/recepty/#${recipe.kategorie}`}>← {dict.categories[recipe.kategorie]}</Link>
-      </p>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: receptProGoogle(recipe, lang, dict.categories[recipe.kategorie]) }} />
+      <div className="recipe-tools">
+        <p className="breadcrumb">
+          <Link href={`/${lang}/recepty/`}>← {d.back}</Link>
+        </p>
+        <PrintButton label={d.print} />
+      </div>
 
       <header className="recipe-head">
         <div>

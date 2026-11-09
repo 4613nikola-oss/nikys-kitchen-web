@@ -1,10 +1,11 @@
 import { getDictionary, getLang } from "@/lib/i18n";
+import { alternates } from "@/lib/site";
 import { getRecipes, getAllergenNames } from "@/lib/content";
 import RecipeBrowser from "@/components/RecipeBrowser";
 
 export async function generateMetadata() {
   const dict = await getDictionary();
-  return { title: dict.recipes.title, description: dict.recipes.lead };
+  return { title: dict.recipes.title, description: dict.recipes.lead, alternates: alternates(await getLang(), "recepty/") };
 }
 
 // Štítky se odvozují z dat receptu, nic se nevymýšlí ručně

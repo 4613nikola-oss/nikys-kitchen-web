@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getDictionary, getLang } from "@/lib/i18n";
+import { alternates } from "@/lib/site";
 import { getArticles, getArticle, recipesFor } from "@/lib/content";
 import RecipeCard from "@/components/RecipeCard";
 
@@ -13,7 +14,7 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const lang = await getLang();
   const a = await getArticle(slug);
-  return a ? { title: a[lang].nazev, description: a[lang].perex } : {};
+  return a ? { title: a[lang].nazev, description: a[lang].perex, alternates: alternates(lang, `clanky/${slug}/`) } : {};
 }
 
 // Blok textu článku: nadpis, odstavec nebo seznam

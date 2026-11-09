@@ -94,7 +94,8 @@
       "empty": "Nothing matches these filters. Try turning one off.",
       "emptyQuery": "I couldn't find “{q}”.",
       "didYouMean": "Maybe you're looking for:"
-    }
+    },
+    "print": "Print / save as PDF"
   },
   "articles": {
     "title": "Articles",
@@ -193,6 +194,111 @@
   "footer": {
     "note": "This is not medical advice. If you have health problems, talk to your doctor.",
     "rights": "Niky's Kitchen",
-    "mascot": "Tečka, the Niky's Kitchen mascot"
+    "mascot": "Tečka, the Niky's Kitchen mascot",
+    "legal": {
+      "privacy": "Privacy",
+      "accessibility": "Accessibility"
+    }
+  },
+  "privacy": {
+    "title": "Privacy",
+    "lead": "In short and in plain words: what happens with your data when you use the Niky's Kitchen website and the Jídlo od A–Z app.",
+    "updated": "Updated 9 November 2026",
+    "sections": [
+      {
+        "h": "Who runs the website"
+      },
+      {
+        "p": "Niky's Kitchen is Niky's personal project, not a company. We'll add a contact for data questions before we launch the newsletter and the shop."
+      },
+      {
+        "h": "What the website collects about you"
+      },
+      {
+        "p": "Nothing. The website has no sign-up, no forms and no newsletter, and it uses no analytics or advertising tools."
+      },
+      {
+        "h": "Cookies"
+      },
+      {
+        "p": "Neither the website nor the app uses cookies. If we add visitor analytics, we'll ask you first with a consent banner and won't measure anything without your consent."
+      },
+      {
+        "h": "The Jídlo od A–Z app"
+      },
+      {
+        "ul": [
+          "Your profile (age, weight, height, goal), fridge and shopping list are stored only in your browser.",
+          "They are never sent anywhere and we can't see them.",
+          "To delete them, clear this site's data in your browser."
+        ]
+      },
+      {
+        "h": "Where the website runs"
+      },
+      {
+        "p": "The website and the app are hosted on GitHub Pages (GitHub, Inc.). On every visit GitHub processes technical data such as your IP address to deliver the page and protect it from attacks. It follows its own privacy statement.",
+        "link": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+        "linkText": "GitHub privacy statement"
+      },
+      {
+        "h": "Fonts"
+      },
+      {
+        "p": "The website stores its fonts itself, nothing else is loaded. The app currently loads fonts from Google Fonts, so Google sees your device's IP address. We'll change this when we rebuild the app.",
+        "link": "https://developers.google.com/fonts/faq/privacy",
+        "linkText": "Google Fonts and privacy"
+      },
+      {
+        "h": "Your rights"
+      },
+      {
+        "p": "Since we store nothing about you, there's nothing to hand over, correct or delete. Once we start collecting data (newsletter, shop), we'll explain your GDPR rights here and how to use them."
+      }
+    ]
+  },
+  "accessibility": {
+    "title": "Accessibility",
+    "lead": "We want everyone to be able to use the website, including people with visual, motor or other impairments.",
+    "updated": "Updated 9 November 2026",
+    "sections": [
+      {
+        "h": "What we aim for"
+      },
+      {
+        "p": "We aim to meet WCAG 2.1 at level AA. The website hasn't been independently audited yet, so we don't claim full compliance."
+      },
+      {
+        "h": "What already works"
+      },
+      {
+        "ul": [
+          "The whole website works with a keyboard, and there's a “Skip to content” link at the top.",
+          "Text has enough contrast with the background (at least 4.5 : 1).",
+          "Images have descriptions for screen readers.",
+          "Allergens are marked with colour and a triangle icon, not colour alone.",
+          "Buttons are large enough for fingers (at least 44 px).",
+          "If your device has “reduce motion” turned on, animations are switched off.",
+          "Recipes can be printed or saved as PDF.",
+          "Pages are in Czech and English with the language set correctly for screen readers."
+        ]
+      },
+      {
+        "h": "What we're still improving"
+      },
+      {
+        "ul": [
+          "Some images are illustrations made with AI; we'll replace them with real photos.",
+          "PDF samples may not be fully accessible to screen readers.",
+          "We're rebuilding the Jídlo od A–Z app and will fine-tune its accessibility."
+        ]
+      },
+      {
+        "h": "Found a problem?"
+      },
+      {
+        "p": "Tell us what didn't work and on which page. We'll add a contact soon; until then you can reach Niky's Kitchen on social media."
+      }
+    ]
   }
 }

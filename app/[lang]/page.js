@@ -1,9 +1,14 @@
 import Link from "next/link";
+import { alternates } from "@/lib/site";
 import { getDictionary, getLang } from "@/lib/i18n";
 import { categories, getRecipes, getArticles, getRecipe } from "@/lib/content";
 import RecipeCard from "@/components/RecipeCard";
 import ArticleCard from "@/components/ArticleCard";
 import Tecka from "@/components/Tecka";
+
+export async function generateMetadata() {
+  return { alternates: alternates(await getLang()) };
+}
 
 const APP_URL = "https://4613nikola-oss.github.io/jidlo-od-a-z/";
 

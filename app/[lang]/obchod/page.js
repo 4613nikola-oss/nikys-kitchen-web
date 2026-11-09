@@ -1,11 +1,12 @@
 import { getDictionary, getLang } from "@/lib/i18n";
+import { alternates } from "@/lib/site";
 import { getProducts } from "@/lib/content";
 import Tecka from "@/components/Tecka";
 import ProductCard from "@/components/ProductCard";
 
 export async function generateMetadata() {
   const dict = await getDictionary();
-  return { title: dict.shop.title, description: dict.shop.lead };
+  return { title: dict.shop.title, description: dict.shop.lead, alternates: alternates(await getLang(), "obchod/") };
 }
 
 // Obchod s digitálními produkty: karty s obálkou a cenou, dole dárek za newsletter

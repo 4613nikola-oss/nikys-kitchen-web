@@ -3,6 +3,7 @@ import { lang } from "next/root-params";
 import { getDictionary, locales } from "@/lib/i18n";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SITE_URL } from "@/lib/site";
 import "../globals.css";
 
 // Písma značky – latin-ext kvůli české diakritice
@@ -23,11 +24,22 @@ export function generateStaticParams() {
   return locales.map((l) => ({ lang: l }));
 }
 
+// Výchozí údaje pro Google a náhledy při sdílení (Facebook, WhatsApp…); stránky je doplní o svůj název a obrázek
 export async function generateMetadata() {
   const dict = await getDictionary();
+  const locale = await lang();
   return {
+    metadataBase: new URL(`${SITE_URL}/`),
     title: { default: dict.meta.title, template: `%s | ${dict.meta.title}` },
     description: dict.meta.description,
+    // kanonickou adresu a jazykové verze si nastavuje každá stránka sama (alternates z lib/site.js)
+    openGraph: {
+      type: "website",
+      siteName: "Niky's Kitchen",
+      locale: locale === "cs" ? "cs_CZ" : "en_GB",
+      images: [{ url: `${SITE_URL}/og/niky-kitchen.png`, width: 1200, height: 630, alt: dict.meta.title }],
+    },
+    twitter: { card: "summary_large_image" },
   };
 }
 
@@ -43,7 +55,7 @@ export default async function RootLayout({ children }) {
         <main id="obsah" className="container">
           {children}
         </main>
-        <Footer dict={dict} />
+        <Footer dict={dict} lang={locale} />
       </body>
     </html>
   );

@@ -1,9 +1,10 @@
-import { getDictionary } from "@/lib/i18n";
+import { getDictionary, getLang } from "@/lib/i18n";
+import { alternates } from "@/lib/site";
 import Tecka from "@/components/Tecka";
 
 export async function generateMetadata() {
   const dict = await getDictionary();
-  return { title: dict.about.title };
+  return { title: dict.about.title, alternates: alternates(await getLang(), "o-mne/") };
 }
 
 export default async function AboutPage() {

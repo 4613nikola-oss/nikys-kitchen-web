@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getDictionary, getLang } from "@/lib/i18n";
+import { alternates } from "@/lib/site";
 import { getProducts, getProduct, getRecipes } from "@/lib/content";
 import { asset } from "@/lib/asset";
 import ProductCover from "@/components/ProductCover";
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const lang = await getLang();
   const p = await getProduct(slug);
-  return p ? { title: p[lang].nazev, description: p[lang].popis } : {};
+  return p ? { title: p[lang].nazev, description: p[lang].popis, alternates: alternates(lang, `obchod/${slug}/`) } : {};
 }
 
 // Detail produktu: obálka, cena, pro koho, co v něm je, ukázka zdarma a časté otázky

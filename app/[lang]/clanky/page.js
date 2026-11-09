@@ -1,10 +1,11 @@
 import { getDictionary, getLang } from "@/lib/i18n";
+import { alternates } from "@/lib/site";
 import { getArticles } from "@/lib/content";
 import ArticleCard from "@/components/ArticleCard";
 
 export async function generateMetadata() {
   const dict = await getDictionary();
-  return { title: dict.articles.title, description: dict.articles.lead };
+  return { title: dict.articles.title, description: dict.articles.lead, alternates: alternates(await getLang(), "clanky/") };
 }
 
 export default async function ArticlesPage() {

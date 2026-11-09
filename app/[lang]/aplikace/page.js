@@ -1,11 +1,12 @@
-import { getDictionary } from "@/lib/i18n";
+import { getDictionary, getLang } from "@/lib/i18n";
+import { alternates } from "@/lib/site";
 import Tecka from "@/components/Tecka";
 
 const APP_URL = "https://4613nikola-oss.github.io/jidlo-od-a-z/";
 
 export async function generateMetadata() {
   const dict = await getDictionary();
-  return { title: dict.app.title, description: dict.app.lead };
+  return { title: dict.app.title, description: dict.app.lead, alternates: alternates(await getLang(), "aplikace/") };
 }
 
 export default async function AppPage() {

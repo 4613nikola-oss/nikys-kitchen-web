@@ -94,7 +94,8 @@
       "empty": "S těmito filtry jsem nic nenašla. Zkus některý vypnout.",
       "emptyQuery": "„{q}“ jsem nenašla.",
       "didYouMean": "Možná hledáš tohle:"
-    }
+    },
+    "print": "Vytisknout / uložit PDF"
   },
   "articles": {
     "title": "Články",
@@ -193,6 +194,111 @@
   "footer": {
     "note": "Nejde o lékařskou radu. Při zdravotních potížích se poraď s lékařem.",
     "rights": "Niky's Kitchen",
-    "mascot": "Tečka, maskot Niky's Kitchen"
+    "mascot": "Tečka, maskot Niky's Kitchen",
+    "legal": {
+      "privacy": "Ochrana soukromí",
+      "accessibility": "Přístupnost"
+    }
+  },
+  "privacy": {
+    "title": "Ochrana soukromí",
+    "lead": "Krátce a srozumitelně: co se děje s tvými údaji, když používáš web Niky's Kitchen a appku Jídlo od A–Z.",
+    "updated": "Aktualizováno 9. 11. 2026",
+    "sections": [
+      {
+        "h": "Kdo web provozuje"
+      },
+      {
+        "p": "Niky's Kitchen je osobní projekt Niky, nejde o firmu. Kontakt pro otázky k údajům doplníme nejpozději před spuštěním newsletteru a obchodu."
+      },
+      {
+        "h": "Co o tobě web sbírá"
+      },
+      {
+        "p": "Nic. Web nemá registraci, formuláře ani newsletter a nepoužívá měřicí ani reklamní nástroje."
+      },
+      {
+        "h": "Cookies"
+      },
+      {
+        "p": "Web ani appka nepoužívají cookies. Až přidáme měření návštěvnosti, zeptáme se tě předem lištou se souhlasem a bez souhlasu nic měřit nebudeme."
+      },
+      {
+        "h": "Appka Jídlo od A–Z"
+      },
+      {
+        "ul": [
+          "Profil (věk, váha, výška, cíl), lednička a nákupní seznam se ukládají jen v tvém prohlížeči.",
+          "Nikam se neposílají a my je nevidíme.",
+          "Smažeš je tak, že v prohlížeči smažeš data této stránky."
+        ]
+      },
+      {
+        "h": "Kde web běží"
+      },
+      {
+        "p": "Web i appka běží na GitHub Pages (GitHub, Inc.). GitHub při každé návštěvě zpracovává technické údaje, například IP adresu, aby stránku doručil a chránil ji před útoky. Řídí se svými zásadami ochrany soukromí.",
+        "link": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+        "linkText": "Zásady GitHubu (anglicky)"
+      },
+      {
+        "h": "Písma"
+      },
+      {
+        "p": "Web má písma uložená u sebe, nic dalšího se nenačítá. Appka zatím načítá písma ze služby Google Fonts, takže Google uvidí IP adresu tvého zařízení. Při přestavbě appky to změníme.",
+        "link": "https://developers.google.com/fonts/faq/privacy",
+        "linkText": "Google Fonts a soukromí (anglicky)"
+      },
+      {
+        "h": "Tvoje práva"
+      },
+      {
+        "p": "Protože o tobě nic neukládáme, není co předat, opravit ani smazat. Až začneme údaje sbírat (newsletter, obchod), doplníme sem, jaké máš práva podle GDPR a jak je uplatnit."
+      }
+    ]
+  },
+  "accessibility": {
+    "title": "Přístupnost",
+    "lead": "Chceme, aby web mohl používat každý, i lidé se zrakovým, pohybovým nebo jiným omezením.",
+    "updated": "Aktualizováno 9. 11. 2026",
+    "sections": [
+      {
+        "h": "Na co se zaměřujeme"
+      },
+      {
+        "p": "Snažíme se splnit pravidla WCAG 2.1 na úrovni AA. Web zatím nikdo nezávislý nekontroloval, proto netvrdíme, že je splňuje úplně."
+      },
+      {
+        "h": "Co už funguje"
+      },
+      {
+        "ul": [
+          "Celý web jde ovládat klávesnicí a na začátku stránky je odkaz „Přeskočit na obsah“.",
+          "Text má dostatečný kontrast s pozadím (aspoň 4,5 : 1).",
+          "Obrázky mají popisky pro čtečky obrazovky.",
+          "Alergeny jsou označené barvou i ikonou trojúhelníku, ne jen barvou.",
+          "Tlačítka jsou dost velká na ovládání prstem (aspoň 44 px).",
+          "Kdo má v zařízení zapnuté „omezit pohyb“, neuvidí animace.",
+          "Recepty jdou vytisknout nebo uložit jako PDF.",
+          "Stránky jsou česky i anglicky a mají správně nastavený jazyk pro čtečky."
+        ]
+      },
+      {
+        "h": "Co ještě zlepšujeme"
+      },
+      {
+        "ul": [
+          "Některé obrázky jsou zatím ilustrační (vytvořené AI), postupně je nahradíme skutečnými fotkami.",
+          "PDF ukázky nemusí být pro čtečky obrazovky úplně přístupné.",
+          "Appku Jídlo od A–Z přestavujeme a přístupnost v ní ještě doladíme."
+        ]
+      },
+      {
+        "h": "Narazil/a jsi na problém?"
+      },
+      {
+        "p": "Napiš nám, co nefungovalo a na jaké stránce. Kontakt doplníme brzy, do té doby nás najdeš na sociálních sítích Niky's Kitchen."
+      }
+    ]
   }
 }
