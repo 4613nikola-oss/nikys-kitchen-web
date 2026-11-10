@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { FORM_URL } from "@/lib/site";
+import { asset } from "@/lib/asset";
 
 // Formulář na e-mail: přihlášení k newsletteru nebo „Mám zájem“ o produkt.
 // Pošle údaje do Make, který je zapíše do Google tabulky.
@@ -36,7 +37,15 @@ export default function SignupForm({ typ, produkt = "", lang, f }) {
   }
 
   if (stav === "hotovo") {
-    return <p className="form-ok" role="status">{typ === "newsletter" ? f.okNewsletter : f.okInterest}</p>;
+    return (
+      <div className="form-ok" role="status">
+        <p>{typ === "newsletter" ? f.okNewsletter : f.okInterest}</p>
+        {/* dárek za newsletter hned ke stažení */}
+        {typ === "newsletter" && (
+          <a className="btn btn-primary" href={asset(`/darky/startovaci-knizka-${lang}.pdf`)} download>{f.download}</a>
+        )}
+      </div>
+    );
   }
 
   return (

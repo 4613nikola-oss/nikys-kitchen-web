@@ -187,8 +187,9 @@
       "sendNewsletter": "Sign up",
       "sending": "Sending…",
       "okInterest": "Thanks! We'll email you as soon as you can buy it.",
-      "okNewsletter": "Done, you're on the newsletter. We'll email you the starter booklet.",
-      "error": "Something went wrong. Please try again."
+      "okNewsletter": "Done, you're on the newsletter. Here's your gift:",
+      "error": "Something went wrong. Please try again.",
+      "download": "Download the starter booklet (PDF)"
     },
     "faqLive": [
       {

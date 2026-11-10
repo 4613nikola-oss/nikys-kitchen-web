@@ -187,8 +187,9 @@
       "sendNewsletter": "Přihlásit se",
       "sending": "Odesílám…",
       "okInterest": "Díky! Napíšeme ti, jakmile se dá koupit.",
-      "okNewsletter": "Hotovo, jsi v newsletteru. Startovací knížku ti pošleme e-mailem.",
-      "error": "Něco se nepovedlo. Zkus to prosím znovu."
+      "okNewsletter": "Hotovo, jsi v newsletteru. Tady je tvůj dárek:",
+      "error": "Něco se nepovedlo. Zkus to prosím znovu.",
+      "download": "Stáhnout Startovací knížku (PDF)"
     },
     "faqLive": [
       {

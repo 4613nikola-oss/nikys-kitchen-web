@@ -57,3 +57,6 @@ desktop.ini
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# generované HTML Startovací knížky (PDF je v public/darky)
+.knizka/
