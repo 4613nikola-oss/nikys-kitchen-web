@@ -121,7 +121,7 @@
   },
   "shop": {
     "title": "Obchod",
-    "lead": "Plány, e-booky a kurzy, které jdou do hloubky. Všechno digitální: stáhneš a hned používáš.",
+    "lead": "Plány, e-booky a kurzy, které jdou do hloubky. Digitální produkty si stáhneš do mobilu, na kurz naživo přijdeš vařit s námi.",
     "soon": "Připravujeme",
     "free": "Zdarma",
     "freeNote": "za přihlášení k newsletteru",
@@ -138,10 +138,8 @@
     "forWho": "Pro koho",
     "inside": "Co v něm najdeš",
     "format": "Formát",
-    "notify": "Zatím ho připravujeme. Až bude hotový, dáme vědět v newsletteru.",
     "newsletterTitle": "Dárek za přihlášení",
     "newsletterText": "Startovací knížka se 7 recepty a 10% sleva na první nákup. Newsletter chodí jednou za 14 dní: recept, tip a občas akce.",
-    "newsletterSoon": "Přihlášení k newsletteru spustíme brzy.",
     "sampleDayTitle": "Ukázka: jeden den z plánu",
     "sampleDayLead": "Takhle vypadá jeden den. V plánu je jich sedm a každé jídlo má tři varianty.",
     "sampleRecipesTitle": "Ukázka: 3 ze 7 receptů",
@@ -170,11 +168,55 @@
         "a": "Ne. Jsou to recepty a tipy pro zdravé dospělé. Pokud se léčíš, poraď se s lékařem nebo nutričním terapeutem."
       },
       {
-        "q": "Kdy bude produkt hotový?",
-        "a": "Pracujeme na něm. Kdo se přihlásí k newsletteru, dozví se to jako první."
+        "q": "Kdy si ho můžu koupit?",
+        "a": "Klikni na „Mám zájem“ a nech nám e-mail. Napíšeme ti, jakmile spustíme prodej."
       }
     ],
-    "back": "Zpět do obchodu"
+    "back": "Zpět do obchodu",
+    "forms": {
+      "kurz-online": "Online kurz",
+      "kurz-nazivo": "Kurz naživo"
+    },
+    "interestTitle": "Mám zájem",
+    "interestText": "Nech nám e-mail a napíšeme ti, jakmile spustíme prodej. Nic tím nekupuješ ani neplatíš.",
+    "newsletterLink": "Podívej se, co je ve Startovací knížce →",
+    "form": {
+      "email": "Tvůj e-mail",
+      "consent": "Souhlasím se zpracováním e-mailu podle",
+      "consentLink": "zásad ochrany soukromí",
+      "sendInterest": "Mám zájem",
+      "sendNewsletter": "Přihlásit se",
+      "sending": "Odesílám…",
+      "okInterest": "Díky! Napíšeme ti, jakmile se dá koupit.",
+      "okNewsletter": "Hotovo, jsi v newsletteru. Startovací knížku ti pošleme e-mailem.",
+      "error": "Něco se nepovedlo. Zkus to prosím znovu."
+    },
+    "faqLive": [
+      {
+        "q": "Kde a kdy kurz bude?",
+        "a": "Místo a termíny pošleme e-mailem všem, kdo klikli na „Mám zájem“. Vybereš si termín, který ti sedí."
+      },
+      {
+        "q": "Musím umět vařit?",
+        "a": "Ne. Lektorka ukáže každý krok a vaří se v malé skupině, takže se můžeš na cokoli zeptat."
+      },
+      {
+        "q": "Co si mám přinést?",
+        "a": "Jen sebe a dobrou náladu. Suroviny i zástěru dostaneš, krabičky na jídlo domů taky."
+      },
+      {
+        "q": "Je to vhodné při alergii?",
+        "a": "Napiš nám předem, na co jsi alergický/á. Recepty upravíme, nebo ti poradíme náhradu."
+      },
+      {
+        "q": "Je to lékařská rada?",
+        "a": "Ne. Jsou to recepty a tipy pro zdravé dospělé. Pokud se léčíš, poraď se s lékařem nebo nutričním terapeutem."
+      },
+      {
+        "q": "Kdy si ho můžu koupit?",
+        "a": "Klikni na „Mám zájem“ a nech nám e-mail. Napíšeme ti, jakmile spustíme prodej."
+      }
+    ]
   },
   "about": {
     "title": "O mně",
@@ -203,19 +245,31 @@
   "privacy": {
     "title": "Ochrana soukromí",
     "lead": "Krátce a srozumitelně: co se děje s tvými údaji, když používáš web Niky's Kitchen a appku Jídlo od A–Z.",
-    "updated": "Aktualizováno 9. 11. 2026",
+    "updated": "Aktualizováno 10. 11. 2026",
     "sections": [
       {
         "h": "Kdo web provozuje"
       },
       {
-        "p": "Niky's Kitchen je osobní projekt Niky, nejde o firmu. Kontakt pro otázky k údajům doplníme nejpozději před spuštěním newsletteru a obchodu."
+        "p": "Niky's Kitchen je osobní projekt Niky, nejde o firmu. Otázky k údajům i žádost o smazání pošli odpovědí na kterýkoli e-mail, který od nás dostaneš."
       },
       {
         "h": "Co o tobě web sbírá"
       },
       {
-        "p": "Nic. Web nemá registraci, formuláře ani newsletter a nepoužívá měřicí ani reklamní nástroje."
+        "p": "Jen e-mail, a jen když ho sám nebo sama vyplníš: při přihlášení k newsletteru nebo u „Mám zájem“ v obchodě. Web nemá registraci a nepoužívá měřicí ani reklamní nástroje."
+      },
+      {
+        "h": "Newsletter a „Mám zájem“"
+      },
+      {
+        "ul": [
+          "Ukládáme tvůj e-mail, co jsi vyplnil/a (newsletter, nebo o jaký produkt máš zájem), jazyk webu a čas odeslání.",
+          "Proč: abychom ti poslali newsletter s dárkem, nebo ti dali vědět, že produkt jde koupit. Základem je tvůj souhlas, který dáváš zaškrtnutím políčka.",
+          "Údaje projdou službou Make (servery v EU) a uloží se do Google tabulky, kterou vidí jen Niky. Nikomu je nedáváme ani neprodáváme.",
+          "Jak dlouho: dokud se neodhlásíš. Odhlásit se můžeš odkazem v každém e-mailu nebo odpovědí na něj. E-mail pak smažeme.",
+          "Máš právo zjistit, co o tobě máme, nechat to opravit nebo smazat, a podat stížnost u Úřadu pro ochranu osobních údajů (uoou.gov.cz)."
+        ]
       },
       {
         "h": "Cookies"

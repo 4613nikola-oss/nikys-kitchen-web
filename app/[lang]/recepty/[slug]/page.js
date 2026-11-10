@@ -86,7 +86,7 @@ export default async function RecipePage({ params }) {
             <p>{t.uvod}</p>
             <dl className="facts">
               <div><dt>{d.time}</dt><dd>{recipe.cas} min</dd></div>
-              <div><dt>{d.portions}</dt><dd>{recipe.porce}</dd></div>
+              <div><dt>{d.portions}</dt><dd>1</dd></div>
               <div>
                 <dt>{d.kcal}</dt>
                 <dd>{recipe.kcal ? `~${recipe.kcal} (${d.kcalApprox})` : d.kcalMissing}</dd>

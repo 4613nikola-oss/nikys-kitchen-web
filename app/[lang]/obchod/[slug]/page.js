@@ -7,6 +7,8 @@ import { asset } from "@/lib/asset";
 import ProductCover from "@/components/ProductCover";
 import ProductPrice from "@/components/ProductPrice";
 import SampleDay from "@/components/SampleDay";
+import SignupForm from "@/components/SignupForm";
+import { typeLabel } from "@/components/ProductCard";
 import RecipeCard from "@/components/RecipeCard";
 
 export const dynamicParams = false;
@@ -42,14 +44,18 @@ export default async function ProductPage({ params }) {
 
       <header className="recipe-head">
         <div>
-          <span className="chip">{s.types[product.typ]}</span>{" "}
-          {product.stav === "pripravujeme" && <span className="chip chip-terra">{s.soon}</span>}
+          <span className="chip">{typeLabel(product, s)}</span>
           <h1>{t.nazev}</h1>
           <p className="lead">{t.popis}</p>
           <ProductPrice product={product} lang={lang} labels={s} />
-          {product.stav === "pripravujeme" && <p className="note">{s.notify}</p>}
+          {/* Prodej zatím neběží: místo „Koupit“ nechá člověk e-mail (dárek = přihlášení k newsletteru) */}
+          <div className="interest">
+            <h2 className="h3">{product.typ === "darek" ? s.newsletterTitle : s.interestTitle}</h2>
+            <p>{product.typ === "darek" ? s.newsletterText : s.interestText}</p>
+            <SignupForm typ={product.typ === "darek" ? "newsletter" : "zajem"} produkt={product.slug} lang={lang} f={s.form} />
+          </div>
         </div>
-        <ProductCover product={product} lang={lang} typeLabel={s.types[product.typ]} large />
+        <ProductCover product={product} lang={lang} typeLabel={typeLabel(product, s)} large />
       </header>
 
       <div className="recipe-body">
@@ -107,7 +113,8 @@ export default async function ProductPage({ params }) {
 
       <section aria-labelledby="faq" className="faq">
         <h2 id="faq">{s.faqTitle}</h2>
-        {s.faq.map((f) => (
+        {/* kurz naživo má vlastní otázky, online kurz jen obecné (bez PDF) */}
+        {(product.obrazek === "kurz-nazivo" ? s.faqLive : product.obrazek ? s.faq.slice(2) : s.faq).map((f) => (
           <details key={f.q} className="more">
             <summary>{f.q}</summary>
             <p>{f.a}</p>

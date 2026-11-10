@@ -121,7 +121,7 @@
   },
   "shop": {
     "title": "Shop",
-    "lead": "Meal plans, e-books and courses that go deeper. All digital: download and start right away.",
+    "lead": "Plans, e-books and courses that go deeper. Download the digital ones to your phone, or come and cook with us at a live class.",
     "soon": "Coming soon",
     "free": "Free",
     "freeNote": "when you join the newsletter",
@@ -138,10 +138,8 @@
     "forWho": "Who it's for",
     "inside": "What's inside",
     "format": "Format",
-    "notify": "We're still working on it. We'll let you know in the newsletter when it's ready.",
     "newsletterTitle": "A gift for joining",
     "newsletterText": "A starter booklet with 7 recipes and 10% off your first order. The newsletter comes every two weeks: a recipe, a tip and the occasional offer.",
-    "newsletterSoon": "Newsletter sign-up is coming soon.",
     "sampleDayTitle": "Sample: one day from the plan",
     "sampleDayLead": "This is what one day looks like. The plan has seven, and every meal comes in three versions.",
     "sampleRecipesTitle": "Sample: 3 of the 7 recipes",
@@ -170,11 +168,55 @@
         "a": "No. These are recipes and tips for healthy adults. If you're being treated for something, talk to your doctor or a dietitian."
       },
       {
-        "q": "When will it be ready?",
-        "a": "We're working on it. Newsletter subscribers will be the first to know."
+        "q": "When can I buy it?",
+        "a": "Click “I'm interested” and leave your email. We'll let you know as soon as it's on sale."
       }
     ],
-    "back": "Back to the shop"
+    "back": "Back to the shop",
+    "forms": {
+      "kurz-online": "Online course",
+      "kurz-nazivo": "Live class"
+    },
+    "interestTitle": "I'm interested",
+    "interestText": "Leave your email and we'll let you know as soon as it's on sale. You're not buying or paying anything.",
+    "newsletterLink": "See what's inside the starter booklet →",
+    "form": {
+      "email": "Your email",
+      "consent": "I agree to my email being processed under the",
+      "consentLink": "privacy policy",
+      "sendInterest": "I'm interested",
+      "sendNewsletter": "Sign up",
+      "sending": "Sending…",
+      "okInterest": "Thanks! We'll email you as soon as you can buy it.",
+      "okNewsletter": "Done, you're on the newsletter. We'll email you the starter booklet.",
+      "error": "Something went wrong. Please try again."
+    },
+    "faqLive": [
+      {
+        "q": "Where and when is the class?",
+        "a": "We'll email the place and dates to everyone who clicked “I'm interested”. You pick the date that suits you."
+      },
+      {
+        "q": "Do I need to know how to cook?",
+        "a": "No. The instructor shows every step and the group is small, so you can ask anything."
+      },
+      {
+        "q": "What should I bring?",
+        "a": "Just yourself. Ingredients, an apron and boxes to take food home are all provided."
+      },
+      {
+        "q": "What if I have allergies?",
+        "a": "Tell us in advance what you're allergic to. We'll adjust the recipes or suggest a swap."
+      },
+      {
+        "q": "Is this medical advice?",
+        "a": "No. These are recipes and tips for healthy adults. If you're being treated for something, talk to your doctor or a dietitian."
+      },
+      {
+        "q": "When can I buy it?",
+        "a": "Click “I'm interested” and leave your email. We'll let you know as soon as it's on sale."
+      }
+    ]
   },
   "about": {
     "title": "About me",
@@ -203,19 +245,31 @@
   "privacy": {
     "title": "Privacy",
     "lead": "In short and in plain words: what happens with your data when you use the Niky's Kitchen website and the Jídlo od A–Z app.",
-    "updated": "Updated 9 November 2026",
+    "updated": "Updated 10 November 2026",
     "sections": [
       {
         "h": "Who runs the website"
       },
       {
-        "p": "Niky's Kitchen is Niky's personal project, not a company. We'll add a contact for data questions before we launch the newsletter and the shop."
+        "p": "Niky's Kitchen is Niky's personal project, not a company. For questions about your data or to have it deleted, just reply to any email you get from us."
       },
       {
         "h": "What the website collects about you"
       },
       {
-        "p": "Nothing. The website has no sign-up, no forms and no newsletter, and it uses no analytics or advertising tools."
+        "p": "Only your email, and only if you enter it yourself: when you sign up for the newsletter or click “I'm interested” in the shop. The website has no accounts and uses no analytics or advertising tools."
+      },
+      {
+        "h": "Newsletter and “I'm interested”"
+      },
+      {
+        "ul": [
+          "We store your email, what you signed up for (the newsletter or which product), the website language and the time.",
+          "Why: to send you the newsletter with the gift, or to tell you when a product is on sale. The legal basis is your consent, which you give by ticking the box.",
+          "The data passes through Make (servers in the EU) and is saved in a Google Sheet that only Niky can see. We never share or sell it.",
+          "How long: until you unsubscribe. You can unsubscribe with the link in every email or by replying to it. We then delete your email.",
+          "You have the right to know what we hold about you, to have it corrected or deleted, and to complain to the Czech data protection authority (uoou.gov.cz)."
+        ]
       },
       {
         "h": "Cookies"

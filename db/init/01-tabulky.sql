@@ -135,6 +135,7 @@ CREATE TABLE produkty (
   stav         text NOT NULL DEFAULT 'pripravujeme' CHECK (stav IN ('pripravujeme', 'v_prodeji')),
   tecka        text,                                -- podoba maskota na obálce
   barva        text,                                -- barva obálky (sage, honey, terra, primary)
+  obrazek      text,                                -- ilustrace místo obálky (kurz-online, kurz-nazivo)
   ukazka       jsonb,                               -- ukázka zdarma, např. jeden den plánu
   soubor       text,                                -- PDF ke stažení po zaplacení
   aktivni      boolean NOT NULL DEFAULT false,      -- false = zatím se neprodává

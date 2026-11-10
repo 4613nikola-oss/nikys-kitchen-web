@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 
-// Suroviny s přepočtem porcí (tlačítka − a +). Množství se zaokrouhlí rozumně.
+// Suroviny s přepočtem porcí (tlačítka − a +). Začíná se na 1 porci, aby sedělo s „kcal na porci“.
+// Množství se zaokrouhlí rozumně.
 const KUSY = ["ks", "pc", "pcs", "stroužky", "cloves"];
 function format(n, lang, jednotka) {
   // kusy na půlky (2,5 ks cukety), gramy a ml na pětky, malá čísla na desetiny
@@ -12,8 +13,15 @@ function format(n, lang, jednotka) {
   return rounded.toLocaleString(lang === "cs" ? "cs-CZ" : "en-GB");
 }
 
+// „1 stroužky“ → „1 stroužek“, „1 cloves“ → „1 clove“ (jen jednotky, které se skloňují)
+const JEDNOTNE = { "stroužky": "stroužek", cloves: "clove", pcs: "pc" };
+function jednotka(n, j) {
+  const zaokrouhleno = KUSY.includes(j) ? Math.max(0.5, Math.round(n * 2) / 2) : n;
+  return zaokrouhleno <= 1 && JEDNOTNE[j] ? JEDNOTNE[j] : j;
+}
+
 export default function PortionCalculator({ ingredients, basePortions, kcal, labels, lang }) {
-  const [portions, setPortions] = useState(basePortions);
+  const [portions, setPortions] = useState(1);
   const factor = portions / basePortions;
 
   return (
@@ -35,7 +43,7 @@ export default function PortionCalculator({ ingredients, basePortions, kcal, lab
           <li key={idx}>
             {i.mnozstvi != null && (
               <strong>
-                {format(i.mnozstvi * factor, lang, i.jednotka)} {i.jednotka}{" "}
+                {format(i.mnozstvi * factor, lang, i.jednotka)} {jednotka(i.mnozstvi * factor, i.jednotka)}{" "}
               </strong>
             )}
             {i.co}
