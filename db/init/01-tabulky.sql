@@ -26,6 +26,7 @@ CREATE TABLE recepty (
   jidla       text[] NOT NULL DEFAULT '{}',     -- kdy se hodí (pro appku): snidane, obed, vecere, svacina
   obrazek     text,                             -- soubor v public/images/recepty/
   obrazek_ai  boolean NOT NULL DEFAULT false,   -- fotka je zatím AI ilustrace
+  obrazek_zdroj jsonb,                                  -- volná fotka: autor, licence, odkaz
   tecka       text,                             -- podoba maskota, když chybí fotka
   poradi      integer NOT NULL DEFAULT 0,       -- pořadí na webu
   zverejneno  boolean NOT NULL DEFAULT true,

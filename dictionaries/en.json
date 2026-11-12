@@ -95,7 +95,9 @@
       "emptyQuery": "I couldn't find “{q}”.",
       "didYouMean": "Maybe you're looking for:"
     },
-    "print": "Print / save as PDF"
+    "print": "Print / save as PDF",
+    "photoBy": "Photo:",
+    "photoNote": "illustrative photo, the dish may differ from this recipe"
   },
   "articles": {
     "title": "Articles",

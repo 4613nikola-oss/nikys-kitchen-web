@@ -113,7 +113,18 @@ export default async function RecipePage({ params }) {
         </div>
         <div className="recipe-media">
           {recipe.obrazek ? (
-            <Image src={asset(`/images/recepty/${recipe.obrazek}`)} alt={t.nazev} width={700} height={382} priority />
+            <figure className="photo-fig">
+              <Image src={asset(`/images/recepty/${recipe.obrazek}`)} alt={t.nazev} width={700} height={525} priority />
+              {/* volná fotka: autor a licence (podmínka licence CC BY) */}
+              {recipe.obrazekZdroj && (
+                <figcaption className="photo-credit">
+                  {d.photoBy} {recipe.obrazekZdroj.odkaz ? <a href={recipe.obrazekZdroj.odkaz} rel="noopener" target="_blank">{recipe.obrazekZdroj.autor}</a> : recipe.obrazekZdroj.autor}
+                  {", "}
+                  {recipe.obrazekZdroj.licence_url ? <a href={recipe.obrazekZdroj.licence_url} rel="noopener" target="_blank">{recipe.obrazekZdroj.licence}</a> : recipe.obrazekZdroj.licence}
+                  {" · "}{d.photoNote}
+                </figcaption>
+              )}
+            </figure>
           ) : (
             <Tecka podoba={recipe.tecka} size={240} />
           )}

@@ -95,7 +95,9 @@
       "emptyQuery": "„{q}“ jsem nenašla.",
       "didYouMean": "Možná hledáš tohle:"
     },
-    "print": "Vytisknout / uložit PDF"
+    "print": "Vytisknout / uložit PDF",
+    "photoBy": "Foto:",
+    "photoNote": "ilustrační fotka, jídlo nemusí být přesně podle receptu"
   },
   "articles": {
     "title": "Články",
@@ -202,7 +204,7 @@
       },
       {
         "q": "Co si mám přinést?",
-        "a": "Jen sebe a dobrou náladu. Suroviny i zástěru dostaneš, krabičky na jídlo domů taky."
+        "a": "Jen sebe a dobrou náladu. Suroviny i zástěru dostaneš, obaly na jídlo domů taky."
       },
       {
         "q": "Je to vhodné při alergii?",
