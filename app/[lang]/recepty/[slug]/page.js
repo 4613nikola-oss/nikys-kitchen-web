@@ -5,6 +5,7 @@ import { getDictionary, getLang } from "@/lib/i18n";
 import { getRecipes, getRecipe, articlesFor, getAllergenNames } from "@/lib/content";
 import { asset } from "@/lib/asset";
 import PortionCalculator from "@/components/PortionCalculator";
+import Icon from "@/components/Icon";
 import ArticleCard from "@/components/ArticleCard";
 import Tecka from "@/components/Tecka";
 import PrintButton from "@/components/PrintButton";
@@ -85,10 +86,10 @@ export default async function RecipePage({ params }) {
           <section className="in-short" aria-label={d.inShort}>
             <p>{t.uvod}</p>
             <dl className="facts">
-              <div><dt>{d.time}</dt><dd>{recipe.cas} min</dd></div>
-              <div><dt>{d.portions}</dt><dd>1</dd></div>
+              <div><dt><Icon name="cas" size={18} /> {d.time}</dt><dd>{recipe.cas} min</dd></div>
+              <div><dt><Icon name="porce" size={18} /> {d.portions}</dt><dd>1</dd></div>
               <div>
-                <dt>{d.kcal}</dt>
+                <dt><Icon name="kcal" size={18} /> {d.kcal}</dt>
                 <dd>{recipe.kcal ? `~${recipe.kcal} (${d.kcalApprox})` : d.kcalMissing}</dd>
               </div>
             </dl>

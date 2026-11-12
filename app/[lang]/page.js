@@ -5,6 +5,7 @@ import { categories, getRecipes, getArticles, getRecipe } from "@/lib/content";
 import RecipeCard from "@/components/RecipeCard";
 import ArticleCard from "@/components/ArticleCard";
 import Tecka from "@/components/Tecka";
+import TeckaMorph from "@/components/TeckaMorph";
 
 export async function generateMetadata() {
   return { alternates: alternates(await getLang()) };
@@ -32,7 +33,7 @@ export default async function HomePage() {
             <a className="btn btn-accent" href={APP_URL}>{h.ctaApp}</a>
           </div>
         </div>
-        <Tecka podoba="ahoj" size={260} className="hero-tecka" />
+        <TeckaMorph size={260} className="hero-tecka" />
       </section>
 
       {/* Jeden základ, tři varianty */}

@@ -41,12 +41,22 @@ export default function PortionCalculator({ ingredients, basePortions, kcal, lab
       <ul className="ingredients">
         {ingredients.map((i, idx) => (
           <li key={idx}>
-            {i.mnozstvi != null && (
-              <strong>
-                {format(i.mnozstvi * factor, lang, i.jednotka)} {jednotka(i.mnozstvi * factor, i.jednotka)}{" "}
-              </strong>
-            )}
-            {i.co}
+            {/* odškrtávání při vaření: fajfka se nakreslí, text se přeškrtne (animace 4) */}
+            <label className="check-item">
+              <input type="checkbox" />
+              <svg className="check-box" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="1.5" y="1.5" width="21" height="21" rx="6" />
+                <path d="M6.5 12.5l4 4 7-8.5" />
+              </svg>
+              <span className="check-text">
+                {i.mnozstvi != null && (
+                  <strong>
+                    {format(i.mnozstvi * factor, lang, i.jednotka)} {jednotka(i.mnozstvi * factor, i.jednotka)}{" "}
+                  </strong>
+                )}
+                {i.co}
+              </span>
+            </label>
           </li>
         ))}
       </ul>
