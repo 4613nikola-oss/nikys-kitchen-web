@@ -54,9 +54,10 @@ Na webu: odkazy z receptů a článků vedou do appky (stránka Aplikace) a do o
 
 ## Co na webu je
 
-- **Recepty** – 17 receptů ve třech kategoriích, hledání (zvládne i překlepy), filtry podle jídla a alergenů, přepočet porcí i kcal, alergeny (14 podle EU), varianty po dnech, tisk do PDF, tip od maskota Tečky
+- **Recepty** – 17 receptů ve třech kategoriích, každý s fotkou, hledání (zvládne i překlepy), filtry podle jídla a alergenů, recept na 1 porci s přepočtem porcí i kcal, odškrtávání surovin při vaření, alergeny (14 podle EU), varianty po dnech, tisk do PDF, tip od maskota Tečky
 - **Články** – krátce „v kostce“, víc po rozkliknutí, se zdroji
-- **Obchod** – 6 digitálních produktů z databáze s obálkou, cenou a ukázkou zdarma (u týdenního plánu celý den + PDF)
+- **Obchod** – 7 produktů z databáze (plán, e-booky, kuchařka, kurz online a kurz naživo), formulář „Mám zájem“, ukázky zdarma; **newsletter** s dárkem (Startovací knížka v PDF) – přihlášky jdou přes Make do Google tabulky
+- **Vzhled** – vlastní ikonky, maskot Tečka v tenké lince jako logo, pozadí s jemným bylinkovým vzorem, mikroanimace (respektují „omezit pohyb“)
 - **Aplikace, O mně** – představení dalších částí
 - **Ochrana soukromí a prohlášení o přístupnosti** – vlastní stránky, odkaz v patičce
 - Čeština a angličtina (`/cs/`, `/en/`), responzivní, přístupnost (WCAG), SEO (mapa webu, náhledy při sdílení, data receptů pro Google), maskot Tečka
@@ -73,7 +74,15 @@ Na webu: odkazy z receptů a článků vedou do appky (stránka Aplikace) a do o
 
 | Obchod | Detail produktu |
 |---|---|
-| ![Obchod: 6 digitálních produktů s obálkami a cenami](docs/ukazky/web-obchod.webp) | ![Týdenní jídelní plán: cena, pro koho, co v něm najdeš](docs/ukazky/web-produkt.webp) |
+| ![Obchod: produkty s obálkami a ilustracemi kurzů, ceny](docs/ukazky/web-obchod.webp) | ![Kurz vaření naživo: cena, formulář Mám zájem, ilustrace skupiny, která vaří s lektorkou](docs/ukazky/web-produkt.webp) |
+
+**Mikroanimace** (hrají jen chvilku; kdo má v telefonu „omezit pohyb“, uvidí rovnou konečný stav):
+
+| Tečka se promění v dort | Odškrtnutí na nákupu |
+|---|---|
+| ![Animace: maskot Tečka se na úvodní stránce promění v dort](docs/ukazky/animace-tecka-dort.gif) | ![Animace: v nákupním seznamu se nakreslí fajfka a položka se přeškrtne](docs/ukazky/animace-odskrtnuti.gif) |
+
+Fotky receptů jsou zatím ilustrační fotky s volnou licencí (Openverse/Flickr, CC0, Public Domain a CC BY). Autor a licence jsou u každé fotky na stránce receptu.
 
 | Web v mobilu | Recept v mobilu | Appka: Můj den |
 |---|---|---|
