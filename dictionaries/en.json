@@ -218,16 +218,68 @@
         "q": "When can I buy it?",
         "a": "Click “I'm interested” and leave your email. We'll let you know as soon as it's on sale."
       }
-    ]
+    ],
+    "book": {
+      "title": "Take a look inside",
+      "lead": "This is what one spread looks like. The recipes are real, from our website.",
+      "inside": "Inside you'll find",
+      "day": "Day 1",
+      "monday": "Monday",
+      "dayNote": "The whole day is about {kcal} kcal. One shopping list is all you need.",
+      "base": "A base for 3 days",
+      "recipe": "Sample recipe",
+      "ingredients": "Ingredients",
+      "steps": "Method",
+      "variants": "Three versions"
+    }
   },
   "about": {
     "title": "About me",
-    "lead": "Hi, I'm Niky.",
+    "lead": "Hi, I'm Niky. I cook healthy food, without guilt and without counting every bite.",
     "text": [
-      "I cook healthy food without guilt and without counting every bite. I want healthy eating to be simple, even for people with no time.",
-      "That's why I came up with one base, three variations, a sweet treat as part of the plan, and an app that works out how much to eat.",
-      "My full story is coming soon."
-    ]
+      "I want healthy eating to be simple, even for people with no time. After work or training nobody wants spreadsheets and complicated recipes.",
+      "That's why I came up with one base and three versions, a sweet treat as part of the plan, and an app that works out how much to eat."
+    ],
+    "photoCaption": "Niky & Tečka",
+    "rulesTitle": "How I cook",
+    "rules": [
+      "One base, three versions – cook once and everyone finishes it their way (lose, maintain, gain).",
+      "I cook with what's at home. Your fridge is a better cookbook than you think.",
+      "A sweet treat belongs in the plan. Healthy food shouldn't feel like punishment.",
+      "I don't count every bite. Knowing roughly how much and what is enough.",
+      "Only trustworthy information, no miracle diets and no health promises."
+    ],
+    "whatTitle": "What I make for you",
+    "what": [
+      [
+        "Recipes and articles",
+        "Short methods, kcal per serving, allergens and articles in a nutshell."
+      ],
+      [
+        "The Jídlo od A–Z app",
+        "Works out how much to eat, splits it into meals and finds recipes from your fridge."
+      ],
+      [
+        "Plans, e-books and courses",
+        "For anyone who wants more: a ready week, cooking ahead, a live class."
+      ],
+      [
+        "Newsletter with a gift",
+        "A recipe and a tip every two weeks. A free starter booklet to begin with."
+      ]
+    ],
+    "whyTitle": "Why I do all this",
+    "why": [
+      "Niky's Kitchen is my personal project. I build it from the idea through recipes and design to the website, the app and the shop, and learn everything about e-commerce, UX and the web along the way.",
+      "I'll add my story here soon – why I started cooking differently."
+    ],
+    "teckaTitle": "Meet Tečka",
+    "tecka": "Tečka is the Niky's Kitchen mascot. She helps you in the app, gives tips in recipes and can turn into a plate, a glass or a cake, because a sweet treat simply belongs.",
+    "cta": {
+      "recipes": "Browse recipes",
+      "app": "Try the app",
+      "news": "Get the newsletter and gift"
+    }
   },
   "notFound": {
     "title": "Oops, this page isn't here",

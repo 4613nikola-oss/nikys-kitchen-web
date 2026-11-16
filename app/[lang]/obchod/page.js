@@ -23,7 +23,7 @@ export default async function ShopPage() {
   return (
     <>
       <div className="band-grid">
-        <Tecka podoba="pohar" size={200} />
+        <Tecka podoba="kosik" size={200} />
         <div>
           <h1>{s.title}</h1>
           <p className="lead">{s.lead}</p>

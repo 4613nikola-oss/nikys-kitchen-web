@@ -13,11 +13,12 @@ import pohar from "@/assets/maskot/pohar.svg";
 import buchta from "@/assets/maskot/buchta.svg";
 import ovocnyKolac from "@/assets/maskot/ovocny-kolac.svg";
 import sklenice from "@/assets/maskot/sklenice.svg";
+import kosik from "@/assets/maskot/kosik.svg";
 
 // Tečka – maskot značky. Nálady (ahoj, radost…) i proměny (talíř, pohár…)
 const podoby = {
   ahoj, radost, premysli, vari, jejda, slavi,
-  talir, kolac, vidlicka, zakusek, pohar, buchta, "ovocny-kolac": ovocnyKolac, sklenice,
+  talir, kolac, vidlicka, zakusek, pohar, buchta, "ovocny-kolac": ovocnyKolac, sklenice, kosik,
 };
 
 export default function Tecka({ podoba = "ahoj", size = 160, alt = "", className = "" }) {

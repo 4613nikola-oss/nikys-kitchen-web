@@ -8,6 +8,7 @@ import ProductCover from "@/components/ProductCover";
 import ProductPrice from "@/components/ProductPrice";
 import SampleDay from "@/components/SampleDay";
 import SignupForm from "@/components/SignupForm";
+import BookPreview from "@/components/BookPreview";
 import { typeLabel } from "@/components/ProductCard";
 import RecipeCard from "@/components/RecipeCard";
 
@@ -48,12 +49,8 @@ export default async function ProductPage({ params }) {
           <h1>{t.nazev}</h1>
           <p className="lead">{t.popis}</p>
           <ProductPrice product={product} lang={lang} labels={s} />
-          {/* Prodej zatím neběží: místo „Koupit“ nechá člověk e-mail (dárek = přihlášení k newsletteru) */}
-          <div className="interest">
-            <h2 className="h3">{product.typ === "darek" ? s.newsletterTitle : s.interestTitle}</h2>
-            <p>{product.typ === "darek" ? s.newsletterText : s.interestText}</p>
-            <SignupForm typ={product.typ === "darek" ? "newsletter" : "zajem"} produkt={product.slug} lang={lang} f={s.form} />
-          </div>
+          {/* nahoře jen tlačítko, formulář je dole až po ukázce */}
+          <p><a className="btn btn-primary" href="#zajem">{product.typ === "darek" ? s.newsletterTitle : s.interestTitle} ↓</a></p>
         </div>
         <ProductCover product={product} lang={lang} typeLabel={typeLabel(product, s)} large />
       </header>
@@ -72,6 +69,15 @@ export default async function ProductPage({ params }) {
           </ul>
         </section>
       </div>
+
+      {/* Nahlédni dovnitř: jedna dvojstrana z knížky (u kurzů ne – nejsou to knížky) */}
+      {product.typ !== "kurz" && (
+        <section aria-labelledby="kniha">
+          <h2 id="kniha">{s.book.title}</h2>
+          <p>{s.book.lead}</p>
+          <BookPreview product={product} recipes={recipes} lang={lang} s={s} typeLabel={typeLabel(product, s)} />
+        </section>
+      )}
 
       {u.den && (
         <section className="band band-sage" aria-labelledby="ukazka">
@@ -110,6 +116,13 @@ export default async function ProductPage({ params }) {
           </div>
         </section>
       )}
+
+      {/* Prodej zatím neběží: místo „Koupit“ nechá člověk e-mail (dárek = přihlášení k newsletteru) */}
+      <section id="zajem" className="interest" aria-labelledby="zajem-h">
+        <h2 id="zajem-h" className="h3">{product.typ === "darek" ? s.newsletterTitle : s.interestTitle}</h2>
+        <p>{product.typ === "darek" ? s.newsletterText : s.interestText}</p>
+        <SignupForm typ={product.typ === "darek" ? "newsletter" : "zajem"} produkt={product.slug} lang={lang} f={s.form} />
+      </section>
 
       <section aria-labelledby="faq" className="faq">
         <h2 id="faq">{s.faqTitle}</h2>

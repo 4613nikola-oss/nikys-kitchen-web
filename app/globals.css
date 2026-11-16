@@ -119,7 +119,7 @@ input, textarea { caret-color: var(--color-primary); }
 .nav-list { display: none; list-style: none; margin: 0; padding: 0.5rem 0 0; width: 100%; }
 .nav-list.is-open { display: block; }
 .nav-list a { display: block; padding: 0.6rem 0.25rem; text-decoration: none; min-height: 44px; font-weight: 600; }
-.nav-list a[aria-current="page"] { color: var(--color-terracotta); }
+.nav-list a[aria-current="page"], .nav-list a[aria-current="true"] { color: var(--color-terracotta); }
 .lang-switch { font-weight: 800; }
 
 @media (min-width: 900px) {
@@ -401,6 +401,52 @@ main section { margin-bottom: 3rem; }
 .product-card .card-body p:not(.price) { margin-bottom: 0.25rem; }
 .product .recipe-head h1 { margin-top: 0.5rem; }
 .newsletter-box { margin-top: 3rem; }
+
+/* U produktů se rámeček „Pro koho“ nedrží při posouvání (jinak najížděl přes obsah nad sebou) */
+.product .recipe-body > .card { position: static; }
+.interest { scroll-margin-top: 6rem; margin-bottom: 2.5rem; }
+
+/* O mně */
+.about-photo { width: min(17rem, 80%); justify-self: center; padding-bottom: 2.6rem; text-align: center; }
+.about-photo img { width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; background: var(--color-sage-faint); }
+.about-photo figcaption { position: absolute; left: 0; right: 0; bottom: 0.4rem; font-size: 1.5rem; color: #5b4a32; }
+.about-what h3 { margin: 0 0 0.35rem; }
+@media (min-width: 700px) { .about .about-what { grid-template-columns: repeat(2, 1fr); } }
+.about-cta { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
+
+/* Ukázka z knížky: rozevřená kniha */
+.book {
+  display: grid; grid-template-columns: 1fr 1fr; margin: 1.5rem auto 0; max-width: 56rem;
+  border-radius: 0.6rem; box-shadow: 0 18px 40px rgba(44, 44, 44, 0.18), 0 3px 8px rgba(44, 44, 44, 0.1);
+  background: #8a6c45; padding: 0.5rem; /* desky knihy */
+}
+.book-page { position: relative; background: #fdfaf2; padding: 2rem 1.75rem 2.75rem; min-height: 26rem; font-size: 0.95rem; }
+.book-left { border-radius: 0.4rem 0 0 0.4rem; background-image: linear-gradient(90deg, transparent 85%, rgba(0, 0, 0, 0.09)); text-align: center; }
+.book-right { border-radius: 0 0.4rem 0.4rem 0; background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.09), transparent 15%); }
+.book-eyebrow { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-terracotta); margin: 0 0 0.4rem; }
+.book-title { font-family: var(--font-heading-stack); font-weight: 700; font-size: 1.6rem; color: var(--color-primary); line-height: 1.15; margin: 0 auto 0.75rem; }
+.book-tecka { display: block; margin: 0 auto 0.75rem; }
+.book-h4, .book-page h4 { font-family: var(--font-heading-stack); color: var(--color-primary); font-size: 1rem; margin: 0.75rem 0 0.35rem; }
+.book-list { text-align: left; padding-left: 1.1rem; margin: 0; }
+.book-list li, .book-page li { margin: 0.25rem 0; }
+.book-h { font-size: 1.35rem; margin: 0 0 0.25rem; }
+.book-h::after { display: none !important; }
+.book-meta { color: var(--color-muted); margin: 0 0 0.5rem; }
+.book-cols { display: grid; grid-template-columns: 1fr 1.2fr; gap: 1rem; }
+.book-cols ul, .book-cols ol { padding-left: 1.1rem; margin: 0; }
+.book-meals { list-style: none; padding: 0; margin: 0.5rem 0; }
+.book-meals li { display: grid; grid-template-columns: 5.5rem 1fr auto; gap: 0.5rem; padding: 0.55rem 0; border-bottom: 1px dashed var(--paper-line, #e9e1cf); align-items: baseline; }
+.book-meals span { font-size: 0.8rem; font-weight: 700; color: var(--color-terracotta); text-transform: uppercase; letter-spacing: 0.05em; }
+.book-meals em { font-style: normal; color: var(--color-muted); font-size: 0.85rem; }
+.book-note { font-family: var(--font-hand), cursive; font-size: 1.25rem; line-height: 1.3; color: #5b4a32; margin-top: 1rem; }
+.book-num { position: absolute; bottom: 0.9rem; font-size: 0.8rem; color: var(--color-muted); }
+.book-left .book-num { left: 1.5rem; } .book-right .book-num { right: 1.5rem; }
+@media (max-width: 720px) {
+  .book { grid-template-columns: 1fr; }
+  .book-left { border-radius: 0.4rem 0.4rem 0 0; background-image: linear-gradient(180deg, transparent 90%, rgba(0, 0, 0, 0.08)); }
+  .book-right { border-radius: 0 0 0.4rem 0.4rem; background-image: none; }
+  .book-cols { grid-template-columns: 1fr; }
+}
 
 /* Ilustrace kurzů místo obálky */
 .cover-scene { position: relative; padding: 0; overflow: hidden; }

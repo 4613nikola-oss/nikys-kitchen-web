@@ -218,16 +218,68 @@
         "q": "Kdy si ho můžu koupit?",
         "a": "Klikni na „Mám zájem“ a nech nám e-mail. Napíšeme ti, jakmile spustíme prodej."
       }
-    ]
+    ],
+    "book": {
+      "title": "Nahlédni dovnitř",
+      "lead": "Takhle vypadá jedna dvojstrana. Recepty jsou skutečné, z našeho webu.",
+      "inside": "V knížce najdeš",
+      "day": "Den 1",
+      "monday": "Pondělí",
+      "dayNote": "Celý den asi {kcal} kcal. Na nákup ti stačí jeden seznam.",
+      "base": "Základ na 3 dny",
+      "recipe": "Ukázkový recept",
+      "ingredients": "Suroviny",
+      "steps": "Postup",
+      "variants": "Tři varianty"
+    }
   },
   "about": {
     "title": "O mně",
-    "lead": "Ahoj, jsem Niky.",
+    "lead": "Ahoj, jsem Niky. Vařím zdravě, ale bez výčitek a bez počítání každého sousta.",
     "text": [
-      "Vařím zdravě, ale bez výčitek a bez počítání každého sousta. Chci, aby zdravé jídlo bylo jednoduché i pro lidi, kteří nemají čas.",
-      "Proto jsem vymyslela princip jeden základ, tři varianty, sladkou tečku jako součást plánu a appku, která spočítá, kolik jíst.",
-      "Svůj příběh sem brzy doplním."
-    ]
+      "Chci, aby zdravé jídlo bylo jednoduché i pro lidi, kteří nemají čas. Po práci nebo tréninku nikdo nechce řešit tabulky a složité recepty.",
+      "Proto jsem vymyslela princip jeden základ, tři varianty, sladkou tečku jako součást plánu a appku, která spočítá, kolik jíst."
+    ],
+    "photoCaption": "Niky & Tečka",
+    "rulesTitle": "Jak vařím",
+    "rules": [
+      "Jeden základ, tři varianty – uvařím jednou a každý si ho dochutí po svém (zhubnout, udržet, nabrat).",
+      "Vařím z toho, co je doma. Lednička je lepší kuchařka, než si myslíš.",
+      "Sladká tečka patří do plánu. Zdravé jídlo nemá být trest.",
+      "Nepočítám každé sousto. Stačí vědět zhruba kolik a z čeho.",
+      "Jen ověřené informace, žádné zázračné diety ani zdravotní sliby."
+    ],
+    "whatTitle": "Co tu pro tebe dělám",
+    "what": [
+      [
+        "Recepty a články",
+        "Krátké postupy, kcal na porci, alergeny a články „v kostce“."
+      ],
+      [
+        "Appka Jídlo od A–Z",
+        "Spočítá, kolik toho sníst, rozdělí to do jídel a najde recepty z ledničky."
+      ],
+      [
+        "Plány, e-booky a kurzy",
+        "Pro ty, kdo chtějí víc: hotový týden, vaření dopředu, kurz naživo."
+      ],
+      [
+        "Newsletter s dárkem",
+        "Jednou za 14 dní recept a tip. Na začátek Startovací knížka zdarma."
+      ]
+    ],
+    "whyTitle": "Proč to celé dělám",
+    "why": [
+      "Niky's Kitchen je můj osobní projekt. Stavím ho od nápadu přes recepty a design až po web, appku a obchod a učím se při tom všechno kolem e-commerce, UX a webu.",
+      "Svůj příběh, proč jsem začala vařit jinak, sem ještě doplním."
+    ],
+    "teckaTitle": "Seznam se s Tečkou",
+    "tecka": "Tečka je maskot Niky's Kitchen. Pomáhá ti v appce, radí v receptech a umí se proměnit v talíř, pohár nebo dort, protože sladká tečka k jídlu prostě patří.",
+    "cta": {
+      "recipes": "Prohlédnout recepty",
+      "app": "Vyzkoušet appku",
+      "news": "Chci newsletter s dárkem"
+    }
   },
   "notFound": {
     "title": "Jejda, tahle stránka tu není",

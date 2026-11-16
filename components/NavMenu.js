@@ -30,7 +30,8 @@ export default function NavMenu({ items, dict, lang }) {
           <li key={item.href}>
             <Link
               href={item.href}
-              aria-current={pathname === item.href ? "page" : undefined}
+              // přesná stránka = "page"; detail uvnitř sekce (recept, článek, produkt) = "true", aby sekce v menu svítila
+              aria-current={pathname === item.href ? "page" : item.href !== `/${lang}/` && pathname.startsWith(item.href) ? "true" : undefined}
               onClick={() => setOpen(false)}
             >
               {item.label}
