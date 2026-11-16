@@ -128,6 +128,42 @@ input, textarea { caret-color: var(--color-primary); }
 }
 
 main.container { padding-top: 2rem; padding-bottom: 3rem; min-height: 60vh; }
+
+/* ===== Babiččina kuchařka: obsah leží na papírovém listu, vzor je vidět jen po stranách jako ubrus ===== */
+:root { --paper: #fdfaf2; --paper-line: #e9e1cf; }
+main.container {
+  max-width: calc(var(--container) + 4rem);
+  margin: 1.5rem auto 2.5rem;
+  padding: 2.25rem clamp(1rem, 4vw, 3rem) 3rem;
+  background-color: var(--paper);
+  /* jemná struktura papíru (šum) */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .38 0 0 0 0 .25 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  border: 1px solid var(--paper-line);
+  border-radius: 0.4rem;
+  box-shadow: 0 1px 0 #fff inset, 0 12px 32px rgba(44, 44, 44, 0.1), 0 2px 6px rgba(44, 44, 44, 0.06);
+}
+@media (max-width: 600px) { main.container { margin: 0.75rem 0.5rem 1.5rem; width: auto; } }
+
+/* Tah perem pod nadpisy stránek a sekcí */
+main h1::after, main h2::after {
+  content: ""; display: block; width: min(9rem, 50%); height: 0.65rem; margin-top: 0.3rem;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 12'%3E%3Cpath d='M2 8c18-6 34 3 52-1s30-6 48-2 24 3 36-1' fill='none' stroke='%23bfa97f' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat left center / contain;
+}
+main .card h2::after, main .tip h2::after, main .interest h2::after, main .h3::after, main .faq h2::after { display: none; }
+
+/* Ručně psané poznámky (Caveat) – jen krátké věci, aby se dobře četly */
+.note, .photo-credit em, .hand { font-family: var(--font-hand), "Segoe Print", cursive; font-style: normal; font-size: 1.3rem; line-height: 1.3; color: #5b4a32; }
+
+/* Tip jako lísteček připíchnutý do kuchařky */
+.tip {
+  position: relative; background: #fffdf6;
+  background-image: repeating-linear-gradient(transparent 0 1.9rem, #e7dcc4 1.9rem 1.95rem);
+  border: 1px solid #ece3cf; border-radius: 0.3rem; box-shadow: 0 6px 14px rgba(44, 44, 44, 0.12);
+  transform: rotate(-0.6deg); padding: 1.5rem 1.25rem 1.25rem;
+}
+.tip::before { content: ""; position: absolute; top: -0.5rem; left: 50%; width: 1.1rem; height: 1.1rem; margin-left: -0.55rem; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #e3866a, #a24e33 70%); box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3); }
+.tip p { font-family: var(--font-hand), "Segoe Print", cursive; font-size: 1.35rem; line-height: 1.95rem; color: #3b3328; }
+@media (prefers-reduced-motion: reduce) { .tip { transform: none; } }
 main section { margin-bottom: 3rem; }
 
 /* Úvod */
@@ -408,6 +444,8 @@ main section { margin-bottom: 3rem; }
 /* Tisk do PDF: jen obsah, bez hlavičky a patičky */
 @media print {
   body { background: #fff; }
+  main.container { background: #fff; border: 0; box-shadow: none; margin: 0; padding: 0; max-width: none; }
+  main h1::after, main h2::after { display: none; }
   .site-header, .site-footer, .skip-link, .breadcrumb { display: none !important; }
   body { background: #fff; font-size: 11pt; }
   main.container { padding: 0; min-height: 0; }

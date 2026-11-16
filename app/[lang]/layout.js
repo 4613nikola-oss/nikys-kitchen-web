@@ -1,4 +1,4 @@
-import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
+import { Playfair_Display, Plus_Jakarta_Sans, Caveat } from "next/font/google";
 import { lang } from "next/root-params";
 import { getDictionary, locales } from "@/lib/i18n";
 import Header from "@/components/Header";
@@ -15,6 +15,12 @@ const playfair = Playfair_Display({
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin", "latin-ext"],
   variable: "--font-body",
+  display: "swap",
+});
+// Ručně psané poznámky jako v babiččině kuchařce (jen ozdoby a tipy, ne dlouhé texty)
+const caveat = Caveat({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-hand",
   display: "swap",
 });
 
@@ -48,7 +54,7 @@ export default async function RootLayout({ children }) {
   const dict = await getDictionary();
 
   return (
-    <html lang={locale} className={`${playfair.variable} ${jakarta.variable}`}>
+    <html lang={locale} className={`${playfair.variable} ${jakarta.variable} ${caveat.variable}`}>
       <body>
         <a className="skip-link" href="#obsah">{dict.skip}</a>
         <Header dict={dict} lang={locale} />
