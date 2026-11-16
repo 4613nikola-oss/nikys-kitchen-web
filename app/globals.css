@@ -14,8 +14,8 @@
   --color-terracotta: #a24e33;  /* terakota – hlavní výzva, sladká tečka (5,3 : 1 na krémové) */
   --color-terracotta-hover: #87402a;
   --color-bg: #edf1ec;          /* bylinková šalvěj (fáze B, pozadí A) – dřív krémová #f7f5f0 */
-  /* jemný vzor: lístek, vidlička, bylinka, lístek, tečka (průhlednost 22 %, text zůstává čitelný) */
-  --bg-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%235e7769' stroke-opacity='.22' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M18 30c8-12 22-12 26-2-10 6-22 6-26 2z M18 30l-8 6'/%3E%3Cpath d='M78 18v26 M73 18v8c0 3 2 5 5 5s5-2 5-5v-8'/%3E%3Cpath d='M30 92c6-8 6-18 0-26 M30 92c-6-8-6-18 0-26 M30 66v34'/%3E%3Cpath d='M86 80c10 0 14 8 10 16-8 2-14-6-10-16z'/%3E%3Ccircle cx='60' cy='60' r='2.4' fill='%235e7769' fill-opacity='.22' stroke='none'/%3E%3C/g%3E%3C/svg%3E");
+  /* jemný vzor: lístek, vidlička, bylinka, lístek, tečka (průhlednost 15 %, aby nadpisy nezanikaly) */
+  --bg-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%235e7769' stroke-opacity='.15' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M18 30c8-12 22-12 26-2-10 6-22 6-26 2z M18 30l-8 6'/%3E%3Cpath d='M78 18v26 M73 18v8c0 3 2 5 5 5s5-2 5-5v-8'/%3E%3Cpath d='M30 92c6-8 6-18 0-26 M30 92c-6-8-6-18 0-26 M30 66v34'/%3E%3Cpath d='M86 80c10 0 14 8 10 16-8 2-14-6-10-16z'/%3E%3Ccircle cx='60' cy='60' r='2.4' fill='%235e7769' fill-opacity='.15' stroke='none'/%3E%3C/g%3E%3C/svg%3E");
   --color-card: #ffffff;
   --color-border: #e3ded5;
   --color-text: #2c2c2c;
@@ -129,20 +129,8 @@ input, textarea { caret-color: var(--color-primary); }
 
 main.container { padding-top: 2rem; padding-bottom: 3rem; min-height: 60vh; }
 
-/* ===== Babiččina kuchařka: obsah leží na papírovém listu, vzor je vidět jen po stranách jako ubrus ===== */
+/* Pozadí se vzorem všude (bez papírového listu – přání Niky). Barvy papíru zůstávají pro knihu a lístečky. */
 :root { --paper: #fdfaf2; --paper-line: #e9e1cf; }
-main.container {
-  max-width: calc(var(--container) + 4rem);
-  margin: 1.5rem auto 2.5rem;
-  padding: 2.25rem clamp(1rem, 4vw, 3rem) 3rem;
-  background-color: var(--paper);
-  /* jemná struktura papíru (šum) */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .38 0 0 0 0 .25 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  border: 1px solid var(--paper-line);
-  border-radius: 0.4rem;
-  box-shadow: 0 1px 0 #fff inset, 0 12px 32px rgba(44, 44, 44, 0.1), 0 2px 6px rgba(44, 44, 44, 0.06);
-}
-@media (max-width: 600px) { main.container { margin: 0.75rem 0.5rem 1.5rem; width: auto; } }
 
 /* Tah perem pod nadpisy stránek a sekcí */
 main h1::after, main h2::after {
