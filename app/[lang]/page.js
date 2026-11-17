@@ -6,6 +6,7 @@ import RecipeCard from "@/components/RecipeCard";
 import ArticleCard from "@/components/ArticleCard";
 import Tecka from "@/components/Tecka";
 import TeckaMorph from "@/components/TeckaMorph";
+import ComicPanel from "@/components/ComicPanel";
 
 export async function generateMetadata() {
   return { alternates: alternates(await getLang()) };
@@ -24,16 +25,29 @@ export default async function HomePage() {
   return (
     <>
       {/* Úvod */}
+      {/* Titulní strana novin: velký titulek, perex, vedle komiksový panel */}
       <section className="hero">
         <div className="hero-text">
-          <h1>{h.title}</h1>
-          <p className="lead">{h.lead}</p>
+          <h1 className="headline">{h.title}</h1>
+          <p className="lead dropcap">{h.lead}</p>
           <div className="actions">
             <Link className="btn btn-primary" href={`/${lang}/recepty/`}>{h.ctaRecipes}</Link>
             <a className="btn btn-accent" href={APP_URL}>{h.ctaApp}</a>
           </div>
         </div>
-        <TeckaMorph size={260} className="hero-tecka" />
+        <ComicPanel text={h.heroBubble} label={h.kicker} tone="med" className="hero-panel">
+          <TeckaMorph size={220} />
+        </ComicPanel>
+      </section>
+
+      {/* Komiks dne: tři panely s hláškami */}
+      <section aria-labelledby="komiks">
+        <h2 id="komiks" className="rubrika">{h.comicTitle} <small>{h.comicSub}</small></h2>
+        <div className="comic-strip">
+          {h.comics.map((c) => (
+            <ComicPanel key={c.text} text={c.text} podoba={c.podoba} tone={c.tone} />
+          ))}
+        </div>
       </section>
 
       {/* Jeden základ, tři varianty */}

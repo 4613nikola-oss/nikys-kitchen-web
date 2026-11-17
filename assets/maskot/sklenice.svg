@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"><title>Tečka – sklenice</title><style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"><title>Tečka – sklenice</title><defs><pattern id="raster" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="3.5" cy="3.5" r="1.7" fill="#c69a4c" opacity=".65"/></pattern>
+<clipPath id="tc"><circle cx="100" cy="112" r="64"/></clipPath></defs>
+<style>
 @media (prefers-reduced-motion: no-preference) {
 .hop{animation:hop 3.2s ease-in-out infinite;transform-origin:100px 186px}
 .lis{animation:lis 2.8s ease-in-out infinite}
@@ -15,9 +17,9 @@
 @keyframes bub{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(-7px);opacity:.55}}
 @keyframes kon{0%,100%{opacity:1;transform:translateY(0)}50%{opacity:.3;transform:translateY(3px)}}
 @keyframes lzice{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(10deg)}}
-</style><ellipse cx="100" cy="188" rx="36" ry="6" fill="#3d5233" opacity=".08"/><g class="hop">
-<path d="M120 40l18-30" stroke="#a24e33" stroke-width="5" stroke-linecap="round"/>
-<path d="M60 44h80l-8 136H68z" fill="#e3ece1" stroke="#3d5233" stroke-width="3" stroke-linejoin="round"/>
-<path d="M62 70h76" stroke="#3d5233" stroke-width="2" opacity=".4"/>
-<circle cx="80" cy="56" r="7" fill="#fff" stroke="#3d5233" stroke-width="1.5"/><path d="M116 50c8-10 20-10 26-6-5 10-18 11-26 6z" fill="#5e7769" stroke="#3d5233" stroke-width="2"/>
-<g class="oko" style="transform-origin:100px 112px"><circle cx="82" cy="112" r="4.5" fill="#2c2c2c"/><circle cx="118" cy="112" r="4.5" fill="#2c2c2c"/></g><path d="M91 128c6 6 12 6 18 0" fill="none" stroke="#2c2c2c" stroke-width="3" stroke-linecap="round"/><circle cx="72" cy="124" r="6" fill="#e8a487" opacity=".35"/><circle cx="128" cy="124" r="6" fill="#e8a487" opacity=".35"/></g></svg>
+</style><ellipse cx="100" cy="190" rx="36" ry="6" fill="#1f1d1a" opacity=".15"/><g class="hop">
+<path d="M120 40l18-30" stroke="#a24e33" stroke-width="6.8" stroke-linecap="round"/>
+<path d="M60 44h80l-8 136H68z" fill="#d7e8cf" stroke="#1f1d1a" stroke-width="5.1" stroke-linejoin="round"/>
+<path d="M62 70h76" stroke="#1f1d1a" stroke-width="2.5" opacity=".4"/>
+<circle cx="80" cy="56" r="7" fill="#fff" stroke="#1f1d1a" stroke-width="2.5"/><path d="M116 50c8-10 20-10 26-6-5 10-18 11-26 6z" fill="#5e7769" stroke="#1f1d1a" stroke-width="3.4"/>
+<g class="oko" style="transform-origin:100px 112px"><ellipse cx="82" cy="112" rx="7.2" ry="8.8" fill="#fff" stroke="#1f1d1a" stroke-width="3.1"/><circle cx="83.6" cy="113.6" r="4" fill="#1f1d1a"/><circle cx="85.2" cy="111.2" r="1.4400000000000002" fill="#fff"/><ellipse cx="118" cy="112" rx="7.2" ry="8.8" fill="#fff" stroke="#1f1d1a" stroke-width="3.1"/><circle cx="119.6" cy="113.6" r="4" fill="#1f1d1a"/><circle cx="121.2" cy="111.2" r="1.4400000000000002" fill="#fff"/></g><path d="M91 130c6 7 12 7 18 0" fill="none" stroke="#1f1d1a" stroke-width="4.4" stroke-linecap="round"/><circle cx="70" cy="126" r="7" fill="#e9a6a0" opacity=".8"/><circle cx="130" cy="126" r="7" fill="#e9a6a0" opacity=".8"/></g></svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"><title>Tečka – pohár</title><style>
+@media (prefers-reduced-motion: no-preference) {
+.hop{animation:hop 3.2s ease-in-out infinite;transform-origin:100px 186px}
+.lis{animation:lis 2.8s ease-in-out infinite}
+.oko{animation:mrk 5s infinite}
+.bub{animation:bub 2.6s ease-in-out infinite}
+.bub2{animation-delay:.7s}
+.kon{animation:kon 1.6s ease-in-out infinite}
+.kon2{animation-delay:.8s}
+.lzice{animation:lzice 1.8s ease-in-out infinite;transform-origin:170px 168px}
+}
+@keyframes hop{0%,100%{transform:translateY(0) scale(1,1)}45%{transform:translateY(-5px) scale(.99,1.01)}55%{transform:translateY(-5px)}}
+@keyframes lis{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(6deg)}}
+@keyframes mrk{0%,90%,100%{transform:scaleY(1)}93%{transform:scaleY(.1)}96%{transform:scaleY(1)}}
+@keyframes bub{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(-7px);opacity:.55}}
+@keyframes kon{0%,100%{opacity:1;transform:translateY(0)}50%{opacity:.3;transform:translateY(3px)}}
+@keyframes lzice{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(10deg)}}
+</style><ellipse cx="100" cy="188" rx="40" ry="6" fill="#3d5233" opacity=".08"/><g class="hop">
+<path d="M48 52h104l-14 84c-2 10-10 16-20 16H82c-10 0-18-6-20-16z" fill="#fbfaf6" stroke="#3d5233" stroke-width="3" stroke-linejoin="round"/>
+<path d="M54 88h92l-4 22H58z" fill="#bfa97f" opacity=".55"/><path d="M60 112h80l-4 22c-1 6-6 10-12 10H76c-6 0-11-4-12-10z" fill="#e9d6d0"/>
+<path d="M90 152v24M70 180h60" stroke="#3d5233" stroke-width="3" stroke-linecap="round"/>
+<g class="lis" style="transform-origin:100px 52px"><path d="M100 52c-1-8 1-15 4-21" fill="none" stroke="#3d5233" stroke-width="3" stroke-linecap="round"/>
+<path d="M104 34c10-14 26-15 34-10-7 14-24 16-34 10z" fill="#5e7769" stroke="#3d5233" stroke-width="2" stroke-linejoin="round"/>
+<path d="M102 38c-9-10-21-10-28-5 6 11 19 12 28 5z" fill="#bfa97f" stroke="#3d5233" stroke-width="2" stroke-linejoin="round"/></g>
+<circle cx="124" cy="44" r="8" fill="#a24e33" stroke="#3d5233" stroke-width="2"/>
+<g class="oko" style="transform-origin:100px 98px"><circle cx="82" cy="98" r="4.5" fill="#2c2c2c"/><circle cx="118" cy="98" r="4.5" fill="#2c2c2c"/></g><path d="M91 114c6 6 12 6 18 0" fill="none" stroke="#2c2c2c" stroke-width="3" stroke-linecap="round"/><circle cx="72" cy="110" r="6" fill="#e8a487" opacity=".35"/><circle cx="128" cy="110" r="6" fill="#e8a487" opacity=".35"/></g></svg>

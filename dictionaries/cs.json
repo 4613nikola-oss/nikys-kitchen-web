@@ -42,7 +42,28 @@
     "appCta": "Otevřít appku",
     "aboutTitle": "Kdo je Niky",
     "aboutLead": "Vařím zdravě, ale bez výčitek. Recepty zkouším ve vlastní kuchyni a píšu tak, jak bych radila kamarádce.",
-    "aboutCta": "Víc o mně"
+    "aboutCta": "Víc o mně",
+    "kicker": "Exkluzivně",
+    "heroBubble": "Lednička nehlídá. Já jo!",
+    "comicTitle": "Komiks dne",
+    "comicSub": "vtipné hlášky místo kázání",
+    "comics": [
+      {
+        "podoba": "jejda",
+        "tone": "ruzova",
+        "text": "Od zítřka jen voda a salát!"
+      },
+      {
+        "podoba": "varecka",
+        "tone": "med",
+        "text": "Uvaříš jednou, sníš třikrát. Já si dám šlofíka."
+      },
+      {
+        "podoba": "slavi",
+        "tone": "zelena",
+        "text": "Sladká tečka se počítá. Do plánu!"
+      }
+    ]
   },
   "recipes": {
     "title": "Recepty",
@@ -408,5 +429,10 @@
         "p": "Napiš nám, co nefungovalo a na jaké stránce. Kontakt doplníme brzy, do té doby nás najdeš na sociálních sítích Niky's Kitchen."
       }
     ]
+  },
+  "masthead": {
+    "issue": "Ročník I",
+    "price": "Cena: zdarma",
+    "tagline": "Zpravodaj zdravé kuchyně bez výčitek"
   }
 }

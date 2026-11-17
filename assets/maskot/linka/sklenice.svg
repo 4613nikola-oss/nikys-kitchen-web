@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"><title>Tečka – sklenice</title><style>
+@media (prefers-reduced-motion: no-preference) {
+.hop{animation:hop 3.2s ease-in-out infinite;transform-origin:100px 186px}
+.lis{animation:lis 2.8s ease-in-out infinite}
+.oko{animation:mrk 5s infinite}
+.bub{animation:bub 2.6s ease-in-out infinite}
+.bub2{animation-delay:.7s}
+.kon{animation:kon 1.6s ease-in-out infinite}
+.kon2{animation-delay:.8s}
+.lzice{animation:lzice 1.8s ease-in-out infinite;transform-origin:170px 168px}
+}
+@keyframes hop{0%,100%{transform:translateY(0) scale(1,1)}45%{transform:translateY(-5px) scale(.99,1.01)}55%{transform:translateY(-5px)}}
+@keyframes lis{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(6deg)}}
+@keyframes mrk{0%,90%,100%{transform:scaleY(1)}93%{transform:scaleY(.1)}96%{transform:scaleY(1)}}
+@keyframes bub{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(-7px);opacity:.55}}
+@keyframes kon{0%,100%{opacity:1;transform:translateY(0)}50%{opacity:.3;transform:translateY(3px)}}
+@keyframes lzice{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(10deg)}}
+</style><ellipse cx="100" cy="188" rx="36" ry="6" fill="#3d5233" opacity=".08"/><g class="hop">
+<path d="M120 40l18-30" stroke="#a24e33" stroke-width="5" stroke-linecap="round"/>
+<path d="M60 44h80l-8 136H68z" fill="#e3ece1" stroke="#3d5233" stroke-width="3" stroke-linejoin="round"/>
+<path d="M62 70h76" stroke="#3d5233" stroke-width="2" opacity=".4"/>
+<circle cx="80" cy="56" r="7" fill="#fff" stroke="#3d5233" stroke-width="1.5"/><path d="M116 50c8-10 20-10 26-6-5 10-18 11-26 6z" fill="#5e7769" stroke="#3d5233" stroke-width="2"/>
+<g class="oko" style="transform-origin:100px 112px"><circle cx="82" cy="112" r="4.5" fill="#2c2c2c"/><circle cx="118" cy="112" r="4.5" fill="#2c2c2c"/></g><path d="M91 128c6 6 12 6 18 0" fill="none" stroke="#2c2c2c" stroke-width="3" stroke-linecap="round"/><circle cx="72" cy="124" r="6" fill="#e8a487" opacity=".35"/><circle cx="128" cy="124" r="6" fill="#e8a487" opacity=".35"/></g></svg>

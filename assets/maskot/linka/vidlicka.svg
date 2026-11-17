@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"><title>Tečka – s vidličkou</title><style>
+@media (prefers-reduced-motion: no-preference) {
+.hop{animation:hop 3.2s ease-in-out infinite;transform-origin:100px 186px}
+.lis{animation:lis 2.8s ease-in-out infinite}
+.oko{animation:mrk 5s infinite}
+.bub{animation:bub 2.6s ease-in-out infinite}
+.bub2{animation-delay:.7s}
+.kon{animation:kon 1.6s ease-in-out infinite}
+.kon2{animation-delay:.8s}
+.lzice{animation:lzice 1.8s ease-in-out infinite;transform-origin:170px 168px}
+}
+@keyframes hop{0%,100%{transform:translateY(0) scale(1,1)}45%{transform:translateY(-5px) scale(.99,1.01)}55%{transform:translateY(-5px)}}
+@keyframes lis{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(6deg)}}
+@keyframes mrk{0%,90%,100%{transform:scaleY(1)}93%{transform:scaleY(.1)}96%{transform:scaleY(1)}}
+@keyframes bub{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(-7px);opacity:.55}}
+@keyframes kon{0%,100%{opacity:1;transform:translateY(0)}50%{opacity:.3;transform:translateY(3px)}}
+@keyframes lzice{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(10deg)}}
+</style><ellipse cx="100" cy="188" rx="44" ry="6" fill="#3d5233" opacity=".08"/><g class="hop"><circle cx="100" cy="112" r="64" fill="#f1e8d3" stroke="#3d5233" stroke-width="3"/><g class="lis" style="transform-origin:100px 48px"><path d="M100 48c-1-8 1-15 4-21" fill="none" stroke="#3d5233" stroke-width="3" stroke-linecap="round"/>
+<path d="M104 30c10-14 26-15 34-10-7 14-24 16-34 10z" fill="#5e7769" stroke="#3d5233" stroke-width="2" stroke-linejoin="round"/>
+<path d="M102 34c-9-10-21-10-28-5 6 11 19 12 28 5z" fill="#bfa97f" stroke="#3d5233" stroke-width="2" stroke-linejoin="round"/></g><g class="oko" style="transform-origin:100px 108px"><circle cx="80" cy="108" r="4.5" fill="#2c2c2c"/><circle cx="120" cy="108" r="4.5" fill="#2c2c2c"/></g><path d="M86 124c8 11 20 11 28 0" fill="#a24e33" stroke="#2c2c2c" stroke-width="2.5" stroke-linejoin="round"/><circle cx="70" cy="122" r="6" fill="#e8a487" opacity=".35"/><circle cx="130" cy="122" r="6" fill="#e8a487" opacity=".35"/>
+<g fill="none" stroke="#3d5233" stroke-width="3.5" stroke-linecap="round"><path d="M178 180V96"/><path d="M168 60v26c0 6 4 10 10 10s10-4 10-10V60M178 60v24"/></g></g></svg>

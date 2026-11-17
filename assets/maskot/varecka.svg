@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"><title>Vařečka – parťák Tečky</title><defs><pattern id="raster" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="3.5" cy="3.5" r="1.7" fill="#c69a4c" opacity=".65"/></pattern>
+<clipPath id="tc"><circle cx="100" cy="112" r="64"/></clipPath></defs>
+<style>
+@media (prefers-reduced-motion: no-preference) {
+.hop{animation:hop 3.2s ease-in-out infinite;transform-origin:100px 186px}
+.lis{animation:lis 2.8s ease-in-out infinite}
+.oko{animation:mrk 5s infinite}
+.bub{animation:bub 2.6s ease-in-out infinite}
+.bub2{animation-delay:.7s}
+.kon{animation:kon 1.6s ease-in-out infinite}
+.kon2{animation-delay:.8s}
+.lzice{animation:lzice 1.8s ease-in-out infinite;transform-origin:170px 168px}
+}
+@keyframes hop{0%,100%{transform:translateY(0) scale(1,1)}45%{transform:translateY(-5px) scale(.99,1.01)}55%{transform:translateY(-5px)}}
+@keyframes lis{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(6deg)}}
+@keyframes mrk{0%,90%,100%{transform:scaleY(1)}93%{transform:scaleY(.1)}96%{transform:scaleY(1)}}
+@keyframes bub{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(-7px);opacity:.55}}
+@keyframes kon{0%,100%{opacity:1;transform:translateY(0)}50%{opacity:.3;transform:translateY(3px)}}
+@keyframes lzice{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(10deg)}}
+</style><ellipse cx="100" cy="190" rx="36" ry="6" fill="#1f1d1a" opacity=".15"/><g class="hop">
+<g class="lzice" style="transform-origin:100px 180px">
+<rect x="89" y="100" width="22" height="88" rx="11" fill="#d9a86c" stroke="#1f1d1a" stroke-width="5.1"/>
+<path d="M95 124v52M104 118v60" stroke="#a67a45" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M90 132c-18 4-30-4-34-14" fill="none" stroke="#1f1d1a" stroke-width="6.0" stroke-linecap="round"/>
+<path d="M110 132c18 2 27 11 31 24" fill="none" stroke="#1f1d1a" stroke-width="6.0" stroke-linecap="round"/>
+<ellipse cx="100" cy="68" rx="47" ry="56" fill="#e6b97c" stroke="#1f1d1a" stroke-width="5.1"/>
+<path d="M128 32a47 56 0 0 1 7 72" fill="none" stroke="#c4935a" stroke-width="10.2" stroke-linecap="round" opacity=".6"/>
+<path d="M60 24c-6-20 20-27 27-16 7-15 33-11 31 5 16-4 24 16 9 24H65c-9-2-11-9-5-13z" fill="#fff" stroke="#1f1d1a" stroke-width="5.1" stroke-linejoin="round"/>
+<path d="M70 50l15 5M130 50l-15 5" stroke="#1f1d1a" stroke-width="5.1" stroke-linecap="round"/>
+<g class="oko" style="transform-origin:100px 68px"><circle cx="84" cy="68" r="5.5" fill="#1f1d1a"/><circle cx="116" cy="68" r="5.5" fill="#1f1d1a"/><circle cx="86" cy="66" r="1.8" fill="#fff"/><circle cx="118" cy="66" r="1.8" fill="#fff"/></g>
+<path d="M86 92c9 6 20 6 29-2" fill="none" stroke="#1f1d1a" stroke-width="5.1" stroke-linecap="round"/>
+</g></g></svg>

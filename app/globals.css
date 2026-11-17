@@ -503,3 +503,108 @@ main section { margin-bottom: 3rem; }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; animation: none !important; }
 }
+
+/* =====================================================================
+   NOVINY + KOMIKS (od 17. 11. 2026) – vrstva navrch, přepisuje vzhled výš.
+   Novinový papír s jemným rastrem, titulky a rubriky jako v novinách,
+   komiksové panely s bublinami, tlačítka a karty s tmavou linkou a stínem.
+   ===================================================================== */
+:root {
+  --ink: #1f1d1a;
+  --newsprint: #f3ecdc;
+  --comic-yellow: #e9b949;
+  --comic-pink: #f3d0c8;
+  --comic-green: #d3e3c9;
+  --color-text: #1f1d1a;
+  --color-muted: #5c544a;        /* tmavší kvůli kontrastu na novinovém papíře */
+  --radius: 0.35rem;
+  --shadow-comic: 5px 5px 0 var(--ink);
+}
+body {
+  background-color: var(--newsprint);
+  background-image: radial-gradient(rgba(120, 100, 60, 0.09) 1px, transparent 1.3px);
+  background-size: 6px 6px;
+}
+h1, h2, h3, .h3 { color: var(--ink); }
+
+/* Hlavička jako titulní strana novin */
+.site-header { position: static; background: transparent; border-bottom: 0; }
+.masthead { text-align: center; padding-top: 0.9rem; }
+.masthead-row {
+  display: flex; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap;
+  border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); padding: 0.3rem 0;
+  font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
+}
+.masthead-date::first-letter { text-transform: uppercase; }
+.brand { justify-content: center; margin: 0.6rem 0 0; color: var(--ink); gap: 0.75rem; }
+.brand-name { font-family: var(--font-heading-stack); font-weight: 900; font-size: clamp(2.2rem, 8vw, 5.2rem); line-height: 0.95; letter-spacing: -0.01em; text-transform: uppercase; }
+.brand-logo { width: clamp(2.2rem, 6vw, 3.6rem); height: auto; }
+.masthead-tagline { font-family: var(--font-heading-stack); font-style: italic; font-size: clamp(1rem, 2.4vw, 1.25rem); margin: 0.2rem auto 0.5rem; max-width: none; }
+.masthead .header-inner { justify-content: center; border-top: 2px solid var(--ink); border-bottom: 6px double var(--ink); padding: 0.2rem 0; }
+.nav-list a { text-transform: uppercase; letter-spacing: 0.08em; font-weight: 800; font-size: 0.92rem; color: var(--ink); }
+.nav-toggle { border: 2px solid var(--ink); color: var(--ink); box-shadow: 3px 3px 0 var(--ink); }
+@media (min-width: 900px) { .nav-list, .nav-list.is-open { justify-content: center; gap: 1.75rem; } }
+
+/* Titulky a rubriky */
+main h1::after, main h2::after { display: none; }
+.headline { font-weight: 900; text-transform: uppercase; font-size: clamp(2.2rem, 6vw, 3.6rem); line-height: 1.02; letter-spacing: -0.01em; }
+main h2 { font-weight: 900; }
+.rubrika, main section > h2:not(.h3), .section-head h2 {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap;
+  border-top: 4px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 0.35rem 0; text-transform: uppercase; font-size: clamp(1.3rem, 3vw, 1.75rem);
+}
+.rubrika small { font-family: var(--font-body-stack); font-size: 0.75rem; letter-spacing: 0.12em; font-weight: 800; }
+.section-head { align-items: flex-end; }
+.section-head h2 { flex: 1; margin-bottom: 0; }
+.band h2, .tip h2, .card h2, .interest h2, .about-what h3 { border: 0 !important; text-transform: none; display: block; padding: 0; }
+.dropcap::first-letter { font-family: var(--font-heading-stack); font-weight: 900; float: left; font-size: 3.4em; line-height: 0.8; padding: 0.08em 0.1em 0 0; color: var(--color-primary); }
+
+/* Tlačítka a štítky po komiksovsku */
+.btn { border: 3px solid var(--ink); box-shadow: 4px 4px 0 var(--ink); transition: transform 0.12s, box-shadow 0.12s; }
+.btn:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink); }
+.btn-ghost { background: #fff; color: var(--ink); }
+.chip { border: 1.5px solid var(--ink); }
+.chip-cat { border-color: var(--ink); }
+
+/* Karty: tmavý obrys a posunutý stín */
+.card { border: 2px solid var(--ink); box-shadow: var(--shadow-comic); border-radius: var(--radius); }
+.recipe-card { border-top-width: 6px; box-shadow: var(--shadow-comic); }
+.band { border: 3px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); border-radius: var(--radius); }
+.band-sage { background-color: var(--comic-green); background-image: radial-gradient(rgba(61, 82, 51, 0.18) 22%, transparent 24%); background-size: 12px 12px; }
+.band-honey { background-color: #f7e2a6; background-image: radial-gradient(rgba(162, 78, 51, 0.16) 22%, transparent 24%); background-size: 12px 12px; }
+.facts div, .interest { border: 2px solid var(--ink); box-shadow: 3px 3px 0 var(--ink); }
+.tip { background-color: #fbe9a0; background-image: repeating-linear-gradient(transparent 0 1.9rem, rgba(31, 29, 26, 0.12) 1.9rem 1.95rem); border: 0; }
+.signup-row input, .search, input[type="search"] { border: 2px solid var(--ink); }
+
+/* Komiksový panel s bublinou */
+.comic-panel {
+  position: relative; margin: 0; min-height: 17rem; border: 4px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); overflow: hidden;
+  background-size: 12px 12px; display: flex; flex-direction: column; justify-content: space-between;
+}
+.comic-med { background-color: var(--comic-yellow); background-image: radial-gradient(rgba(162, 78, 51, 0.4) 22%, transparent 24%); }
+.comic-ruzova { background-color: var(--comic-pink); background-image: radial-gradient(rgba(162, 78, 51, 0.3) 22%, transparent 24%); }
+.comic-zelena { background-color: var(--comic-green); background-image: radial-gradient(rgba(61, 82, 51, 0.3) 22%, transparent 24%); }
+.comic-label { position: absolute; left: 0.75rem; top: 0.75rem; background: var(--ink); color: var(--comic-yellow); font-family: var(--font-comic), Impact, sans-serif; font-size: 1.1rem; letter-spacing: 0.06em; padding: 0.15rem 0.6rem; z-index: 2; }
+.comic-bubble {
+  position: relative; margin: 0.9rem 0.9rem 0 auto; max-width: 85%; background: #fff; border: 3px solid var(--ink); border-radius: 50% / 42%;
+  padding: 0.8rem 1.2rem; text-align: center; z-index: 1;
+}
+.comic-label + .comic-bubble { margin-top: 2.6rem; }
+.comic-bubble p { margin: 0; font-family: var(--font-comic), Impact, sans-serif; font-size: 1.35rem; line-height: 1.1; letter-spacing: 0.03em; text-transform: uppercase; color: var(--ink); max-width: none; }
+.comic-bubble::after { content: ""; position: absolute; bottom: -0.75rem; left: 38%; width: 1.3rem; height: 1.3rem; background: #fff; border-right: 3px solid var(--ink); border-bottom: 3px solid var(--ink); transform: rotate(45deg); }
+.comic-hero { display: flex; justify-content: center; align-items: flex-end; padding: 0.5rem 0 0; }
+.comic-hero img, .comic-hero .morph { margin-bottom: -0.4rem; }
+.comic-strip { display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
+@media (min-width: 720px) { .comic-strip { grid-template-columns: repeat(3, 1fr); } }
+.hero { grid-template-columns: 1fr; }
+@media (min-width: 800px) { .hero { grid-template-columns: 1.3fr 1fr; } }
+.hero-panel { min-height: 20rem; }
+
+/* Patička jako konec novin */
+.site-footer { background: transparent; border-top: 6px double var(--ink); }
+
+@media print {
+  body { background: #fff; }
+  .masthead-row, .masthead-tagline, .site-header .header-inner { display: none; }
+  .card, .btn, .band, .comic-panel { box-shadow: none; }
+}

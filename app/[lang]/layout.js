@@ -1,4 +1,4 @@
-import { Playfair_Display, Plus_Jakarta_Sans, Caveat } from "next/font/google";
+import { Playfair_Display, Plus_Jakarta_Sans, Caveat, Bangers } from "next/font/google";
 import { lang } from "next/root-params";
 import { getDictionary, locales } from "@/lib/i18n";
 import Header from "@/components/Header";
@@ -21,6 +21,13 @@ const jakarta = Plus_Jakarta_Sans({
 const caveat = Caveat({
   subsets: ["latin", "latin-ext"],
   variable: "--font-hand",
+  display: "swap",
+});
+// Komiksové písmo do bublin a štítků (noviny + komiks)
+const bangers = Bangers({
+  weight: "400",
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-comic",
   display: "swap",
 });
 
@@ -54,7 +61,7 @@ export default async function RootLayout({ children }) {
   const dict = await getDictionary();
 
   return (
-    <html lang={locale} className={`${playfair.variable} ${jakarta.variable} ${caveat.variable}`}>
+    <html lang={locale} className={`${playfair.variable} ${jakarta.variable} ${caveat.variable} ${bangers.variable}`}>
       <body>
         <a className="skip-link" href="#obsah">{dict.skip}</a>
         <Header dict={dict} lang={locale} />

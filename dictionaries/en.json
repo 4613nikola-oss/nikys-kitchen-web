@@ -42,7 +42,28 @@
     "appCta": "Open the app",
     "aboutTitle": "Who is Niky",
     "aboutLead": "I cook healthy food without guilt. I test recipes in my own kitchen and write the way I'd advise a friend.",
-    "aboutCta": "More about me"
+    "aboutCta": "More about me",
+    "kicker": "Exclusive",
+    "heroBubble": "The fridge isn't watching. I am!",
+    "comicTitle": "Comic of the day",
+    "comicSub": "jokes instead of lectures",
+    "comics": [
+      {
+        "podoba": "jejda",
+        "tone": "ruzova",
+        "text": "From tomorrow: just water and salad!"
+      },
+      {
+        "podoba": "varecka",
+        "tone": "med",
+        "text": "Cook once, eat three times. I'm taking a nap."
+      },
+      {
+        "podoba": "slavi",
+        "tone": "zelena",
+        "text": "A sweet treat counts. Into the plan!"
+      }
+    ]
   },
   "recipes": {
     "title": "Recipes",
@@ -408,5 +429,10 @@
         "p": "Tell us what didn't work and on which page. We'll add a contact soon; until then you can reach Niky's Kitchen on social media."
       }
     ]
+  },
+  "masthead": {
+    "issue": "Volume I",
+    "price": "Price: free",
+    "tagline": "The guilt-free healthy kitchen gazette"
   }
 }

@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"><title>Tečka – zákusek</title><style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"><title>Tečka – zákusek</title><defs><pattern id="raster" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="3.5" cy="3.5" r="1.7" fill="#c69a4c" opacity=".65"/></pattern>
+<clipPath id="tc"><circle cx="100" cy="112" r="64"/></clipPath></defs>
+<style>
 @media (prefers-reduced-motion: no-preference) {
 .hop{animation:hop 3.2s ease-in-out infinite;transform-origin:100px 186px}
 .lis{animation:lis 2.8s ease-in-out infinite}
@@ -15,12 +17,12 @@
 @keyframes bub{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(-7px);opacity:.55}}
 @keyframes kon{0%,100%{opacity:1;transform:translateY(0)}50%{opacity:.3;transform:translateY(3px)}}
 @keyframes lzice{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(10deg)}}
-</style><ellipse cx="100" cy="188" rx="60" ry="6" fill="#3d5233" opacity=".08"/><g class="hop">
-<path d="M36 168h128V112L36 140z" fill="#f1e8d3" stroke="#3d5233" stroke-width="3" stroke-linejoin="round"/>
-<path d="M36 140 150 98c8-3 14 3 14 14" fill="#fbfaf6" stroke="#3d5233" stroke-width="3" stroke-linejoin="round"/>
-<path d="M36 154h128" stroke="#bfa97f" stroke-width="5"/>
-<circle cx="146" cy="88" r="8" fill="#a24e33" stroke="#3d5233" stroke-width="2"/>
-<path d="M146 80c0-6 2-10 5-13" fill="none" stroke="#3d5233" stroke-width="2.5" stroke-linecap="round"/>
-<path d="M150 68c8-10 19-10 25-6-5 10-17 11-25 6z" fill="#5e7769" stroke="#3d5233" stroke-width="2" stroke-linejoin="round"/>
-<circle cx="84" cy="150" r="4" fill="#2c2c2c"/><circle cx="114" cy="146" r="4" fill="#2c2c2c"/>
-<path d="M92 162c5 4 11 4 16-1" fill="none" stroke="#2c2c2c" stroke-width="3" stroke-linecap="round"/></g></svg>
+</style><ellipse cx="100" cy="190" rx="60" ry="6" fill="#1f1d1a" opacity=".15"/><g class="hop">
+<path d="M36 168h128V112L36 140z" fill="#f4e2b6" stroke="#1f1d1a" stroke-width="5.1" stroke-linejoin="round"/>
+<path d="M36 140 150 98c8-3 14 3 14 14" fill="#fff" stroke="#1f1d1a" stroke-width="5.1" stroke-linejoin="round"/>
+<path d="M36 154h128" stroke="#e0b04a" stroke-width="6.8"/>
+<circle cx="146" cy="88" r="8" fill="#a24e33" stroke="#1f1d1a" stroke-width="3.4"/>
+<path d="M146 80c0-6 2-10 5-13" fill="none" stroke="#1f1d1a" stroke-width="4.3" stroke-linecap="round"/>
+<path d="M150 68c8-10 19-10 25-6-5 10-17 11-25 6z" fill="#5e7769" stroke="#1f1d1a" stroke-width="3.4" stroke-linejoin="round"/>
+<g class="oko" style="transform-origin:100px 148px"><ellipse cx="82" cy="150" rx="6.3" ry="7.699999999999999" fill="#fff" stroke="#1f1d1a" stroke-width="3.1"/><circle cx="83.4" cy="151.4" r="3.5" fill="#1f1d1a"/><circle cx="84.8" cy="149.3" r="1.26" fill="#fff"/><ellipse cx="114" cy="145" rx="6.3" ry="7.699999999999999" fill="#fff" stroke="#1f1d1a" stroke-width="3.1"/><circle cx="115.4" cy="146.4" r="3.5" fill="#1f1d1a"/><circle cx="116.8" cy="144.3" r="1.26" fill="#fff"/></g>
+<path d="M90 164c5 5 12 5 18-1" fill="none" stroke="#1f1d1a" stroke-width="4.3" stroke-linecap="round"/></g></svg>
