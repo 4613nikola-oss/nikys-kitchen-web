@@ -6,7 +6,8 @@ const g = (d, listek = true) => `<g fill="none" stroke="currentColor" stroke-wid
 export const ICONS = {
   cas: g('<circle cx="11" cy="13" r="8"/><path d="M11 8.5V13l3 2"/>'),
   kcal: g('<path d="M11 3c1 3.2 5 5 5 10a5 5 0 0 1-10 0c0-2.4 1.2-3.8 2.4-4.8.2 1.8 1 2.8 2.4 3 .4-3.4-1.2-5.4.2-8.2z"/>'),
-  porce: g('<circle cx="13" cy="13.5" r="7.5"/><circle cx="13" cy="13.5" r="4"/><path d="M3 5v5a1.5 1.5 0 0 0 3 0V5M4.5 10v11"/>'),
+  // talíř vpravo, vidlička vlevo s mezerou (dřív moc u sebe)
+  porce: g('<circle cx="15" cy="14" r="6.3"/><circle cx="15" cy="14" r="2.8"/><path d="M2.5 4.5v4.5a1.6 1.6 0 0 0 3.2 0V4.5M4.1 9v11"/>'),
   slane: g('<path d="M6 3v6a2 2 0 0 0 4 0V3M8 9v12"/><path d="M15 21V3c2.5 1.2 3.5 4 3.5 7.5H15"/>'),
   sladke: g('<path d="M3 19h17V12L3 15.5z"/><path d="M3 15.5 17 9.5"/><path d="M3 17.2h17"/>') + '<circle cx="16" cy="7.4" r="1.8" fill="#a24e33"/>',
   napoje: g('<path d="M5 7h12l-1.6 13.5H6.6z"/><path d="M13 7l2.5-5"/><path d="M6 12h10"/>'),

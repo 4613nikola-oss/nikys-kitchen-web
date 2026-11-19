@@ -6,6 +6,7 @@ import { getRecipes, getRecipe, articlesFor, getAllergenNames } from "@/lib/cont
 import { asset } from "@/lib/asset";
 import PortionCalculator from "@/components/PortionCalculator";
 import Icon from "@/components/Icon";
+import ComicPanel from "@/components/ComicPanel";
 import ArticleCard from "@/components/ArticleCard";
 import Tecka from "@/components/Tecka";
 import PrintButton from "@/components/PrintButton";
@@ -190,9 +191,13 @@ export default async function RecipePage({ params }) {
         </aside>
       )}
 
-      <p>
-        <a className="btn btn-accent" href={APP_URL}>{d.toApp}</a>
-      </p>
+      {/* konec receptu: komiksová hláška a cesta do appky */}
+      <div className="page-intro recipe-outro">
+        <ComicPanel {...dict.comics.recipe} size={140} />
+        <p>
+          <a className="btn btn-accent" href={APP_URL}>{d.toApp}</a>
+        </p>
+      </div>
 
       {related.length > 0 && (
         <section aria-labelledby="clanky-k-receptu">

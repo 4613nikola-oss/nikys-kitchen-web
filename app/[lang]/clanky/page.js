@@ -2,6 +2,7 @@ import { getDictionary, getLang } from "@/lib/i18n";
 import { alternates } from "@/lib/site";
 import { getArticles } from "@/lib/content";
 import ArticleCard from "@/components/ArticleCard";
+import ComicPanel from "@/components/ComicPanel";
 
 export async function generateMetadata() {
   const dict = await getDictionary();
@@ -14,8 +15,13 @@ export default async function ArticlesPage() {
   const articles = await getArticles();
   return (
     <>
-      <h1>{dict.articles.title}</h1>
-      <p className="lead">{dict.articles.lead}</p>
+      <div className="page-intro">
+        <div>
+          <h1>{dict.articles.title}</h1>
+          <p className="lead">{dict.articles.lead}</p>
+        </div>
+        <ComicPanel {...dict.comics.articles} size={140} />
+      </div>
       <div className="grid">
         {articles.map((a) => (
           <ArticleCard key={a.slug} article={a} lang={lang} dict={dict} />

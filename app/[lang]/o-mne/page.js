@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getDictionary, getLang } from "@/lib/i18n";
 import { alternates } from "@/lib/site";
 import Tecka from "@/components/Tecka";
+import ComicPanel from "@/components/ComicPanel";
 
 export async function generateMetadata() {
   const dict = await getDictionary();
@@ -37,15 +38,21 @@ export default async function AboutPage() {
       <section aria-labelledby="co">
         <h2 id="co">{a.whatTitle}</h2>
         <div className="grid about-what">
-          {a.what.map(([h, p]) => (
-            <div key={h} className="card pad"><h3>{h}</h3><p>{p}</p></div>
+          {/* každá karta vede tam, co popisuje */}
+          {a.what.map(([h, p], i) => (
+            <Link key={h} className="card pad" href={[`/${lang}/recepty/`, `/${lang}/aplikace/`, `/${lang}/obchod/`, `/${lang}/obchod/#newsletter`][i]}>
+              <h3>{h}</h3><p>{p}</p>
+            </Link>
           ))}
         </div>
       </section>
 
-      <section aria-labelledby="proc">
-        <h2 id="proc">{a.whyTitle}</h2>
-        {a.why.map((p) => <p key={p}>{p}</p>)}
+      <section aria-labelledby="proc" className="page-intro">
+        <div>
+          <h2 id="proc">{a.whyTitle}</h2>
+          {a.why.map((p) => <p key={p}>{p}</p>)}
+        </div>
+        <ComicPanel {...dict.comics.about} size={150} />
       </section>
 
       <section className="tip" aria-labelledby="tecka">

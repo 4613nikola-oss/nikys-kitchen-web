@@ -1,6 +1,6 @@
 import { getDictionary, getLang } from "@/lib/i18n";
 import { alternates } from "@/lib/site";
-import Tecka from "@/components/Tecka";
+import ComicPanel from "@/components/ComicPanel";
 
 const APP_URL = "https://4613nikola-oss.github.io/jidlo-od-a-z/";
 
@@ -14,7 +14,7 @@ export default async function AppPage() {
   const a = dict.app;
   return (
     <section className="band-grid">
-      <Tecka podoba="premysli" size={220} />
+      <ComicPanel {...dict.comics.app} size={170} />
       <div>
         <h1>{a.title}</h1>
         <p className="lead">{a.lead}</p>

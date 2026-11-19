@@ -4,6 +4,7 @@ import { getDictionary, getLang } from "@/lib/i18n";
 import { alternates } from "@/lib/site";
 import { getArticles, getArticle, recipesFor } from "@/lib/content";
 import RecipeCard from "@/components/RecipeCard";
+import ComicPanel from "@/components/ComicPanel";
 
 export const dynamicParams = false;
 export async function generateStaticParams() {
@@ -65,6 +66,9 @@ export default async function ArticlePage({ params }) {
           </ul>
         </section>
       )}
+
+      {/* konec článku: komiksová hláška */}
+      <ComicPanel {...dict.comics.article} size={140} className="article-comic" />
 
       {related.length > 0 && (
         <section aria-labelledby="recepty-k-clanku">

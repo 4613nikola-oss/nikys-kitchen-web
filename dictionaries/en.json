@@ -44,24 +44,24 @@
     "aboutLead": "I cook healthy food without guilt. I test recipes in my own kitchen and write the way I'd advise a friend.",
     "aboutCta": "More about me",
     "kicker": "Exclusive",
-    "heroBubble": "The fridge isn't watching. I am!",
+    "heroBubble": "Who said healthy eating can't include cake?",
     "comicTitle": "Comic of the day",
     "comicSub": "jokes instead of lectures",
     "comics": [
       {
-        "podoba": "jejda",
-        "tone": "ruzova",
-        "text": "From tomorrow: just water and salad!"
-      },
-      {
         "podoba": "varecka",
         "tone": "med",
-        "text": "Cook once, eat three times. I'm taking a nap."
+        "text": "Diet starts Monday? You've been saying that since September."
+      },
+      {
+        "podoba": "jejda",
+        "tone": "ruzova",
+        "text": "Two pots, three pans, and the result? One omelette."
       },
       {
         "podoba": "slavi",
         "tone": "zelena",
-        "text": "A sweet treat counts. Into the plan!"
+        "text": "Dessert isn't failure. It's dessert."
       }
     ]
   },
@@ -128,7 +128,13 @@
     "more": "Tell me more",
     "sources": "Sources",
     "related": "Recipes for this article",
-    "back": "Back to articles"
+    "back": "Back to articles",
+    "goals": {
+      "hubnout": "Fit · lose",
+      "udrzet": "Normal · maintain",
+      "nabrat": "Muscle · gain",
+      "vse": "For everyone"
+    }
   },
   "app": {
     "title": "Food from A to Z",
@@ -431,8 +437,45 @@
     ]
   },
   "masthead": {
-    "issue": "Volume I",
-    "price": "Price: free",
+    "issue": "Fresh edition",
+    "price": "Free and guilt-free",
     "tagline": "The guilt-free healthy kitchen gazette"
+  },
+  "comics": {
+    "recipes": {
+      "podoba": "varecka",
+      "tone": "med",
+      "text": "A 15-minute recipe. Plus 10 minutes looking for the spoon. Here I am."
+    },
+    "recipe": {
+      "podoba": "vari",
+      "tone": "zelena",
+      "text": "The recipe says “to taste”. My taste says “more cheese”."
+    },
+    "articles": {
+      "podoba": "premysli",
+      "tone": "ruzova",
+      "text": "Shorter than a recipe video where someone talks about their holiday for ten minutes."
+    },
+    "article": {
+      "podoba": "radost",
+      "tone": "med",
+      "text": "Done reading. Now go eat something, so it's not just theory."
+    },
+    "app": {
+      "podoba": "premysli",
+      "tone": "zelena",
+      "text": "I count the calories. You count to three and start cooking."
+    },
+    "shop": {
+      "podoba": "kosik",
+      "tone": "med",
+      "text": "An e-book fits in your bag. A pie, sadly, doesn't."
+    },
+    "about": {
+      "podoba": "varecka",
+      "tone": "ruzova",
+      "text": "Head chef? No, that's Niky. I'm the boss around here."
+    }
   }
 }

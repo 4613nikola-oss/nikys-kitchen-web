@@ -599,6 +599,111 @@ main h2 { font-weight: 900; }
 .hero { grid-template-columns: 1fr; }
 @media (min-width: 800px) { .hero { grid-template-columns: 1.3fr 1fr; } }
 .hero-panel { min-height: 20rem; }
+/* úvod stránky: nadpis vlevo, komiksový panel vpravo (na mobilu pod sebou) */
+.page-intro { display: grid; gap: 1.5rem; align-items: center; margin-bottom: 2rem; }
+@media (min-width: 800px) { .page-intro { grid-template-columns: 1.5fr 1fr; } }
+.page-intro .comic-panel { min-height: 14rem; }
+.recipe-outro { grid-template-columns: 1fr; }
+@media (min-width: 800px) { .recipe-outro { grid-template-columns: minmax(16rem, 22rem) 1fr; } }
+.article-comic { max-width: 26rem; min-height: 14rem; margin: 2rem 0; }
+.band-grid > .comic-panel { width: 100%; max-width: 24rem; justify-self: center; }
+
+/* Barvy textu: ne jen černá – nadpisy v barvách značky, text měkčí, černá jen na linky a obrysy */
+:root { --color-text: #2f2b27; }
+h1, h2, h3, .h3, .brand { color: var(--color-primary); }
+.headline em, .rubrika small { color: var(--color-terracotta); }
+.masthead-row, .nav-list a { color: #3a332c; }
+.nav-list a[aria-current="page"], .nav-list a[aria-current="true"] { color: var(--color-terracotta); }
+.card h3 { color: var(--color-primary); }
+/* jemnější tečky na pozadí, aby text nezanikal */
+body { background-image: radial-gradient(rgba(120, 100, 60, 0.05) 1px, transparent 1.2px); background-size: 9px 9px; }
+
+/* ===== Úpravy 18. 11. podle Niky ===== */
+/* Žádná zářivě bílá: karty v barvách značky (šalvěj, med, růžová) */
+:root { --card-salvej: #e3ebdd; --card-med: #f6e7bf; --card-ruzova: #f4ddd6; --color-card: var(--card-salvej); }
+.card, .interest, .facts div, .signup-row input, .search, input[type="search"] { background-color: var(--card-salvej); }
+.article .in-short { background-color: var(--card-med); }
+.about-what .card:nth-child(4n+2) { background-color: var(--card-med); }
+.about-what .card:nth-child(4n+3) { background-color: var(--card-ruzova); }
+.product-card .card-body, .article-card .card-body { background-color: transparent; }
+
+/* Recepty jednoduše jako polaroid – bez rámečku okolo, text pod fotkou */
+.recipe-card { background: transparent; border: 0; box-shadow: none; overflow: visible; }
+.recipe-card .card-media { background: transparent !important; aspect-ratio: auto; padding: 1rem 0 0.5rem; }
+.recipe-card .polaroid { width: 88%; border: 1px solid #d8cfbd; }
+.recipe-card .card-media img.tecka { height: 9rem; width: auto; background: #fff; padding: 0.6rem 0.6rem 1.6rem; border: 1px solid #d8cfbd; box-shadow: 0 6px 14px rgba(44, 44, 44, 0.18); transform: rotate(1.5deg); }
+.recipe-card .card-body { padding: 0.5rem 0.25rem 0; text-align: center; }
+.recipe-card .card-meta { justify-content: center; }
+.recipe-card h3 { font-size: 1.3rem; }
+
+/* Karta článku: komiksový obrázek nahoře */
+.article-card .card-media { aspect-ratio: 16 / 9; background-size: 12px 12px; border-bottom: 2px solid var(--ink); }
+.article-card .card-media img.tecka { height: 80%; }
+.hand-sm { font-family: var(--font-hand), cursive; font-size: 1.2rem; line-height: 1.3; color: #4a4036 !important; }
+
+/* Víc vzduchu v textu (články, recepty) */
+.prose { line-height: 1.8; }
+.prose h2 { margin-top: 2.5rem; margin-bottom: 0.75rem; }
+.prose h3 { margin-top: 2rem; }
+.prose p, .prose ul { margin-bottom: 1.25rem; }
+.prose li, .in-short li, .variant-list li { margin-bottom: 0.6rem; }
+main section { margin-bottom: 3.5rem; }
+.sources { margin-top: 2.5rem; }
+.rubrika, main section > h2:not(.h3), .section-head h2 { margin-bottom: 1.25rem; }
+
+/* „Chci vědět víc“ jako výrazné komiksové tlačítko */
+.more summary {
+  list-style: none; background: var(--color-primary); color: #fff; border: 3px solid var(--ink); box-shadow: 4px 4px 0 var(--ink);
+  padding: 0.6rem 1.3rem; transition: transform 0.12s, box-shadow 0.12s, background 0.12s;
+}
+.more summary::-webkit-details-marker { display: none; }
+.more summary::after { content: " ↓"; margin-left: 0.4rem; }
+.more[open] summary::after { content: " ↑"; }
+.more summary:hover { background: var(--color-primary-hover); transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink); }
+.faq .more summary { background: var(--card-med); color: var(--ink); border-width: 2px; box-shadow: 3px 3px 0 var(--ink); }
+
+/* Ručně psané písmo dodává osobitost: úvod receptu, poznámky, popisky */
+.btn-ghost, .recipe-tools .btn { background: var(--card-med); }
+.recipe-head .in-short > p:first-child, .page-intro .lead { font-family: var(--font-hand), cursive; font-size: 1.45rem; line-height: 1.35; color: #4a4036; }
+.dropcap { font-family: var(--font-body-stack); }
+
+/* Tah perem pod hlavním nadpisem stránky zůstává (byl oblíbený) */
+main h1::after {
+  display: block; content: ""; width: min(11rem, 55%); height: 0.7rem; margin-top: 0.35rem;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 12'%3E%3Cpath d='M2 8c18-6 34 3 52-1s30-6 48-2 24 3 36-1' fill='none' stroke='%23a24e33' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat left center / contain;
+}
+
+/* Menu: výrazný zelený pruh se světlým písmem, aktivní položka jako terakotový štítek */
+.masthead .header-inner {
+  background: var(--color-primary); border: 3px solid var(--ink);
+  box-shadow: 0 4px 0 var(--ink); padding: 0.35rem 0.5rem; margin-bottom: 0.25rem;
+}
+.masthead .nav-list a { color: #fdf7ea; padding: 0.45rem 0.8rem; border-radius: 999px; }
+.masthead .nav-list a:hover { background: rgba(255, 255, 255, 0.15); color: #fff; }
+.masthead .nav-list a[aria-current="page"], .masthead .nav-list a[aria-current="true"] { background: var(--color-terracotta); color: #fff; }
+.masthead .nav-toggle { background: #fdf7ea; }
+@media (max-width: 899px) { .masthead .nav-list.is-open { padding: 0.5rem; } }
+
+/* Rubrika s odkazem „Všechny … →“: linky drží celý řádek, odkaz je tlačítko uvnitř vpravo */
+.section-head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; border-top: 4px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 0.4rem 0; margin-bottom: 1.25rem; }
+.section-head h2 { border: 0 !important; margin: 0 !important; padding: 0 !important; flex: initial; }
+.section-head > a {
+  font-weight: 800; text-decoration: none; color: var(--ink); background: var(--card-med); border: 2px solid var(--ink); border-radius: 999px;
+  padding: 0.3rem 0.9rem; box-shadow: 3px 3px 0 var(--ink); white-space: nowrap; transition: transform 0.12s, box-shadow 0.12s;
+}
+.section-head > a:hover { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+
+/* Štítky „pro koho“ u článků: Fit (terakota), Normal (šalvěj), Svaly (med), Pro všechny (krém) */
+.goal { display: inline-flex; align-items: center; border: 1.5px solid var(--ink); border-radius: 999px; padding: 0.2rem 0.65rem; font-size: 0.85rem; font-weight: 800; }
+.goal-hubnout { background: var(--color-terracotta); color: #fff; }
+.goal-udrzet { background: var(--color-sage); color: #fff; }
+.goal-nabrat { background: var(--comic-yellow); color: var(--ink); }
+.goal-vse { background: var(--card-med); color: var(--ink); }
+
+/* Karty „Co tu pro tebe dělám“ jsou odkazy */
+.about-what a.card { display: block; text-decoration: none; color: inherit; transition: transform 0.12s, box-shadow 0.12s; }
+.about-what a.card:hover { transform: translate(2px, 2px); box-shadow: 3px 3px 0 var(--ink); }
+.about-what a.card h3::after { content: " →"; color: var(--color-terracotta); }
 
 /* Patička jako konec novin */
 .site-footer { background: transparent; border-top: 6px double var(--ink); }

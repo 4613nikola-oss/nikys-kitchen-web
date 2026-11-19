@@ -44,24 +44,24 @@
     "aboutLead": "Vařím zdravě, ale bez výčitek. Recepty zkouším ve vlastní kuchyni a píšu tak, jak bych radila kamarádce.",
     "aboutCta": "Víc o mně",
     "kicker": "Exkluzivně",
-    "heroBubble": "Lednička nehlídá. Já jo!",
+    "heroBubble": "Kdo říkal, že zdravé jídlo nemůže mít dort?",
     "comicTitle": "Komiks dne",
     "comicSub": "vtipné hlášky místo kázání",
     "comics": [
       {
-        "podoba": "jejda",
-        "tone": "ruzova",
-        "text": "Od zítřka jen voda a salát!"
-      },
-      {
         "podoba": "varecka",
         "tone": "med",
-        "text": "Uvaříš jednou, sníš třikrát. Já si dám šlofíka."
+        "text": "Dieta od pondělí? Tohle říkáš už od září."
+      },
+      {
+        "podoba": "jejda",
+        "tone": "ruzova",
+        "text": "Dva hrnce, tři pánve a výsledek? Jedna omeleta."
       },
       {
         "podoba": "slavi",
         "tone": "zelena",
-        "text": "Sladká tečka se počítá. Do plánu!"
+        "text": "Dezert není selhání. Je to dezert."
       }
     ]
   },
@@ -128,7 +128,13 @@
     "more": "Chci vědět víc",
     "sources": "Zdroje",
     "related": "Recepty k článku",
-    "back": "Zpět na články"
+    "back": "Zpět na články",
+    "goals": {
+      "hubnout": "Fit · zhubnout",
+      "udrzet": "Normal · udržet",
+      "nabrat": "Svaly · nabrat",
+      "vse": "Pro všechny"
+    }
   },
   "app": {
     "title": "Jídlo od A–Z",
@@ -431,8 +437,45 @@
     ]
   },
   "masthead": {
-    "issue": "Ročník I",
-    "price": "Cena: zdarma",
+    "issue": "Čerstvé vydání",
+    "price": "Zdarma a bez výčitek",
     "tagline": "Zpravodaj zdravé kuchyně bez výčitek"
+  },
+  "comics": {
+    "recipes": {
+      "podoba": "varecka",
+      "tone": "med",
+      "text": "Recept na 15 minut. Plus 10 minut hledání vařečky. Tady jsem."
+    },
+    "recipe": {
+      "podoba": "vari",
+      "tone": "zelena",
+      "text": "Recept říká „podle chuti“. Moje chuť říká „ještě sýr“."
+    },
+    "articles": {
+      "podoba": "premysli",
+      "tone": "ruzova",
+      "text": "Kratší než video s receptem, kde autor 10 minut vypráví o dovolené."
+    },
+    "article": {
+      "podoba": "radost",
+      "tone": "med",
+      "text": "Dočteno. Teď jdi něco sníst, ať to nezůstane jen u teorie."
+    },
+    "app": {
+      "podoba": "premysli",
+      "tone": "zelena",
+      "text": "Kalorie počítám já. Ty počítej do tří a jdi vařit."
+    },
+    "shop": {
+      "podoba": "kosik",
+      "tone": "med",
+      "text": "E-book se vejde do kabelky. Koláč bohužel ne."
+    },
+    "about": {
+      "podoba": "varecka",
+      "tone": "ruzova",
+      "text": "Šéfkuchařka? Ne, to je Niky. Šéf jsem tady já."
+    }
   }
 }

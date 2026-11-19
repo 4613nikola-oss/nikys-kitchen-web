@@ -5,6 +5,7 @@ import { getProducts } from "@/lib/content";
 import Tecka from "@/components/Tecka";
 import ProductCard from "@/components/ProductCard";
 import SignupForm from "@/components/SignupForm";
+import ComicPanel from "@/components/ComicPanel";
 
 export async function generateMetadata() {
   const dict = await getDictionary();
@@ -23,7 +24,7 @@ export default async function ShopPage() {
   return (
     <>
       <div className="band-grid">
-        <Tecka podoba="kosik" size={200} />
+        <ComicPanel {...dict.comics.shop} size={170} />
         <div>
           <h1>{s.title}</h1>
           <p className="lead">{s.lead}</p>
