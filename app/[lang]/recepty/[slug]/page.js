@@ -54,6 +54,8 @@ function receptProGoogle(recipe, lang, kategorie) {
     recipeInstructions: t.postup.map((s) => ({ "@type": "HowToStep", text: s.text })),
   };
   if (recipe.kcal) data.nutrition = { "@type": "NutritionInformation", calories: `${recipe.kcal} kcal` };
+  if (recipe.kcal && recipe.bilkoviny != null) data.nutrition.proteinContent = `${recipe.bilkoviny} g`;
+  if (recipe.vegetarianske) data.suitableForDiet = "https://schema.org/VegetarianDiet";
   if (recipe.obrazek) data.image = [`${SITE_URL}/images/recepty/${recipe.obrazek}`];
   return JSON.stringify(data).replace(/</g, "\\u003c");
 }
@@ -93,6 +95,12 @@ export default async function RecipePage({ params }) {
                 <dt><Icon name="kcal" size={18} /> {d.kcal}</dt>
                 <dd>{recipe.kcal ? `~${recipe.kcal} (${d.kcalApprox})` : d.kcalMissing}</dd>
               </div>
+              {recipe.bilkoviny != null && (
+                <div>
+                  <dt><Icon name="bilkoviny" size={18} /> {d.protein}</dt>
+                  <dd>~{recipe.bilkoviny} g ({d.kcalApprox})</dd>
+                </div>
+              )}
               {recipe.narocnost && (
                 <div>
                   <dt>{d.difficulty}</dt>

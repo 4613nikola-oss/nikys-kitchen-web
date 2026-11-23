@@ -117,6 +117,7 @@
       "didYouMean": "Maybe you're looking for:"
     },
     "print": "Print / save as PDF",
+    "protein": "Protein per serving",
     "difficulty": "Difficulty",
     "difficultyNames": ["", "easy", "you've got this", "weekend project"],
     "forWhom": "Who it's for",

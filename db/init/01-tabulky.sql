@@ -26,6 +26,8 @@ CREATE TABLE recepty (
   jidla       text[] NOT NULL DEFAULT '{}',     -- kdy se hodí (pro appku): snidane, obed, vecere, svacina
   narocnost   integer CHECK (narocnost BETWEEN 1 AND 3), -- 1 snadné, 2 střední, 3 náročnější (vařečky)
   cile        text[] NOT NULL DEFAULT '{}',     -- pro koho: hubnout (Fit), udrzet (Normal), nabrat (Svaly) – orientačně
+  bilkoviny   integer CHECK (bilkoviny >= 0),   -- g bílkovin na 1 porci, orientačně
+  vegetarianske boolean NOT NULL DEFAULT false, -- bez masa a ryb
   obrazek     text,                             -- soubor v public/images/recepty/
   obrazek_ai  boolean NOT NULL DEFAULT false,   -- fotka je zatím AI ilustrace
   obrazek_zdroj jsonb,                                  -- volná fotka: autor, licence, odkaz
@@ -202,7 +204,10 @@ SELECT
     ORDER BY s.zaklad
   )                            AS suroviny,
   'cs/recepty/' || r.slug || '/' AS odkaz,
-  r.poradi
+  r.poradi,
+  r.bilkoviny,
+  r.vegetarianske              AS vege,
+  ARRAY(SELECT a.alergen FROM recepty_alergeny a WHERE a.recept = r.slug ORDER BY a.alergen) AS alergeny
 FROM recepty r
 JOIN recepty_texty t ON t.recept = r.slug AND t.jazyk = 'cs'
 WHERE r.zverejneno;

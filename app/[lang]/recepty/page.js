@@ -9,16 +9,15 @@ export async function generateMetadata() {
   return { title: dict.recipes.title, description: dict.recipes.lead, alternates: alternates(await getLang(), "recepty/") };
 }
 
-// Štítky se odvozují z dat receptu, nic se nevymýšlí ručně
-const MASO = /kuř|maso|šunk|ryb|tuňák|slanin/i;
+// Štítky se odvozují z dat receptu, nic se nevymýšlí ručně (vegetariánské je údaj v databázi)
 function stitkyReceptu(r) {
   const t = [...(r.jidla || [])];
   if (r.cas <= 15) t.push("rychle");
-  if (!r.cs.suroviny.some((s) => MASO.test(s.co))) t.push("vegetarianske");
+  if (r.vegetarianske) t.push("vegetarianske");
   return t;
 }
 const TAGY = ["snidane", "obed", "svacina", "vecere", "rychle", "vegetarianske"];
-const ALERGENY = ["lepek", "mleko", "vejce", "orechy"];
+const ALERGENY = ["lepek", "mleko", "vejce", "orechy", "arasidy", "sezam", "ryby"];
 
 // Přehled receptů: hledání, filtry a postupné načítání (RecipeBrowser)
 export default async function RecipesPage() {

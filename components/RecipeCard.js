@@ -46,6 +46,9 @@ export default function RecipeCard({ recipe, lang, dict }) {
           <p className="card-meta">
             <span className="fact"><Icon name="cas" size={18} /> {recipe.cas} min</span>
             {recipe.kcal && <span className="fact"><Icon name="kcal" size={18} /> ~{recipe.kcal} kcal</span>}
+            {recipe.bilkoviny > 0 && (
+              <span className="fact" title={d.protein}><Icon name="bilkoviny" size={18} /> ~{recipe.bilkoviny} g<span className="visually-hidden"> {d.protein}</span></span>
+            )}
           </p>
           {recipe.cile?.length > 0 && (
             <p className="card-goals">

@@ -5,6 +5,8 @@ const g = (d, listek = true) => `<g fill="none" stroke="currentColor" stroke-wid
 
 export const ICONS = {
   cas: g('<circle cx="11" cy="13" r="8"/><path d="M11 8.5V13l3 2"/>'),
+  // činka = bílkoviny
+  bilkoviny: g('<path d="M2.5 9.5v5M5.5 7v10M16.5 7v10M19.5 9.5v5M5.5 12h11"/>'),
   kcal: g('<path d="M11 3c1 3.2 5 5 5 10a5 5 0 0 1-10 0c0-2.4 1.2-3.8 2.4-4.8.2 1.8 1 2.8 2.4 3 .4-3.4-1.2-5.4.2-8.2z"/>'),
   // talíř vpravo, vidlička vlevo s mezerou (dřív moc u sebe)
   porce: g('<circle cx="15" cy="14" r="6.3"/><circle cx="15" cy="14" r="2.8"/><path d="M2.5 4.5v4.5a1.6 1.6 0 0 0 3.2 0V4.5M4.1 9v11"/>'),
