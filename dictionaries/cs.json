@@ -117,6 +117,22 @@
       "didYouMean": "Možná hledáš tohle:"
     },
     "print": "Vytisknout / uložit PDF",
+    "difficulty": "Náročnost",
+    "difficultyNames": ["", "snadné", "zvládneš", "na víkend"],
+    "forWhom": "Pro koho to je",
+    "forWhomNote": "Orientačně – sedí to k cíli, který si nastavíš v appce. Porci si upravíš podle sebe.",
+    "goals": {
+      "hubnout": "Fit",
+      "udrzet": "Normal",
+      "nabrat": "Svaly"
+    },
+    "goalWhy": {
+      "hubnout": "když chceš zhubnout: lehčí jídlo, které zasytí.",
+      "udrzet": "když chceš udržet formu: vyvážené jídlo na každý den.",
+      "nabrat": "když nabíráš: dost bílkovin, porci si klidně zvětši."
+    },
+    "bubbles": ["Mňam!", "Tohle!", "Uvař mě!", "Ochutnej!", "To dáš!"],
+    "suggestTitle": "Recepty",
     "photoBy": "Foto:",
     "photoNote": "ilustrační fotka, jídlo nemusí být přesně podle receptu"
   },

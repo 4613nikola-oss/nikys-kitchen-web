@@ -93,6 +93,20 @@ export default async function RecipePage({ params }) {
                 <dt><Icon name="kcal" size={18} /> {d.kcal}</dt>
                 <dd>{recipe.kcal ? `~${recipe.kcal} (${d.kcalApprox})` : d.kcalMissing}</dd>
               </div>
+              {recipe.narocnost && (
+                <div>
+                  <dt>{d.difficulty}</dt>
+                  {/* 1–3 vařečky; slovo vedle nese význam i bez obrázku */}
+                  <dd className="difficulty">
+                    <span className="spoons" aria-hidden="true">
+                      {[1, 2, 3].map((n) => (
+                        <Icon key={n} name="babicka" size={20} className={n <= recipe.narocnost ? "spoon-on" : "spoon-off"} />
+                      ))}
+                    </span>
+                    {d.difficultyNames[recipe.narocnost]}
+                  </dd>
+                </div>
+              )}
             </dl>
             {/* Alergeny: žlutý rámeček s výstražným trojúhelníkem (nejen barva – i pro lidi, kteří barvy nerozliší) */}
             {recipe.alergeny.length ? (
@@ -110,6 +124,22 @@ export default async function RecipePage({ params }) {
               <p className="allergens"><strong>{d.allergens}:</strong> {d.noAllergens}</p>
             )}
           </section>
+
+          {/* Pro koho to je: štítky Fit / Normal / Svaly a jednou větou proč */}
+          {recipe.cile.length > 0 && (
+            <section className="for-whom" aria-labelledby="pro-koho">
+              <h2 id="pro-koho" className="h3">{d.forWhom}</h2>
+              <ul>
+                {recipe.cile.map((c) => (
+                  <li key={c}>
+                    <span className={`goal goal-${c}`}>{d.goals[c]}</span>{" "}
+                    {d.goalWhy[c]}
+                  </li>
+                ))}
+              </ul>
+              <p className="for-whom-note">{d.forWhomNote}</p>
+            </section>
+          )}
           {recipe.status === "ukazka" && <p className="note">{d.draft}</p>}
         </div>
         <div className="recipe-media">
@@ -133,7 +163,7 @@ export default async function RecipePage({ params }) {
       </header>
 
       <div className="recipe-body">
-        <section aria-labelledby="suroviny" className="card pad">
+        <section aria-labelledby="suroviny" className="card pad sticker">
           <h2 id="suroviny">{d.ingredients}</h2>
           <PortionCalculator
             ingredients={t.suroviny}
@@ -146,7 +176,7 @@ export default async function RecipePage({ params }) {
 
         <section aria-labelledby="postup">
           <h2 id="postup">{d.steps}</h2>
-          <ol className="steps">
+          <ol className="steps steps-clippings">
             {t.postup.map((s, i) => (
               <li key={i}>
                 <p>{s.text}</p>
@@ -182,7 +212,7 @@ export default async function RecipePage({ params }) {
       )}
 
       {t.tip && (
-        <aside className="tip">
+        <aside className="tip tip-highlight">
           <Tecka podoba="vari" size={90} />
           <div>
             <h2>{d.tip}</h2>

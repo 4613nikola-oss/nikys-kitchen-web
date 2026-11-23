@@ -24,6 +24,8 @@ CREATE TABLE recepty (
   porce       integer NOT NULL DEFAULT 1 CHECK (porce > 0),
   kcal        integer CHECK (kcal > 0),         -- na 1 porci, orientačně; prázdné = doplní Niky
   jidla       text[] NOT NULL DEFAULT '{}',     -- kdy se hodí (pro appku): snidane, obed, vecere, svacina
+  narocnost   integer CHECK (narocnost BETWEEN 1 AND 3), -- 1 snadné, 2 střední, 3 náročnější (vařečky)
+  cile        text[] NOT NULL DEFAULT '{}',     -- pro koho: hubnout (Fit), udrzet (Normal), nabrat (Svaly) – orientačně
   obrazek     text,                             -- soubor v public/images/recepty/
   obrazek_ai  boolean NOT NULL DEFAULT false,   -- fotka je zatím AI ilustrace
   obrazek_zdroj jsonb,                                  -- volná fotka: autor, licence, odkaz
@@ -32,7 +34,8 @@ CREATE TABLE recepty (
   zverejneno  boolean NOT NULL DEFAULT true,
   vytvoreno   timestamptz NOT NULL DEFAULT now(),
   upraveno    timestamptz NOT NULL DEFAULT now(),
-  CHECK (jidla <@ ARRAY['snidane', 'obed', 'vecere', 'svacina'])
+  CHECK (jidla <@ ARRAY['snidane', 'obed', 'vecere', 'svacina']),
+  CHECK (cile <@ ARRAY['hubnout', 'udrzet', 'nabrat'])
 );
 CREATE TRIGGER recepty_upraveno BEFORE UPDATE ON recepty
   FOR EACH ROW EXECUTE FUNCTION nastav_upraveno();

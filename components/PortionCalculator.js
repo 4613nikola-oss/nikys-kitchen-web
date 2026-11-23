@@ -28,9 +28,9 @@ export default function PortionCalculator({ ingredients, basePortions, kcal, lab
     <div className="portions">
       <div className="portions-control" role="group" aria-label={labels.portions}>
         <span>{labels.portions}:</span>
-        <button type="button" onClick={() => setPortions(Math.max(1, portions - 1))} aria-label={labels.less}>−</button>
+        <button type="button" className="portion-btn portion-minus" onClick={() => setPortions(Math.max(1, portions - 1))} aria-label={labels.less} disabled={portions <= 1}>−</button>
         <output aria-live="polite">{portions}</output>
-        <button type="button" onClick={() => setPortions(Math.min(20, portions + 1))} aria-label={labels.more}>+</button>
+        <button type="button" className="portion-btn portion-plus" onClick={() => setPortions(Math.min(20, portions + 1))} aria-label={labels.more} disabled={portions >= 20}>+</button>
       </div>
       {kcal && (
         <p className="portions-kcal" aria-live="polite">

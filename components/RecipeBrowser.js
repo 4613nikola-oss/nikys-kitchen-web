@@ -1,7 +1,9 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
+import Link from "next/link";
 import RecipeCard from "./RecipeCard";
+import Icon from "./Icon";
 import { matchScore, suggestions } from "@/lib/search";
 
 const NA_STRANKU = 9;
@@ -38,14 +40,40 @@ export default function RecipeBrowser({ recipes, lang, dict, tagKeys, allergenKe
   const aktivni = query || kategorie.length || stitky.length || bez.length;
   const tipy = !vysledky.length && query ? suggestions(query, recipes, textReceptu) : [];
 
-  const chip = (aktivniSeznam, nastav, hodnota, popisek) => (
+  // Našeptávač: při psaní ukáže až 5 receptů (nejlepší shoda), šipkami se dá projít
+  const [naseptavac, setNaseptavac] = useState(false);
+  const seznamRef = useRef(null);
+  const navrhy = query.trim().length >= 2
+    ? recipes
+        .map((r) => ({ r, score: matchScore(query, textReceptu(r)) }))
+        .filter((x) => x.score !== Infinity)
+        .sort((a, b) => a.score - b.score)
+        .slice(0, 5)
+        .map((x) => x.r)
+    : [];
+  const ukazNavrhy = naseptavac && navrhy.length > 0;
+  const posunFokus = (e, smer) => {
+    const odkazy = [...(seznamRef.current?.querySelectorAll("a") || [])];
+    const i = odkazy.indexOf(document.activeElement);
+    const dalsi = odkazy[i + smer];
+    if (dalsi) { e.preventDefault(); dalsi.focus(); }
+    else if (smer < 0 && i === 0) { e.preventDefault(); document.getElementById("recipe-search")?.focus(); }
+  };
+  const klavesy = (e) => {
+    if (e.key === "Escape") { setNaseptavac(false); document.getElementById("recipe-search")?.focus(); }
+    if (e.key === "ArrowDown") posunFokus(e, 1);
+    if (e.key === "ArrowUp") posunFokus(e, -1);
+  };
+
+  const chip = (aktivniSeznam, nastav, hodnota, popisek, ikona) => (
     <button
       type="button"
       key={hodnota}
-      className={`chip chip-filter${aktivniSeznam.includes(hodnota) ? " is-on" : ""}`}
+      className={`chip chip-filter${ikona ? " chip-filter-cat cat-" + hodnota : ""}${aktivniSeznam.includes(hodnota) ? " is-on" : ""}`}
       aria-pressed={aktivniSeznam.includes(hodnota)}
       onClick={() => prepni(aktivniSeznam, nastav, hodnota)}
     >
+      {ikona && <Icon name={ikona} size={26} />}
       {popisek}
     </button>
   );
@@ -53,18 +81,45 @@ export default function RecipeBrowser({ recipes, lang, dict, tagKeys, allergenKe
   return (
     <div className="recipe-browser">
       <div className="filters card pad">
-        <label className="search-field">
-          <span className="visually-hidden">{f.search}</span>
-          <input
-            type="search"
-            value={query}
-            placeholder={f.searchPlaceholder}
-            onChange={(e) => { setQuery(e.target.value); setPocet(NA_STRANKU); }}
-          />
-        </label>
+        {/* obal zavře našeptávač, až fokus odejde mimo políčko i seznam */}
+        <div
+          className="search-wrap"
+          onKeyDown={klavesy}
+          onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget)) setNaseptavac(false); }}
+        >
+          <label className="search-field">
+            <span className="visually-hidden">{f.search}</span>
+            <Icon name="hledat" size={24} className="search-icon" />
+            <input
+              id="recipe-search"
+              type="search"
+              value={query}
+              placeholder={f.searchPlaceholder}
+              autoComplete="off"
+              aria-autocomplete="list"
+              aria-controls="recipe-suggest"
+              aria-expanded={ukazNavrhy}
+              onFocus={() => setNaseptavac(true)}
+              onChange={(e) => { setQuery(e.target.value); setNaseptavac(true); setPocet(NA_STRANKU); }}
+            />
+          </label>
+          {ukazNavrhy && (
+            <ul className="suggest" id="recipe-suggest" ref={seznamRef} aria-label={dict.recipes.suggestTitle}>
+              {navrhy.map((r) => (
+                <li key={r.slug}>
+                  <Link href={`/${lang}/recepty/${r.slug}/`} className={`suggest-item cat-${r.kategorie}`}>
+                    <Icon name={r.kategorie} size={22} />
+                    <span className="suggest-name">{r[lang].nazev}</span>
+                    <span className="suggest-meta">{r.cas} min{r.kcal ? ` · ~${r.kcal} kcal` : ""}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
 
-        <div className="filter-row" role="group" aria-label={dict.recipes.filterLabel}>
-          {["slane", "sladke", "napoje"].map((k) => chip(kategorie, setKategorie, k, dict.categories[k]))}
+        <div className="filter-row filter-row-cats" role="group" aria-label={dict.recipes.filterLabel}>
+          {["slane", "sladke", "napoje"].map((k) => chip(kategorie, setKategorie, k, dict.categories[k], k))}
         </div>
         <div className="filter-row" role="group" aria-label={f.tags}>
           {tagKeys.map((t) => chip(stitky, setStitky, t, `#${f.tagNames[t]}`))}

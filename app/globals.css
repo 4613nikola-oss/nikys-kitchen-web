@@ -747,6 +747,104 @@ main section { margin-bottom: 4.5rem; }
   .band { padding: 3rem; }
 }
 
+/* ===== Recepty a kartičky (23. 11.) ===== */
+
+/* Kartička: štítky Fit/Normal/Svaly, alergeny, komiksový efekt při najetí */
+.card-goals { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.35rem; margin: 0.6rem 0 0; }
+.card-goals .goal { font-size: 0.78rem; padding: 0.1rem 0.55rem; }
+.card-allergens { display: flex; justify-content: center; align-items: center; gap: 0.3rem; margin: 0.5rem auto 0; font-size: 0.85rem; font-weight: 700; color: #6b4a00; }
+.recipe-card .card-media { position: relative; }
+.card-bubble {
+  position: absolute; top: 0.4rem; right: 0.4rem; z-index: 2; background: #fff; border: 3px solid var(--ink); border-radius: 50% / 45%;
+  padding: 0.35rem 0.8rem; font-family: var(--font-comic), Impact, sans-serif; font-size: 1.15rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--ink);
+  opacity: 0; transform: scale(0.4) rotate(-12deg); transition: opacity 0.18s, transform 0.25s cubic-bezier(0.3, 1.6, 0.6, 1); pointer-events: none;
+}
+.card-bubble::after { content: ""; position: absolute; bottom: -0.55rem; left: 25%; width: 0.9rem; height: 0.9rem; background: #fff; border-right: 3px solid var(--ink); border-bottom: 3px solid var(--ink); transform: rotate(45deg); }
+.recipe-card { transition: transform 0.15s; }
+.recipe-card:hover, .recipe-card:focus-within { transform: translate(-2px, -4px) rotate(-0.6deg); }
+.recipe-card:hover .card-bubble, .recipe-card:focus-within .card-bubble { opacity: 1; transform: scale(1) rotate(-6deg); }
+.recipe-card:hover h3, .recipe-card:focus-within h3 { color: var(--color-terracotta); }
+
+/* Filtry kategorií jako velké ikonky */
+.filter-row-cats { gap: 0.75rem; }
+.chip-filter-cat { display: inline-flex; flex-direction: column; align-items: center; gap: 0.2rem; min-width: 6.5rem; padding: 0.6rem 1rem; border: 2px solid var(--ink); border-radius: var(--radius); box-shadow: 3px 3px 0 var(--ink); background: var(--card-med); color: var(--ink); transition: transform 0.12s, box-shadow 0.12s; }
+.chip-filter-cat .icon { color: var(--ink); }
+.chip-filter-cat:hover { transform: translate(1px, 1px); box-shadow: 2px 2px 0 var(--ink); border-color: var(--ink); }
+.chip-filter-cat.is-on { background: var(--color-primary); color: #fff; border-color: var(--ink); }
+.chip-filter-cat.is-on .icon { color: #fff; }
+
+/* Vyhledávání: lupa, roztažení při kliknutí, našeptávač */
+.search-wrap { position: relative; }
+.search-field { position: relative; display: block; }
+.search-field .search-icon { position: absolute; left: 0.9rem; top: 50%; transform: translateY(-50%); color: var(--ink); pointer-events: none; transition: transform 0.3s; }
+.search-field input { padding-left: 3rem; border: 2px solid var(--ink); transition: box-shadow 0.2s, transform 0.2s; }
+.search-field input:focus { border-color: var(--ink); box-shadow: 4px 4px 0 var(--ink); transform: scale(1.01); }
+.search-field:focus-within .search-icon { animation: lupa 0.6s ease-in-out; }
+@keyframes lupa { 0%, 100% { transform: translateY(-50%) rotate(0); } 30% { transform: translateY(-50%) rotate(-18deg); } 60% { transform: translateY(-50%) rotate(12deg); } }
+.suggest {
+  position: absolute; left: 0; right: 0; top: calc(100% + 0.4rem); z-index: 20; list-style: none; margin: 0; padding: 0.35rem;
+  background: #fffdf6; border: 2px solid var(--ink); border-radius: var(--radius); box-shadow: 5px 5px 0 var(--ink); animation: vyjet 0.18s ease-out;
+}
+@keyframes vyjet { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+.suggest-item { display: flex; align-items: center; gap: 0.6rem; padding: 0.55rem 0.7rem; min-height: 44px; border-radius: 0.3rem; text-decoration: none; color: var(--ink); }
+.suggest-item:hover, .suggest-item:focus-visible { background: var(--card-med); outline: none; }
+.suggest-item .icon { color: var(--ink); }
+.suggest-name { font-weight: 700; flex: 1; }
+.suggest-meta { font-size: 0.85rem; color: var(--color-muted); white-space: nowrap; }
+
+/* Detail receptu: náročnost (vařečky) */
+.difficulty { display: flex; align-items: center; gap: 0.4rem; }
+.spoons { display: inline-flex; }
+.spoon-on { color: var(--color-terracotta); }
+.spoon-off { color: #b8ad9c; opacity: 0.6; }
+
+/* Pro koho to je */
+.for-whom { margin: 1.25rem 0 0; padding: 1rem 1.25rem; background: #fffdf6; border: 2px dashed var(--ink); border-radius: var(--radius); }
+.for-whom h2 { margin: 0 0 0.5rem; }
+.for-whom ul { list-style: none; padding: 0; margin: 0 0 0.5rem; }
+.for-whom li { margin-bottom: 0.45rem; }
+.for-whom-note { font-size: 0.9rem; color: var(--color-muted); margin: 0; }
+
+/* Suroviny jako lepicí štítek s páskou */
+.sticker { position: relative; background: #fffdf6 !important; transform: rotate(-0.8deg); overflow: visible; }
+.sticker::before {
+  content: ""; position: absolute; top: -0.8rem; left: 50%; width: 6.5rem; height: 1.6rem; margin-left: -3.25rem; transform: rotate(-3deg);
+  background: rgba(233, 185, 73, 0.55); border-left: 2px dashed rgba(31, 29, 26, 0.25); border-right: 2px dashed rgba(31, 29, 26, 0.25);
+}
+
+/* Postup jako novinové výstřižky */
+.steps-clippings { list-style: none; padding: 0; counter-reset: krok; }
+.steps-clippings li {
+  counter-increment: krok; position: relative; background: #fffdf6; border: 2px dashed rgba(31, 29, 26, 0.45);
+  padding: 1rem 1rem 0.75rem 3.6rem; margin-bottom: 1.1rem; box-shadow: 3px 3px 0 rgba(31, 29, 26, 0.15); transform: rotate(0.4deg);
+}
+.steps-clippings li:nth-child(even) { transform: rotate(-0.5deg); }
+.steps-clippings li::before {
+  content: counter(krok); position: absolute; left: 0.8rem; top: 0.85rem; width: 2rem; height: 2rem; border-radius: 50%; display: grid; place-items: center;
+  background: var(--color-terracotta); color: #fff; font-weight: 900; border: 2px solid var(--ink);
+}
+.steps-clippings li p { margin-bottom: 0.25rem; }
+
+/* + a − u porcí: velké komiksové tlačítko, + terakota, − šalvěj */
+.portions-control .portion-btn {
+  width: 48px; height: 48px; font-size: 1.6rem; font-weight: 900; line-height: 1; border: 3px solid var(--ink); box-shadow: 3px 3px 0 var(--ink);
+  color: #fff; transition: transform 0.1s, box-shadow 0.1s;
+}
+.portions-control .portion-plus { background: var(--color-terracotta); }
+.portions-control .portion-minus { background: var(--color-primary); }
+.portions-control .portion-btn:hover:not(:disabled) { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+.portions-control .portion-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.portions-control output { font-size: 1.6rem; min-width: 2.5ch; }
+
+/* Tip od Niky zvýrazněný */
+.tip-highlight { border: 3px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); }
+.tip-highlight h2 { color: var(--color-terracotta); text-transform: uppercase; letter-spacing: 0.04em; }
+
+@media (prefers-reduced-motion: reduce) {
+  .recipe-card:hover, .recipe-card:focus-within { transform: none; }
+  .card-bubble, .suggest, .search-field .search-icon, .search-field input { transition: none; animation: none; }
+}
+
 @media print {
   body { background: #fff; }
   .masthead-row, .masthead-tagline, .site-header .header-inner { display: none; }
