@@ -2,7 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getDictionary, getLang } from "@/lib/i18n";
-import { getRecipes, getRecipe, articlesFor, getAllergenNames } from "@/lib/content";
+import { getRecipes, getRecipe, getArticles, articlesFor, getAllergenNames } from "@/lib/content";
+import RecipeCard from "@/components/RecipeCard";
 import { asset } from "@/lib/asset";
 import PortionCalculator from "@/components/PortionCalculator";
 import Icon from "@/components/Icon";
@@ -79,7 +80,24 @@ export default async function RecipePage({ params }) {
   const lang = await getLang();
   const t = recipe[lang];
   const d = dict.recipes;
-  const related = await articlesFor(recipe);
+  // články: nejdřív napojené na recept, pak doplnit do 3 podle toho, pro koho recept je
+  const prime = await articlesFor(recipe);
+  const ostatniClanky = (await getArticles())
+    .filter((a) => !prime.some((p) => p.slug === a.slug))
+    .map((a) => ({ a, skore: a.cile.includes("vse") ? 1 : a.cile.filter((c) => recipe.cile.includes(c)).length * 2 }))
+    .sort((x, y) => y.skore - x.skore)
+    .map((x) => x.a);
+  const related = [...prime, ...ostatniClanky].slice(0, 3);
+  // podobné recepty: stejná kategorie, společný cíl, přednostně s fotkou
+  const podobne = (await getRecipes())
+    .filter((r) => r.slug !== recipe.slug)
+    .map((r) => ({
+      r,
+      skore: (r.kategorie === recipe.kategorie ? 3 : 0) + r.cile.filter((c) => recipe.cile.includes(c)).length + (r.obrazek ? 1 : 0),
+    }))
+    .sort((x, y) => y.skore - x.skore)
+    .slice(0, 3)
+    .map((x) => x.r);
   const allergenNames = await getAllergenNames();
 
   return (
@@ -268,10 +286,25 @@ export default async function RecipePage({ params }) {
         </div>
       </section>
 
+      {podobne.length > 0 && (
+        <section aria-labelledby="podobne-recepty">
+          <div className="section-head">
+            <h2 id="podobne-recepty">{d.similar}</h2>
+            <Link href={`/${lang}/recepty/`}>{d.allRecipes} →</Link>
+          </div>
+          <div className="grid">
+            {podobne.map((r) => <RecipeCard key={r.slug} recipe={r} lang={lang} dict={dict} />)}
+          </div>
+        </section>
+      )}
+
       {related.length > 0 && (
         <section aria-labelledby="clanky-k-receptu">
-          <h2 id="clanky-k-receptu">{d.related}</h2>
-          <div className="grid">
+          <div className="section-head">
+            <h2 id="clanky-k-receptu">{d.related}</h2>
+            <Link href={`/${lang}/clanky/`}>{d.allArticles} →</Link>
+          </div>
+          <div className="grid grid-articles">
             {related.map((a) => (
               <ArticleCard key={a.slug} article={a} lang={lang} dict={dict} />
             ))}

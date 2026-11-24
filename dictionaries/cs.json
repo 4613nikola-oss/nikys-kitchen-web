@@ -131,6 +131,9 @@
     },
     "print": "Vytisknout / uložit PDF",
     "protein": "Bílkoviny na porci",
+    "similar": "Mohlo by ti chutnat",
+    "allRecipes": "Všechny recepty",
+    "allArticles": "Všechny články",
     "outro": {
       "title": "Kolik z toho sníst?",
       "lead": "Appka Jídlo od A–Z spočítá, kolik energie potřebuješ, a řekne ti, kolik porcí tohohle receptu sníst – podle toho, jestli chceš zhubnout, udržet formu, nebo nabrat.",

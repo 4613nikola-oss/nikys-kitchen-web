@@ -131,6 +131,9 @@
     },
     "print": "Print / save as PDF",
     "protein": "Protein per serving",
+    "similar": "You might also like",
+    "allRecipes": "All recipes",
+    "allArticles": "All articles",
     "outro": {
       "title": "How much should you eat?",
       "lead": "The Jídlo od A–Z app works out how much energy you need and tells you how many servings of this recipe to eat – depending on whether you want to lose weight, stay in shape or bulk up.",
