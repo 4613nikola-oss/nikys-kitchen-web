@@ -751,7 +751,9 @@ main h1::after, main h2::after { display: none !important; }
 .chip.chip-cat, .chip.chip-cat .icon { color: #fff; }
 /* kontrast (WCAG ≥ 4,5 : 1): hnědá u Sladkých 4,4 → 5,5; terakota na růžové kartě 4,4 → 5,5 */
 .recipe-card.cat-sladke { --cat: #7a6644; }
-.about-teaser a, .grandma-empty a:not(.btn), .chip-grandma { color: #8e4129; }
+.about-teaser a:not(.btn), .grandma-empty a:not(.btn), .chip-grandma { color: #8e4129; }
+/* Tečka v polaroidu se nesmí ořezat (fotky v polaroidu jsou ořezané na 4:3, Tečka ne) */
+.polaroid img.tecka { aspect-ratio: auto; object-fit: contain; height: auto; }
 
 /* Víc vzduchu mezi sekcemi */
 main section { margin-bottom: 4.5rem; }
