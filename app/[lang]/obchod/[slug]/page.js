@@ -11,6 +11,7 @@ import SignupForm from "@/components/SignupForm";
 import BookPreview from "@/components/BookPreview";
 import { typeLabel } from "@/components/ProductCard";
 import RecipeCard from "@/components/RecipeCard";
+import Icon from "@/components/Icon";
 
 export const dynamicParams = false;
 export async function generateStaticParams() {
@@ -49,8 +50,8 @@ export default async function ProductPage({ params }) {
           <p className="lead">{t.popis}</p>
           {/* Pro koho a formát krátce, jako dva řádky s ikonkou */}
           <ul className="product-facts">
-            {t.proKoho && <li><span aria-hidden="true">👥</span> <span><strong>{s.forWho}:</strong> {t.proKoho}</span></li>}
-            {t.format && <li><span aria-hidden="true">📄</span> <span><strong>{s.format}:</strong> {t.format}</span></li>}
+            {t.proKoho && <li><Icon name="lide" size={22} /> <span><strong>{s.forWho}:</strong> {t.proKoho}</span></li>}
+            {t.format && <li><Icon name="format" size={22} /> <span><strong>{s.format}:</strong> {t.format}</span></li>}
           </ul>
           {/* cena a tlačítko v jednom boxu; formulář je dole až po ukázce */}
           <div className="buy-box">
@@ -64,7 +65,7 @@ export default async function ProductPage({ params }) {
             <a href="#kniha" className="cover-link" aria-label={`${s.book.peek}: ${t.nazev}`}>
               <ProductCover product={product} lang={lang} typeLabel={typeLabel(product, s)} large />
             </a>
-            <a href="#kniha" className="btn btn-ghost">👀 {s.book.peek}</a>
+            <a href="#kniha" className="btn btn-ghost btn-icon"><Icon name="nahled" size={22} /> {s.book.peek}</a>
           </div>
         ) : (
           <ProductCover product={product} lang={lang} typeLabel={typeLabel(product, s)} large />

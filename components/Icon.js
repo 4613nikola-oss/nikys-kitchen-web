@@ -5,6 +5,14 @@ const g = (d, listek = true) => `<g fill="none" stroke="currentColor" stroke-wid
 
 export const ICONS = {
   cas: g('<circle cx="11" cy="13" r="8"/><path d="M11 8.5V13l3 2"/>'),
+  // visačka = sleva
+  sleva: g('<path d="M3 12.5V4h8.5l9 9-8.5 8.5z"/><circle cx="7.5" cy="8.5" r="1.4"/>', false),
+  // lupa s očkem = nahlédnout
+  nahled: g('<circle cx="10" cy="11" r="6.5"/><path d="M15 16l5.5 5.5"/><path d="M6.5 11c1.2-2 5.8-2 7 0-1.2 2-5.8 2-7 0z"/>'),
+  // stránka = formát
+  format: g('<path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 15.5h6"/>', false),
+  // lidé = pro koho
+  lide: g('<circle cx="8.5" cy="9" r="3"/><circle cx="16" cy="10" r="2.5"/><path d="M3 20c.8-3.6 3-5.5 5.5-5.5S13.2 16.4 14 20M13.5 16c.8-1 1.8-1.5 2.9-1.5 2 0 3.6 1.6 4.1 5"/>', false),
   // činka = bílkoviny
   bilkoviny: g('<path d="M2.5 9.5v5M5.5 7v10M16.5 7v10M19.5 9.5v5M5.5 12h11"/>'),
   kcal: g('<path d="M11 3c1 3.2 5 5 5 10a5 5 0 0 1-10 0c0-2.4 1.2-3.8 2.4-4.8.2 1.8 1 2.8 2.4 3 .4-3.4-1.2-5.4.2-8.2z"/>'),

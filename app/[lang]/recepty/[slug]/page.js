@@ -85,7 +85,7 @@ export default async function RecipePage({ params }) {
       <header className="recipe-head">
         <div>
           {recipe.puvod !== "niky" && (
-            <Link className="chip chip-grandma" href={`/${lang}/od-babicky/`}>👵 {dict.grandma.badge[recipe.puvod]}</Link>
+            <Link className="chip chip-grandma" href={`/${lang}/od-babicky/`}><Icon name="babicka" size={16} /> {dict.grandma.badge[recipe.puvod]}</Link>
           )}
           <h1>{t.nazev}</h1>
           {/* V kostce: úvod a hlavní údaje na první pohled */}

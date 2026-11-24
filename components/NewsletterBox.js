@@ -1,6 +1,10 @@
 import Link from "next/link";
 import Tecka from "./Tecka";
+import Icon from "./Icon";
 import SignupForm from "./SignupForm";
+
+// ikonky k výhodám (stejné pořadí jako texty ve slovníku)
+const IKONY = ["stahnout", "sleva", "newsletter", "zvonek"];
 
 // Box s newsletterem a dárkem – stejný na úvodu, v obchodě i na konci článků.
 // „zdarma“ je zeleně a tučně, co dostaneš je v odrážkách.
@@ -15,7 +19,7 @@ export default function NewsletterBox({ dict, lang, id = "newsletter" }) {
           <h2 id={`${id}-h`}>{n.title}</h2>
           <p>{pred}<strong className="free">{n.free}</strong>{po}</p>
           <ul className="newsletter-perks">
-            {n.perks.map((p) => <li key={p}>{p}</li>)}
+            {n.perks.map((p, i) => <li key={p}><Icon name={IKONY[i] || "oblibene"} size={24} /> <span>{p}</span></li>)}
           </ul>
           <SignupForm typ="newsletter" lang={lang} f={dict.shop.form} />
           <p className="newsletter-more"><Link href={`/${lang}/obchod/startovaci-knizka/`}>{dict.shop.newsletterLink}</Link></p>

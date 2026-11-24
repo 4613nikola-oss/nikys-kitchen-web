@@ -113,6 +113,14 @@
         "rychle": "under15min",
         "vegetarianske": "vegetarian"
       },
+      "tagLabels": {
+        "snidane": "Breakfast",
+        "obed": "Lunch",
+        "svacina": "Snack",
+        "vecere": "Dinner",
+        "rychle": "Under 15 min",
+        "vegetarianske": "Veggie"
+      },
       "without": "Without",
       "results": "Recipes found: {n}",
       "clear": "Clear filters",
@@ -147,10 +155,10 @@
     "lead": "Join the newsletter – it's {free} and you can unsubscribe with one click.",
     "free": "free",
     "perks": [
-      "📗 Starter booklet to download right away: 7 recipes in 15 minutes",
-      "🏷️ 10% off your first order in the shop",
-      "✉️ One recipe and tip every 14 days – no spam",
-      "🙌 Be the first to see new recipes and app features"
+      "Starter booklet to download right away: 7 recipes in 15 minutes",
+      "10% off your first order in the shop",
+      "One recipe and tip every 14 days – no spam",
+      "Be the first to see new recipes and app features"
     ]
   },
   "grandma": {
@@ -527,7 +535,7 @@
     "recipes": {
       "podoba": "varecka",
       "tone": "med",
-      "text": "A 15-minute recipe. Plus 10 minutes looking for the spoon. Here I am."
+      "text": "Ready in 15 minutes. Digging the spoon out of the drawer doesn't count."
     },
     "recipe": {
       "podoba": "vari",

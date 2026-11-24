@@ -924,6 +924,19 @@ main section { margin-bottom: 4.5rem; }
 .book-recipe-head { display: flex; align-items: center; gap: 1rem; }
 .book-recipe-head .book-h { margin: 0; }
 
+/* Komiks: ocásek bubliny nesmí zasahovat do postavičky (byla „useknutá“) */
+.comic-hero { margin-top: 1.4rem; }
+
+/* Ikonky místo emoji */
+.newsletter-perks li { display: flex; align-items: center; gap: 0.55rem; }
+.newsletter-perks .icon { flex: none; color: var(--color-primary); }
+.product-facts .icon { flex: none; align-self: center; }
+.btn-icon { gap: 0.45rem; }
+.grandma-link { display: inline-flex; align-items: center; gap: 0.35rem; }
+.chip-grandma { align-items: center; gap: 0.3rem; }
+/* velká tlačítka filtrů: o něco užší, ať se jich vejde víc */
+.chip-filter-cat { min-width: 5.6rem; }
+
 /* Obálka jde rozkliknout + tlačítko Nahlédnout dovnitř */
 .cover-peek { display: grid; justify-items: center; gap: 1rem; }
 .cover-link { display: block; text-decoration: none; transition: transform 0.2s; border-radius: var(--radius); }

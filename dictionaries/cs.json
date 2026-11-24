@@ -113,6 +113,14 @@
         "rychle": "do15minut",
         "vegetarianske": "vegetariánské"
       },
+      "tagLabels": {
+        "snidane": "Snídaně",
+        "obed": "Oběd",
+        "svacina": "Svačina",
+        "vecere": "Večeře",
+        "rychle": "Do 15 min",
+        "vegetarianske": "Vege"
+      },
       "without": "Bez",
       "results": "Nalezeno receptů: {n}",
       "clear": "Vymazat filtry",
@@ -147,10 +155,10 @@
     "lead": "Přihlas se k newsletteru – je {free} a odhlásíš se jedním kliknutím.",
     "free": "zdarma",
     "perks": [
-      "📗 Startovací knížka hned ke stažení: 7 receptů do 15 minut",
-      "🏷️ 10% sleva na první nákup v obchodě",
-      "✉️ Jednou za 14 dní recept a tip – žádný spam",
-      "🙌 Jako první uvidíš nové recepty a appku"
+      "Startovací knížka hned ke stažení: 7 receptů do 15 minut",
+      "10% sleva na první nákup v obchodě",
+      "Jednou za 14 dní recept a tip – žádný spam",
+      "Jako první uvidíš nové recepty a appku"
     ]
   },
   "grandma": {
@@ -527,7 +535,7 @@
     "recipes": {
       "podoba": "varecka",
       "tone": "med",
-      "text": "Recept na 15 minut. Plus 10 minut hledání vařečky. Tady jsem."
+      "text": "Recept je hotový za 15 minut. Hledání vařečky v šuplíku se nepočítá."
     },
     "recipe": {
       "podoba": "vari",

@@ -7,6 +7,8 @@ import Icon from "./Icon";
 import { matchScore, suggestions } from "@/lib/search";
 
 const NA_STRANKU = 9;
+// ikonky k filtrům (kdy se to jí, rychlé, vege)
+const TAG_IKONY = { snidane: "snidane", obed: "porce", svacina: "svacina", vecere: "vecere", rychle: "cas", vegetarianske: "vege" };
 
 // Přehled receptů s hledáním, štítky (víc najednou), „bez alergenu“ a postupným načítáním
 export default function RecipeBrowser({ recipes, lang, dict, tagKeys, allergenKeys, allergenNames }) {
@@ -118,11 +120,12 @@ export default function RecipeBrowser({ recipes, lang, dict, tagKeys, allergenKe
           )}
         </div>
 
+        {/* velká tlačítka s ikonkou: kategorie, pak kdy se to jí a „do 15 min“ / „vege“ */}
         <div className="filter-row filter-row-cats" role="group" aria-label={dict.recipes.filterLabel}>
           {["slane", "sladke", "napoje"].map((k) => chip(kategorie, setKategorie, k, dict.categories[k], k))}
         </div>
-        <div className="filter-row" role="group" aria-label={f.tags}>
-          {tagKeys.map((t) => chip(stitky, setStitky, t, `#${f.tagNames[t]}`))}
+        <div className="filter-row filter-row-cats" role="group" aria-label={f.tags}>
+          {tagKeys.map((t) => chip(stitky, setStitky, t, f.tagLabels[t], TAG_IKONY[t]))}
         </div>
         <div className="filter-row" role="group" aria-label={f.without}>
           <span className="filter-label">{f.without}:</span>
