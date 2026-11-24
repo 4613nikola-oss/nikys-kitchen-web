@@ -847,6 +847,11 @@ main section { margin-bottom: 4.5rem; }
 .btn .icon { color: currentColor; }
 .btn .icon path[fill="#5e7769"] { fill: currentColor; opacity: 0.6; }
 
+/* Tlačítka u receptu v jedné řadě: nákup do appky + tisk */
+.recipe-actions-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin-top: 1.25rem; }
+.recipe-actions-row .app-bridge { margin: 0; }
+.recipe-actions-row .app-bridge-msg { order: 10; }
+
 /* Propojení receptu s appkou */
 .app-bridge { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin: 1.25rem 0 0; }
 .app-bridge-status { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; font-weight: 700; color: var(--color-primary); }

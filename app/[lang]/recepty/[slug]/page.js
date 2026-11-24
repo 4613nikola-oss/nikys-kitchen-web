@@ -120,7 +120,6 @@ export default async function RecipePage({ params }) {
         <p className="breadcrumb">
           <Link href={`/${lang}/recepty/`}>← {d.back}</Link>
         </p>
-        <PrintButton label={d.print} />
       </div>
 
       <header className="recipe-head">
@@ -180,7 +179,10 @@ export default async function RecipePage({ params }) {
           </section>
 
           {/* propojení s appkou: přidat suroviny do nákupu, zpět do appky */}
-          <AppBridge items={recipe.cs?.nakup || []} labels={d.bridge} />
+          <div className="recipe-actions-row">
+            <AppBridge items={recipe.cs?.nakup || []} labels={d.bridge} />
+            <PrintButton label={d.print} />
+          </div>
 
           {/* Pro koho to je: štítky Fit / Normal / Svaly a jednou větou proč */}
           {recipe.cile.length > 0 && (
