@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict UJQQEG94zF6KxxnWLgWrlakQcR3a1PcFPt78Vm92NN7jRAWz7sqTNbcIN5yZtAg
+\restrict wTZfz0rruKWAqm5haF6sh9wOuh8jBZfIag0OFvRUJpYotcK53SW361hWceVeLkd
 
 -- Dumped from database version 17.11
 -- Dumped by pg_dump version 17.11
@@ -156,6 +156,9 @@ INSERT INTO public.recepty (slug, kategorie, stav, cas_min, porce, kcal, jidla, 
 INSERT INTO public.recepty (slug, kategorie, stav, cas_min, porce, kcal, jidla, obrazek, obrazek_ai, tecka, poradi, zverejneno, vytvoreno, upraveno, obrazek_zdroj, narocnost, cile, bilkoviny, vegetarianske) VALUES ('chia-puding-s-malinami', 'sladke', 'ukazka', 5, 2, 245, '{snidane,svacina}', NULL, false, 'pohar', 24, true, '2026-11-23 01:27:03.684556+00', '2026-11-23 01:27:03.684556+00', NULL, 1, '{hubnout,udrzet}', 11, true);
 INSERT INTO public.recepty (slug, kategorie, stav, cas_min, porce, kcal, jidla, obrazek, obrazek_ai, tecka, poradi, zverejneno, vytvoreno, upraveno, obrazek_zdroj, narocnost, cile, bilkoviny, vegetarianske) VALUES ('cizrnove-kari', 'slane', 'ukazka', 30, 3, 615, '{obed,vecere}', NULL, false, 'talir', 25, true, '2026-11-23 01:27:03.684556+00', '2026-11-23 01:27:03.684556+00', NULL, 2, '{udrzet,nabrat}', 19, true);
 INSERT INTO public.recepty (slug, kategorie, stav, cas_min, porce, kcal, jidla, obrazek, obrazek_ai, tecka, poradi, zverejneno, vytvoreno, upraveno, obrazek_zdroj, narocnost, cile, bilkoviny, vegetarianske) VALUES ('bananovy-shake-s-tvarohem', 'napoje', 'ukazka', 5, 1, 430, '{snidane,svacina}', NULL, false, 'sklenice', 26, true, '2026-11-23 01:27:03.684556+00', '2026-11-23 01:27:03.684556+00', NULL, 1, '{nabrat}', 25, true);
+INSERT INTO public.recepty (slug, kategorie, stav, cas_min, porce, kcal, jidla, obrazek, obrazek_ai, tecka, poradi, zverejneno, vytvoreno, upraveno, obrazek_zdroj, narocnost, cile, bilkoviny, vegetarianske) VALUES ('pohankova-kase-s-jablkem', 'sladke', 'ukazka', 15, 1, 360, '{snidane}', NULL, false, 'pohar', 27, true, '2026-11-24 09:25:40.701157+00', '2026-11-24 09:25:40.701157+00', NULL, 1, '{hubnout,udrzet}', 11, true);
+INSERT INTO public.recepty (slug, kategorie, stav, cas_min, porce, kcal, jidla, obrazek, obrazek_ai, tecka, poradi, zverejneno, vytvoreno, upraveno, obrazek_zdroj, narocnost, cile, bilkoviny, vegetarianske) VALUES ('tofu-michanice', 'slane', 'ukazka', 15, 1, 390, '{snidane,vecere}', NULL, false, 'talir', 28, true, '2026-11-24 09:25:40.701157+00', '2026-11-24 09:25:40.701157+00', NULL, 1, '{hubnout,nabrat}', 22, true);
+INSERT INTO public.recepty (slug, kategorie, stav, cas_min, porce, kcal, jidla, obrazek, obrazek_ai, tecka, poradi, zverejneno, vytvoreno, upraveno, obrazek_zdroj, narocnost, cile, bilkoviny, vegetarianske) VALUES ('bataty-s-vejcem', 'slane', 'ukazka', 30, 1, 470, '{snidane,obed}', NULL, false, 'talir', 29, true, '2026-11-24 09:25:40.701157+00', '2026-11-24 09:25:40.701157+00', NULL, 2, '{udrzet,nabrat}', 17, true);
 
 
 --
@@ -194,6 +197,8 @@ INSERT INTO public.recepty_alergeny (recept, alergen) VALUES ('shakshuka', 'lepe
 INSERT INTO public.recepty_alergeny (recept, alergen) VALUES ('chia-puding-s-malinami', 'mleko');
 INSERT INTO public.recepty_alergeny (recept, alergen) VALUES ('bananovy-shake-s-tvarohem', 'mleko');
 INSERT INTO public.recepty_alergeny (recept, alergen) VALUES ('bananovy-shake-s-tvarohem', 'arasidy');
+INSERT INTO public.recepty_alergeny (recept, alergen) VALUES ('tofu-michanice', 'soja');
+INSERT INTO public.recepty_alergeny (recept, alergen) VALUES ('bataty-s-vejcem', 'vejce');
 
 
 --
@@ -284,6 +289,12 @@ INSERT INTO public.recepty_texty (recept, jazyk, nazev, uvod, postup, varianty, 
 INSERT INTO public.recepty_texty (recept, jazyk, nazev, uvod, postup, varianty, tip) VALUES ('cizrnove-kari', 'en', 'Chickpea curry with spinach', 'A warming meat-free curry, a filling bowl for cold days. It cooks itself.', '[{"text": "Fry the onion, garlic and grated ginger in the oil."}, {"text": "Add the curry powder, fry briefly and pour in the tomatoes and coconut milk."}, {"text": "Stir in the drained chickpeas and simmer for 15 minutes."}, {"text": "Finally stir in the spinach, let it wilt and serve with rice."}]', NULL, 'For a lighter version use light coconut milk and less rice.');
 INSERT INTO public.recepty_texty (recept, jazyk, nazev, uvod, postup, varianty, tip) VALUES ('bananovy-shake-s-tvarohem', 'cs', 'Banánový shake s tvarohem a arašídovým máslem', 'Snídaně do ruky nebo svačina po tréninku. Sytá a bez proteinového prášku.', '[{"text": "Všechno dej do mixéru."}, {"text": "Mixuj do hladka, asi 30 sekund."}, {"text": "Nalij do sklenice a posyp skořicí."}]', NULL, 'S mraženým banánem je shake hustý a studený jako zmrzlina.');
 INSERT INTO public.recepty_texty (recept, jazyk, nazev, uvod, postup, varianty, tip) VALUES ('bananovy-shake-s-tvarohem', 'en', 'Banana shake with quark and peanut butter', 'Breakfast on the go or a post-workout snack. Filling, no protein powder needed.', '[{"text": "Put everything in a blender."}, {"text": "Blend until smooth, about 30 seconds."}, {"text": "Pour into a glass and sprinkle with cinnamon."}]', NULL, 'With a frozen banana the shake gets thick and cold like ice cream.');
+INSERT INTO public.recepty_texty (recept, jazyk, nazev, uvod, postup, varianty, tip) VALUES ('pohankova-kase-s-jablkem', 'cs', 'Pohanková kaše s jablkem a skořicí', 'Teplá snídaně bez mléka a bez lepku. Voní jako jablečný koláč.', '[{"text": "Pohanku propláchni a vař ve vodě se špetkou soli asi 10 minut doměkka."}, {"text": "Nastrouhej do ní jablko, přidej skořici a krátce povař."}, {"text": "Osladí sirup, navrch nasyp dýňová semínka."}]', NULL, 'Pohanka je přirozeně bez lepku. Uvař jí víc – v lednici vydrží 3 dny.');
+INSERT INTO public.recepty_texty (recept, jazyk, nazev, uvod, postup, varianty, tip) VALUES ('pohankova-kase-s-jablkem', 'en', 'Buckwheat porridge with apple and cinnamon', 'A warm breakfast without milk or gluten. It smells like apple pie.', '[{"text": "Rinse the buckwheat and simmer it in water with a pinch of salt for about 10 minutes until soft."}, {"text": "Grate in the apple, add cinnamon and cook briefly."}, {"text": "Sweeten with syrup and top with pumpkin seeds."}]', NULL, 'Buckwheat is naturally gluten-free. Cook extra – it keeps for 3 days in the fridge.');
+INSERT INTO public.recepty_texty (recept, jazyk, nazev, uvod, postup, varianty, tip) VALUES ('tofu-michanice', 'cs', 'Tofu míchanice se zeleninou', 'Jako míchaná vajíčka, jen bez vajec a bez mléka. Plná bílkovin.', '[{"text": "Na oleji osmahni nakrájenou cibuli a papriku."}, {"text": "Tofu rozdrob rukama do pánve, přidej kurkumu, sůl a pepř a 5 minut opékej."}, {"text": "Přidej rajče a špenát, nech zavadnout."}, {"text": "Podávej s plátky avokáda."}]', NULL, 'Kurkuma dá tofu žlutou barvu jako u vajíček. Kdo má rád, přidá špetku černé soli kala namak – voní po vajíčkách.');
+INSERT INTO public.recepty_texty (recept, jazyk, nazev, uvod, postup, varianty, tip) VALUES ('tofu-michanice', 'en', 'Tofu scramble with vegetables', 'Like scrambled eggs, just without eggs or milk. Packed with protein.', '[{"text": "Fry the chopped onion and pepper in the oil."}, {"text": "Crumble the tofu into the pan, add turmeric, salt and pepper and fry for 5 minutes."}, {"text": "Add the tomato and spinach and let it wilt."}, {"text": "Serve with sliced avocado."}]', NULL, 'Turmeric gives the tofu an egg-like colour. A pinch of kala namak (black salt) even makes it smell like eggs.');
+INSERT INTO public.recepty_texty (recept, jazyk, nazev, uvod, postup, varianty, tip) VALUES ('bataty-s-vejcem', 'cs', 'Pečené batáty s vejcem a avokádem', 'Sytá snídaně na víkend nebo rychlý oběd. Bez mléka a bez lepku.', '[{"text": "Batát nakrájej na kostky, promíchej s olejem, solí a paprikou a peč 20 minut na 200 °C."}, {"text": "Mezitím uvař vejce nahniličko (6–7 minut) nebo je usmaž."}, {"text": "Batáty dej na talíř, přidej vejce a plátky avokáda, posyp semínky."}]', NULL, 'Batáty se dají upéct večer předem – ráno je jen ohřeješ.');
+INSERT INTO public.recepty_texty (recept, jazyk, nazev, uvod, postup, varianty, tip) VALUES ('bataty-s-vejcem', 'en', 'Roasted sweet potato with egg and avocado', 'A filling weekend breakfast or quick lunch. No milk, no gluten.', '[{"text": "Cube the sweet potato, toss with oil, salt and paprika and roast for 20 minutes at 200 °C."}, {"text": "Meanwhile soft-boil the eggs (6–7 minutes) or fry them."}, {"text": "Plate the sweet potato, add the eggs and sliced avocado and sprinkle with seeds."}]', NULL, 'You can roast the sweet potato the evening before – just warm it up in the morning.');
 
 
 --
@@ -606,6 +617,42 @@ INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, 
 INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (314, 'bananovy-shake-s-tvarohem', 'en', 3, 1, 'pc', 'banana', NULL);
 INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (315, 'bananovy-shake-s-tvarohem', 'en', 4, 1, 'tbsp', 'peanut butter', NULL);
 INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (316, 'bananovy-shake-s-tvarohem', 'en', 5, NULL, NULL, 'cinnamon', NULL);
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (317, 'pohankova-kase-s-jablkem', 'cs', 1, 60, 'g', 'pohanky', 'pohanka');
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (318, 'pohankova-kase-s-jablkem', 'cs', 2, 1, 'ks', 'jablka', 'jablko');
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (319, 'pohankova-kase-s-jablkem', 'cs', 3, 1, 'lžíce', 'dýňových semínek', 'dýňová semínka');
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (320, 'pohankova-kase-s-jablkem', 'cs', 4, 1, 'lžička', 'javorového sirupu', 'javorový sirup');
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (321, 'pohankova-kase-s-jablkem', 'cs', 5, NULL, NULL, 'skořice, špetka soli', NULL);
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (322, 'pohankova-kase-s-jablkem', 'en', 1, 60, 'g', 'buckwheat', NULL);
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (323, 'pohankova-kase-s-jablkem', 'en', 2, 1, 'pc', 'apple', NULL);
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (324, 'pohankova-kase-s-jablkem', 'en', 3, 1, 'tbsp', 'pumpkin seeds', NULL);
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (325, 'pohankova-kase-s-jablkem', 'en', 4, 1, 'tsp', 'maple syrup', NULL);
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (326, 'pohankova-kase-s-jablkem', 'en', 5, NULL, NULL, 'cinnamon, pinch of salt', NULL);
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (327, 'tofu-michanice', 'cs', 1, 150, 'g', 'tofu natural', 'tofu');
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (328, 'tofu-michanice', 'cs', 2, 0.5, 'ks', 'cibule', 'cibule');
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (329, 'tofu-michanice', 'cs', 3, 0.5, 'ks', 'papriky', 'paprika');
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (330, 'tofu-michanice', 'cs', 4, 1, 'ks', 'rajčete', 'rajčata');
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (331, 'tofu-michanice', 'cs', 5, 1, 'hrst', 'baby špenátu', 'špenát');
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (332, 'tofu-michanice', 'cs', 6, 0.5, 'ks', 'avokáda', 'avokádo');
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (333, 'tofu-michanice', 'cs', 7, 1, 'lžička', 'olivového oleje', 'olivový olej');
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (334, 'tofu-michanice', 'cs', 8, NULL, NULL, 'kurkuma, sůl, pepř', NULL);
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (335, 'tofu-michanice', 'en', 1, 150, 'g', 'plain tofu', NULL);
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (336, 'tofu-michanice', 'en', 2, 0.5, 'pc', 'onion', NULL);
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (337, 'tofu-michanice', 'en', 3, 0.5, 'pc', 'pepper', NULL);
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (338, 'tofu-michanice', 'en', 4, 1, 'pc', 'tomato', NULL);
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (339, 'tofu-michanice', 'en', 5, 1, 'handful', 'baby spinach', NULL);
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (340, 'tofu-michanice', 'en', 6, 0.5, 'pc', 'avocado', NULL);
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (341, 'tofu-michanice', 'en', 7, 1, 'tsp', 'olive oil', NULL);
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (342, 'tofu-michanice', 'en', 8, NULL, NULL, 'turmeric, salt, pepper', NULL);
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (343, 'bataty-s-vejcem', 'cs', 1, 200, 'g', 'batátů (sladkých brambor)', 'batáty');
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (344, 'bataty-s-vejcem', 'cs', 2, 2, 'ks', 'vejce', 'vejce');
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (345, 'bataty-s-vejcem', 'cs', 3, 0.5, 'ks', 'avokáda', 'avokádo');
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (346, 'bataty-s-vejcem', 'cs', 4, 1, 'lžička', 'olivového oleje', 'olivový olej');
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (347, 'bataty-s-vejcem', 'cs', 5, NULL, NULL, 'sůl, sladká paprika, dýňová semínka', NULL);
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (348, 'bataty-s-vejcem', 'en', 1, 200, 'g', 'sweet potato', NULL);
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (349, 'bataty-s-vejcem', 'en', 2, 2, 'pcs', 'eggs', NULL);
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (350, 'bataty-s-vejcem', 'en', 3, 0.5, 'pc', 'avocado', NULL);
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (351, 'bataty-s-vejcem', 'en', 4, 1, 'tsp', 'olive oil', NULL);
+INSERT INTO public.suroviny (id, recept, jazyk, poradi, mnozstvi, jednotka, co, zaklad) OVERRIDING SYSTEM VALUE VALUES (352, 'bataty-s-vejcem', 'en', 5, NULL, NULL, 'salt, sweet paprika, pumpkin seeds', NULL);
 
 
 --
@@ -626,12 +673,12 @@ SELECT pg_catalog.setval('public.objednavky_id_seq', 1, false);
 -- Name: suroviny_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.suroviny_id_seq', 316, true);
+SELECT pg_catalog.setval('public.suroviny_id_seq', 352, true);
 
 
 --
 -- PostgreSQL database dump complete
 --
 
-\unrestrict UJQQEG94zF6KxxnWLgWrlakQcR3a1PcFPt78Vm92NN7jRAWz7sqTNbcIN5yZtAg
+\unrestrict wTZfz0rruKWAqm5haF6sh9wOuh8jBZfIag0OFvRUJpYotcK53SW361hWceVeLkd
 

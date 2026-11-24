@@ -17,7 +17,7 @@ function stitkyReceptu(r) {
   return t;
 }
 const TAGY = ["snidane", "obed", "svacina", "vecere", "rychle", "vegetarianske"];
-const ALERGENY = ["lepek", "mleko", "vejce", "orechy", "arasidy", "sezam", "ryby"];
+const ALERGENY = ["lepek", "mleko", "vejce", "orechy", "arasidy", "sezam", "soja", "ryby"];
 
 // Přehled receptů: hledání, filtry a postupné načítání (RecipeBrowser)
 export default async function RecipesPage() {
