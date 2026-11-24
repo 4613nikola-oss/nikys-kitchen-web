@@ -176,6 +176,10 @@
       "Niky reads it, cooks it and publishes it – with your first name under the recipe."
     ],
     "linkFromRecipes": "Grandma's recipes",
+    "teaserKicker": "New section",
+    "teaserTitle": "Grandma's recipes",
+    "teaserLead": "The smell of Sunday, cake from the tray and a soup that lifts your mood. Grandma's recipes with a story – a little lighter for today.",
+    "teaserCta": "Peek into Grandma's cookbook",
     "badge": {
       "babicka": "From Grandma",
       "ctenar": "From a reader"
@@ -188,6 +192,28 @@
     "readTime": "{n} min read",
     "filterLabel": "Who it's for",
     "filterAll": "All",
+    "filterAllSub": "every article",
+    "readMore": "Read the article",
+    "goalTiles": {
+      "hubnout": { "name": "Fit", "sub": "I want to lose weight" },
+      "udrzet": { "name": "Normal", "sub": "I want to stay in shape" },
+      "nabrat": { "name": "Muscle", "sub": "I want to bulk up" }
+    },
+    "topicsLabel": "Topics",
+    "tagNames": {
+      "psychika": "noguilt",
+      "sladke": "sweets",
+      "porce": "portions",
+      "kalorie": "calories",
+      "rychle": "quick",
+      "vecere": "dinner",
+      "sytost": "fullness",
+      "bilkoviny": "protein",
+      "sport": "sport",
+      "napoje": "drinks",
+      "pitnyrezim": "hydration"
+    },
+    "filterEmpty": "No article matches this choice yet. Try another topic.",
     "filterCount": "Articles: {n}",
     "recommended": "You might also like",
     "inShort": "In short",

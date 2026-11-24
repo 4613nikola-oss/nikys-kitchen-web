@@ -4,6 +4,7 @@ import { alternates } from "@/lib/site";
 import { getRecipes, getAllergenNames } from "@/lib/content";
 import RecipeBrowser from "@/components/RecipeBrowser";
 import Icon from "@/components/Icon";
+import Tecka from "@/components/Tecka";
 import ComicPanel from "@/components/ComicPanel";
 
 export async function generateMetadata() {
@@ -34,10 +35,20 @@ export default async function RecipesPage() {
         <div>
           <h1>{dict.recipes.title}</h1>
           <p className="lead">{dict.recipes.lead}</p>
-          <p><Link className="grandma-link" href={`/${lang}/od-babicky/`}><Icon name="babicka" size={22} /> {dict.grandma.linkFromRecipes} →</Link></p>
         </div>
         <ComicPanel {...dict.comics.recipes} size={140} />
       </div>
+
+      {/* Lákadlo na Od babičky: výrazná karta, ať se tam lidem chce */}
+      <Link className="grandma-teaser" href={`/${lang}/od-babicky/`}>
+        <Tecka podoba="kolac" size={110} />
+        <span className="grandma-teaser-text">
+          <span className="grandma-teaser-kicker"><Icon name="babicka" size={18} /> {dict.grandma.teaserKicker}</span>
+          <span className="grandma-teaser-title">{dict.grandma.teaserTitle}</span>
+          <span className="grandma-teaser-lead">{dict.grandma.teaserLead}</span>
+        </span>
+        <span className="btn btn-accent grandma-teaser-btn">{dict.grandma.teaserCta} →</span>
+      </Link>
       <RecipeBrowser
         recipes={recipes}
         lang={lang}

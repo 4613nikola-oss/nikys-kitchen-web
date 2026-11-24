@@ -714,11 +714,14 @@ main h1::after {
 main h1::after, main h2::after { display: none !important; }
 .card-link:hover h3 { text-decoration: none; }
 
-/* Logo a název vlevo, menu taky zarovnané vlevo */
+/* Logo a název vlevo, menu taky zarovnané vlevo; logo vedle názvu i podtitulu, se vzduchem */
 .masthead { text-align: left; }
-.brand { justify-content: flex-start; }
-.brand-name { font-size: clamp(2rem, 6vw, 4rem); }
-.masthead-tagline { margin-left: 0; }
+.brand { justify-content: flex-start; align-items: center; gap: clamp(0.75rem, 2vw, 1.25rem); margin: 1rem 0 1.1rem; }
+.brand-logo { width: clamp(3.2rem, 8vw, 5.2rem); height: auto; flex: none; }
+.brand-text { display: grid; gap: 0.4rem; }
+.brand-name { font-size: clamp(2rem, 6vw, 4rem); line-height: 0.95; }
+.brand .masthead-tagline { display: block; margin: 0; color: #4a4036; font-weight: 400; text-transform: none; }
+.masthead .header-inner { margin-top: 0.25rem; }
 @media (min-width: 900px) { .nav-list, .nav-list.is-open { justify-content: flex-start; } }
 
 /* Hero: menší úvodní písmeno (velké „S“), víc místa kolem */
@@ -968,6 +971,62 @@ main section { margin-bottom: 4.5rem; }
 /* Políčka (e-mail, hledání) světlejší než karta, ať nesplývají */
 .signup-row input, .search, input[type="search"], .search-field input { background-color: #f6faf3; }
 .signup-row input:focus, input[type="search"]:focus, .search-field input:focus { background-color: #fff; }
+
+/* ===== Články: velká barevná tlačítka cílů, hashtagy, „Číst článek →“ ===== */
+.goal-filters { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin: 0 0 1rem; }
+@media (min-width: 720px) { .goal-filters { grid-template-columns: repeat(4, 1fr); } }
+.goal-tile {
+  display: grid; gap: 0.15rem; text-align: left; font: inherit; cursor: pointer; color: var(--ink);
+  padding: 0.85rem 1rem; border: 3px solid var(--ink); border-radius: var(--radius); box-shadow: 4px 4px 0 var(--ink);
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+.goal-tile:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink); }
+.goal-tile:focus-visible { outline: 3px solid var(--color-terracotta); outline-offset: 3px; }
+.goal-tile-name { font-family: var(--font-heading-stack); font-weight: 900; font-size: 1.35rem; line-height: 1.1; }
+.goal-tile-sub { font-size: 0.85rem; font-weight: 600; }
+/* barvy: světlé = nevybrané (tmavé písmo), plné = vybrané */
+.goal-tile-vse { background: #fbf4e2; }
+.goal-tile-hubnout { background: var(--card-ruzova); }
+.goal-tile-udrzet { background: var(--card-salvej); }
+.goal-tile-nabrat { background: #f7e2a6; }
+.goal-tile.is-on { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink); }
+.goal-tile-vse.is-on { background: var(--color-primary); color: #fff; }
+.goal-tile-hubnout.is-on { background: var(--color-terracotta); color: #fff; }
+.goal-tile-udrzet.is-on { background: #4d6357; color: #fff; }
+.goal-tile-nabrat.is-on { background: var(--comic-yellow); color: var(--ink); }
+.hashtags { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin: 0 0 1.75rem; }
+.hashtag {
+  font: inherit; font-weight: 800; cursor: pointer; min-height: 40px; padding: 0.3rem 0.85rem; border-radius: 999px;
+  background: #fbf4e2; color: #8e4129; border: 2px dashed #8e4129;
+}
+.hashtag:hover { background: #fff; }
+.hashtag.is-on { background: #8e4129; color: #fff; border-style: solid; }
+.card-hashtags { display: flex; flex-wrap: wrap; gap: 0.25rem 0.6rem; margin: 0.5rem 0 0 !important; font-size: 0.85rem; font-weight: 700; color: #8e4129 !important; }
+.card-cta { display: inline-block; margin-top: 0.85rem; font-weight: 800; color: var(--color-primary); border-bottom: 2px solid currentColor; }
+.card-link:hover .card-cta, .card-link:focus-visible .card-cta { color: #8e4129; }
+.article-card .card-link { display: flex; flex-direction: column; }
+.article-card .card-body { display: flex; flex-direction: column; flex: 1; }
+.article-card .card-cta { margin-top: auto; padding-top: 0.85rem; align-self: flex-start; border-bottom: 0; text-decoration: underline; text-underline-offset: 3px; }
+
+/* Lákadlo na Od babičky na stránce Recepty */
+.grandma-teaser {
+  display: grid; grid-template-columns: auto 1fr; gap: 1rem 1.25rem; align-items: center; margin: 0 0 2.5rem;
+  padding: 1.25rem 1.5rem; text-decoration: none; color: var(--ink);
+  background-color: var(--card-ruzova); background-image: radial-gradient(rgba(162, 78, 51, 0.12) 22%, transparent 24%); background-size: 12px 12px;
+  border: 3px solid var(--ink); border-radius: var(--radius); box-shadow: 6px 6px 0 var(--ink); transition: transform 0.15s, box-shadow 0.15s;
+}
+.grandma-teaser:hover, .grandma-teaser:focus-visible { transform: translate(-2px, -3px) rotate(-0.4deg); box-shadow: 9px 9px 0 var(--ink); color: var(--ink); }
+.grandma-teaser-text { display: grid; gap: 0.3rem; }
+.grandma-teaser-kicker { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: #8e4129; }
+.grandma-teaser-kicker .icon { color: #8e4129; }
+.grandma-teaser-title { font-family: var(--font-heading-stack); font-weight: 900; font-size: clamp(1.4rem, 3.5vw, 2rem); line-height: 1.1; }
+.grandma-teaser-lead { color: #4a4036; max-width: 40rem; }
+.grandma-teaser-btn { grid-column: 1 / -1; justify-self: start; }
+@media (min-width: 800px) {
+  .grandma-teaser { grid-template-columns: auto 1fr auto; }
+  .grandma-teaser-btn { grid-column: auto; justify-self: end; }
+}
+@media (prefers-reduced-motion: reduce) { .grandma-teaser:hover { transform: none; } }
 
 /* Od babičky */
 .grandma-link { font-weight: 800; color: var(--color-terracotta); }

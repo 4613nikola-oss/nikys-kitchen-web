@@ -18,7 +18,6 @@ export default async function ArticlesPage() {
       <div className="page-intro">
         <div>
           <h1>{dict.articles.title}</h1>
-          <p className="lead">{dict.articles.lead}</p>
         </div>
         <ComicPanel {...dict.comics.articles} size={140} />
       </div>

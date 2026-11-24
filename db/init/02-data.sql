@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict GvJgqeU3q89XVsd3oAy30cXfz2qCsLZF9exmtir42rgnHgShaWhavhuul8TwUKF
+\restrict sD6hZjL33Hmh8gH7Tumzsi0s09qsapxXneMekS4Wc3XJ3Fd052UcOp2u2WrJxdS
 
 -- Dumped from database version 17.11
 -- Dumped by pg_dump version 17.11
@@ -43,12 +43,12 @@ INSERT INTO public.alergeny (kod, cs, en) VALUES ('mekkysi', 'měkkýši', 'moll
 -- Data for Name: clanky; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-INSERT INTO public.clanky (slug, cteni_min, cile, zdroje, poradi, zverejneno, vytvoreno, upraveno) VALUES ('jez-bez-vycitek', 3, '{vse}', '[{"url": "https://doi.org/10.1002/(sici)1098-108x(199907)26:1%3C53::aid-eat7%3E3.0.co;2-n", "nazev": "Westenhoefer a kol. 1999 – přísná a flexibilní kontrola jídla"}, {"url": "https://doi.org/10.1016/j.eatbeh.2017.02.002", "nazev": "Simpson a Mazzeo 2017 – počítání kalorií a starosti kolem jídla"}]', 1, true, '2026-11-07 14:57:43.670343+00', '2026-11-07 14:57:43.670343+00');
-INSERT INTO public.clanky (slug, cteni_min, cile, zdroje, poradi, zverejneno, vytvoreno, upraveno) VALUES ('kolik-toho-snist', 5, '{vse}', '[{"url": "https://doi.org/10.1093/ajcn/51.2.241", "nazev": "Mifflin a kol. 1990 – rovnice pro výpočet bazálního metabolismu"}, {"url": "https://doi.org/10.1186/s12970-017-0177-8", "nazev": "ISSN 2017 – bílkoviny a pohyb"}]', 2, true, '2026-11-07 14:57:43.676448+00', '2026-11-07 14:57:43.676448+00');
-INSERT INTO public.clanky (slug, cteni_min, cile, zdroje, poradi, zverejneno, vytvoreno, upraveno) VALUES ('kdyz-prijdes-domu-unavena', 2, '{vse}', '[]', 3, true, '2026-11-07 14:57:43.681667+00', '2026-11-07 14:57:43.681667+00');
-INSERT INTO public.clanky (slug, cteni_min, cile, zdroje, poradi, zverejneno, vytvoreno, upraveno) VALUES ('proc-po-nekterem-jidle-hladovis', 2, '{hubnout,udrzet}', '[]', 4, true, '2026-11-07 14:57:43.685441+00', '2026-11-07 14:57:43.685441+00');
-INSERT INTO public.clanky (slug, cteni_min, cile, zdroje, poradi, zverejneno, vytvoreno, upraveno) VALUES ('traveni-po-treninku', 1, '{udrzet,nabrat}', '[{"url": "https://doi.org/10.1186/s12970-017-0177-8", "nazev": "ISSN 2017 – bílkoviny a pohyb"}]', 5, true, '2026-11-07 14:57:43.689336+00', '2026-11-07 14:57:43.689336+00');
-INSERT INTO public.clanky (slug, cteni_min, cile, zdroje, poradi, zverejneno, vytvoreno, upraveno) VALUES ('bylinky-a-ovoce-v-napojich', 2, '{vse}', '[]', 6, true, '2026-11-07 14:57:43.693598+00', '2026-11-07 14:57:43.693598+00');
+INSERT INTO public.clanky (slug, cteni_min, cile, zdroje, poradi, zverejneno, vytvoreno, upraveno, stitky, tecka) VALUES ('jez-bez-vycitek', 3, '{vse}', '[{"url": "https://doi.org/10.1002/(sici)1098-108x(199907)26:1%3C53::aid-eat7%3E3.0.co;2-n", "nazev": "Westenhoefer a kol. 1999 – přísná a flexibilní kontrola jídla"}, {"url": "https://doi.org/10.1016/j.eatbeh.2017.02.002", "nazev": "Simpson a Mazzeo 2017 – počítání kalorií a starosti kolem jídla"}]', 1, true, '2026-11-07 14:57:43.670343+00', '2026-11-24 17:09:29.432226+00', '{psychika,sladke}', 'zakusek');
+INSERT INTO public.clanky (slug, cteni_min, cile, zdroje, poradi, zverejneno, vytvoreno, upraveno, stitky, tecka) VALUES ('kolik-toho-snist', 5, '{vse}', '[{"url": "https://doi.org/10.1093/ajcn/51.2.241", "nazev": "Mifflin a kol. 1990 – rovnice pro výpočet bazálního metabolismu"}, {"url": "https://doi.org/10.1186/s12970-017-0177-8", "nazev": "ISSN 2017 – bílkoviny a pohyb"}]', 2, true, '2026-11-07 14:57:43.676448+00', '2026-11-24 17:09:29.435772+00', '{porce,kalorie}', 'talir');
+INSERT INTO public.clanky (slug, cteni_min, cile, zdroje, poradi, zverejneno, vytvoreno, upraveno, stitky, tecka) VALUES ('kdyz-prijdes-domu-unavena', 2, '{vse}', '[]', 3, true, '2026-11-07 14:57:43.681667+00', '2026-11-24 17:09:29.436917+00', '{rychle,vecere}', 'vari');
+INSERT INTO public.clanky (slug, cteni_min, cile, zdroje, poradi, zverejneno, vytvoreno, upraveno, stitky, tecka) VALUES ('proc-po-nekterem-jidle-hladovis', 2, '{hubnout,udrzet}', '[]', 4, true, '2026-11-07 14:57:43.685441+00', '2026-11-24 17:09:29.438188+00', '{sytost,bilkoviny}', 'vidlicka');
+INSERT INTO public.clanky (slug, cteni_min, cile, zdroje, poradi, zverejneno, vytvoreno, upraveno, stitky, tecka) VALUES ('traveni-po-treninku', 1, '{udrzet,nabrat}', '[{"url": "https://doi.org/10.1186/s12970-017-0177-8", "nazev": "ISSN 2017 – bílkoviny a pohyb"}]', 5, true, '2026-11-07 14:57:43.689336+00', '2026-11-24 17:09:29.439719+00', '{sport,bilkoviny}', 'slavi');
+INSERT INTO public.clanky (slug, cteni_min, cile, zdroje, poradi, zverejneno, vytvoreno, upraveno, stitky, tecka) VALUES ('bylinky-a-ovoce-v-napojich', 2, '{vse}', '[]', 6, true, '2026-11-07 14:57:43.693598+00', '2026-11-24 17:09:29.441075+00', '{napoje,pitnyrezim}', 'sklenice');
 
 
 --
@@ -680,5 +680,5 @@ SELECT pg_catalog.setval('public.suroviny_id_seq', 352, true);
 -- PostgreSQL database dump complete
 --
 
-\unrestrict GvJgqeU3q89XVsd3oAy30cXfz2qCsLZF9exmtir42rgnHgShaWhavhuul8TwUKF
+\unrestrict sD6hZjL33Hmh8gH7Tumzsi0s09qsapxXneMekS4Wc3XJ3Fd052UcOp2u2WrJxdS
 

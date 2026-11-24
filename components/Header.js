@@ -25,11 +25,14 @@ export default function Header({ dict, lang }) {
           <MastheadDate lang={lang} />
           <span>{m.price}</span>
         </div>
+        {/* logo vlevo, vedle něj název a pod ním podtitul – zarovnané na jeden okraj */}
         <Link href={`/${lang}/`} className="brand">
-          <Image src={ikona} alt="" width={52} height={52} priority className="brand-logo" />
-          <span className="brand-name">Niky&apos;s Kitchen</span>
+          <Image src={ikona} alt="" width={80} height={80} priority className="brand-logo" />
+          <span className="brand-text">
+            <span className="brand-name">Niky&apos;s Kitchen</span>
+            <span className="masthead-tagline">{m.tagline}</span>
+          </span>
         </Link>
-        <p className="masthead-tagline">{m.tagline}</p>
         <div className="header-inner">
           <NavMenu items={items} dict={dict} lang={lang} />
         </div>

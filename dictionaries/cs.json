@@ -176,6 +176,10 @@
       "Niky ho přečte, uvaří a zveřejní – pod receptem bude tvoje křestní jméno."
     ],
     "linkFromRecipes": "Recepty od babičky",
+    "teaserKicker": "Nová rubrika",
+    "teaserTitle": "Recepty od babičky",
+    "teaserLead": "Vůně neděle, koláč z plechu a polévka, která spraví náladu. Babiččiny recepty s příběhem – trochu odlehčené pro dnešek.",
+    "teaserCta": "Nahlédni do babiččiny kuchařky",
     "badge": {
       "babicka": "Od babičky",
       "ctenar": "Od čtenáře"
@@ -188,6 +192,28 @@
     "readTime": "čtení na {n} min",
     "filterLabel": "Pro koho",
     "filterAll": "Vše",
+    "filterAllSub": "všechny články",
+    "readMore": "Číst článek",
+    "goalTiles": {
+      "hubnout": { "name": "Fit", "sub": "chci zhubnout" },
+      "udrzet": { "name": "Normal", "sub": "chci udržet formu" },
+      "nabrat": { "name": "Svaly", "sub": "chci nabrat" }
+    },
+    "topicsLabel": "Témata",
+    "tagNames": {
+      "psychika": "bezvýčitek",
+      "sladke": "sladké",
+      "porce": "porce",
+      "kalorie": "kalorie",
+      "rychle": "rychlé",
+      "vecere": "večeře",
+      "sytost": "sytost",
+      "bilkoviny": "bílkoviny",
+      "sport": "sport",
+      "napoje": "nápoje",
+      "pitnyrezim": "pitnýrežim"
+    },
+    "filterEmpty": "S tímhle výběrem tu zatím žádný článek není. Zkus jiné téma.",
     "filterCount": "Článků: {n}",
     "recommended": "Mohlo by tě zajímat",
     "inShort": "V kostce",

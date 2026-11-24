@@ -90,6 +90,8 @@ CREATE TABLE clanky (
   slug        text PRIMARY KEY,
   cteni_min   integer NOT NULL CHECK (cteni_min > 0),
   cile        text[] NOT NULL DEFAULT '{vse}',  -- komu ho appka doporučí: hubnout, udrzet, nabrat, vse
+  stitky      text[] NOT NULL DEFAULT '{}',     -- témata (hashtagy na webu): porce, bilkoviny, sport…
+  tecka       text,                             -- podoba maskota na kartičce (podle tématu článku)
   zdroje      jsonb NOT NULL DEFAULT '[]',      -- [{ "nazev": "...", "url": "https://doi.org/..." }]
   poradi      integer NOT NULL DEFAULT 0,
   zverejneno  boolean NOT NULL DEFAULT true,
