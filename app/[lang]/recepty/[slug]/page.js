@@ -151,7 +151,13 @@ export default async function RecipePage({ params }) {
                   {/* 1–3 vařečky; slovo vedle nese význam i bez obrázku */}
                   <dd className="difficulty">
                     <DifficultyFace level={recipe.narocnost} />
-                    {d.difficultyNames[recipe.narocnost]}
+                    <span className="difficulty-text">
+                      {d.difficultyNames[recipe.narocnost]}
+                      {/* puntíky: kolik ze 3 */}
+                      <span className={`difficulty-dots level-${recipe.narocnost}`} aria-label={`${recipe.narocnost} / 3`}>
+                        {[1, 2, 3].map((n) => <i key={n} className={n <= recipe.narocnost ? "on" : ""} />)}
+                      </span>
+                    </span>
                   </dd>
                 </div>
               )}
