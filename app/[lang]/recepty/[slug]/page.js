@@ -48,6 +48,19 @@ function zvyrazni(text) {
   );
 }
 
+// Ikonka ke kroku podle toho, co se v něm dělá (česky i anglicky). Kroky bez jasné činnosti ikonku nemají.
+const KROKY_IKONY = [
+  ["trouba", /troub|peč|upeč|oven|bake|roast/i],
+  ["mixer", /rozmixuj|mixuj|mixér|blend/i],
+  ["nuz", /nakrájej|krájej|nastrouhej|rozkrojit|rozkroj|nasekej|chop|slice|cut|grate|dice/i],
+  ["panev", /osmahni|opeč|orestuj|pánv|smaž|fry|sauté|saute|pan\b/i],
+  ["vari", /uvař|povař|vař|duš|simmer|boil|cook the/i],
+  ["lednicka", /lednic|přes noc|fridge|overnight/i],
+  ["misa", /smíchej|promíchej|vmíchej|rozšlehej|zamíchej|mix|stir|whisk|combine/i],
+  ["talir", /podávej|posyp|ozdob|serve|sprinkle|top with/i],
+];
+const ikonaKroku = (text) => KROKY_IKONY.find(([, re]) => re.test(text))?.[0];
+
 // Data receptu pro Google (schema.org/Recipe): čas, porce, kcal, suroviny a postup ve výsledcích hledání
 function receptProGoogle(recipe, lang, kategorie) {
   const t = recipe[lang];
@@ -228,7 +241,10 @@ export default async function RecipePage({ params }) {
           <ol className="steps steps-clippings">
             {t.postup.map((s, i) => (
               <li key={i}>
-                <p>{zvyrazni(s.text)}</p>
+                <div className="step-row">
+                  <p>{zvyrazni(s.text)}</p>
+                  {ikonaKroku(s.text) && <span className="step-icon" aria-hidden="true"><Icon name={ikonaKroku(s.text)} size={34} /></span>}
+                </div>
                 {s.obrazek && (
                   <Image src={asset(`/images/recepty/${s.obrazek}`)} alt="" width={560} height={306} loading="lazy" />
                 )}

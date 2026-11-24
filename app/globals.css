@@ -722,6 +722,13 @@ main h1::after, main h2::after { display: none !important; }
 .brand-name { font-size: clamp(2rem, 6vw, 4rem); line-height: 0.95; }
 .brand .masthead-tagline { display: block; margin: 0; color: #4a4036; font-weight: 400; text-transform: none; }
 .masthead .header-inner { margin-top: 0.25rem; }
+/* menu v zelené liště zarovnané vlevo (s logem), přepínač jazyka úplně vpravo */
+.masthead .header-inner { justify-content: flex-start; padding-left: 0.5rem; padding-right: 0.5rem; }
+.masthead .nav { display: block; width: 100%; }
+@media (min-width: 900px) {
+  .masthead .nav-list, .masthead .nav-list.is-open { justify-content: flex-start; gap: 0.5rem; width: 100%; }
+  .masthead .nav-list li:last-child { margin-left: auto; }
+}
 @media (min-width: 900px) { .nav-list, .nav-list.is-open { justify-content: flex-start; } }
 
 /* Hero: menší úvodní písmeno (velké „S“), víc místa kolem */
@@ -815,6 +822,13 @@ main section { margin-bottom: 4.5rem; }
 .outro-perks li { display: flex; align-items: center; gap: 0.6rem; font-weight: 700; }
 .outro-perks .icon { flex: none; color: var(--color-primary); }
 .outro-note { margin: 0.6rem 0 0; font-size: 0.9rem; color: var(--color-muted); }
+
+/* Ikonka činnosti ke každému kroku */
+.step-row { display: flex; align-items: center; gap: 1rem; }
+.step-row p { flex: 1; }
+.step-icon { flex: none; display: grid; place-items: center; width: 3.6rem; height: 3.6rem; border-radius: 50%; background: var(--card-med); border: 2px solid var(--ink); transform: rotate(-4deg); }
+.step-icon .icon { color: var(--ink); }
+.steps-clippings li:nth-child(even) .step-icon { transform: rotate(4deg); background: var(--card-salvej); }
 
 /* Důležité údaje v krocích: čas a teplota jako štítek */
 .step-key { display: inline-block; white-space: nowrap; font-weight: 800; background: #f7e2a6; border: 1.5px solid var(--ink); border-radius: 0.4em; padding: 0 0.4em; line-height: 1.5; }

@@ -5,6 +5,12 @@ const g = (d, listek = true) => `<g fill="none" stroke="currentColor" stroke-wid
 
 export const ICONS = {
   cas: g('<circle cx="11" cy="13" r="8"/><path d="M11 8.5V13l3 2"/>'),
+  // ikonky kroků postupu
+  nuz: g('<path d="M3 20h18"/><path d="M5 16.5 16.5 5a2.1 2.1 0 0 1 3 3L8 19.5z"/><path d="M8.5 13l2.5 2.5"/>', false),
+  misa: g('<path d="M3 11.5h18a9 9 0 0 1-18 0z"/><path d="M14.5 11.5 19 3M17 4.5c1.2-.2 2.3.4 2.6 1.4"/>'),
+  mixer: g('<path d="M7 3h10l-1.5 9h-7z"/><path d="M8.5 12 7.5 21h9l-1-9"/><path d="M10 16.5h4"/>'),
+  panev: g('<path d="M2.5 12h13a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6z"/><path d="M15.5 12l6-3"/><path d="M7 9c-.5-1 .5-2 0-3M10.5 9c-.5-1 .5-2 0-3"/>'),
+  talir: g('<circle cx="12" cy="13" r="7.5"/><circle cx="12" cy="13" r="4"/>'),
   // visačka = sleva
   sleva: g('<path d="M3 12.5V4h8.5l9 9-8.5 8.5z"/><circle cx="7.5" cy="8.5" r="1.4"/>', false),
   // lupa s očkem = nahlédnout
