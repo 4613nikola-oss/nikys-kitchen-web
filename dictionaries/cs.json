@@ -384,7 +384,7 @@
   "privacy": {
     "title": "Ochrana soukromí",
     "lead": "Krátce a srozumitelně: co se děje s tvými údaji, když používáš web Niky's Kitchen a appku Jídlo od A–Z.",
-    "updated": "Aktualizováno 10. 11. 2026",
+    "updated": "Aktualizováno 24. 11. 2026",
     "sections": [
       {
         "h": "Kdo web provozuje"
@@ -417,13 +417,28 @@
         "p": "Web ani appka nepoužívají cookies. Až přidáme měření návštěvnosti, zeptáme se tě předem lištou se souhlasem a bez souhlasu nic měřit nebudeme."
       },
       {
-        "h": "Appka Jídlo od A–Z"
+        "h": "Appka Jídlo od A–Z bez účtu"
       },
       {
         "ul": [
-          "Profil (věk, váha, výška, cíl), lednička a nákupní seznam se ukládají jen v tvém prohlížeči.",
+          "Appka funguje i bez účtu. Pak se profil (věk, váha, výška, pohlaví, pohyb, cíl, jídelníček), lednička, nákupní seznam, oblíbené, razítka i pití ukládají jen v tvém prohlížeči.",
           "Nikam se neposílají a my je nevidíme.",
           "Smažeš je tak, že v prohlížeči smažeš data této stránky."
+        ]
+      },
+      {
+        "h": "Účet v appce (nepovinný)"
+      },
+      {
+        "ul": [
+          "Účet si zakládáš sám nebo sama, když chceš mít data na všech zařízeních a sbírat razítka. Přihlašuješ se odkazem v e-mailu, žádné heslo nemáš.",
+          "Co ukládáme: e-mail, profil (věk, váha, výška, pohlaví, pohyb, cíl a jídelníček – třeba vegetariánsky nebo bez lepku), avatar, oblíbené recepty, razítka, plán, ledničku a nákupní seznam. Pití po dnech neukládáme.",
+          "Proč: jen aby ti appka fungovala stejně na mobilu i na počítači. Údaje nepoužíváme k reklamě, nikomu je nedáváme ani neprodáváme a nikdo je neprohlíží.",
+          "Váha, výška a jídelníček o tobě něco prozrazují (třeba „bez lepku“). Proto je ukládáme jen s tvým výslovným souhlasem – dáváš ho tím, že si účet založíš a profil vyplníš. Souhlas kdykoli odvoláš smazáním účtu.",
+          "Kde: u služby Supabase, na serverech v Evropské unii. Každý přihlášený vidí jen svoje data – hlídá to přímo databáze.",
+          "Jak dlouho: dokud účet máš. Tlačítkem „Smazat účet“ v appce smažeš účet i všechna data v něm hned a natrvalo.",
+          "Tlačítkem „Stáhnout moje data“ si kdykoli stáhneš kopii všeho, co v účtu je.",
+          "Pro přihlášení appka načte knihovnu Supabase ze služby jsDelivr (síť pro doručování souborů) – ta uvidí IP adresu tvého zařízení. Bez účtu se nenačítá."
         ]
       },
       {
@@ -446,7 +461,7 @@
         "h": "Tvoje práva"
       },
       {
-        "p": "Protože o tobě nic neukládáme, není co předat, opravit ani smazat. Až začneme údaje sbírat (newsletter, obchod), doplníme sem, jaké máš práva podle GDPR a jak je uplatnit."
+        "p": "U všeho, co o tobě máme (e-mail z newsletteru, účet v appce), máš právo vědět, co to je, dostat kopii, nechat to opravit nebo smazat, odvolat souhlas a podat stížnost u Úřadu pro ochranu osobních údajů (uoou.gov.cz). Data z účtu si stáhneš a smažeš rovnou v appce, u newsletteru stačí odpovědět na kterýkoli e-mail."
       }
     ]
   },

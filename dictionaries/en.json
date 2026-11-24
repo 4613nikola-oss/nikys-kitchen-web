@@ -384,7 +384,7 @@
   "privacy": {
     "title": "Privacy",
     "lead": "In short and in plain words: what happens with your data when you use the Niky's Kitchen website and the Jídlo od A–Z app.",
-    "updated": "Updated 10 November 2026",
+    "updated": "Updated 24 November 2026",
     "sections": [
       {
         "h": "Who runs the website"
@@ -417,13 +417,28 @@
         "p": "Neither the website nor the app uses cookies. If we add visitor analytics, we'll ask you first with a consent banner and won't measure anything without your consent."
       },
       {
-        "h": "The Jídlo od A–Z app"
+        "h": "The Jídlo od A–Z app without an account"
       },
       {
         "ul": [
-          "Your profile (age, weight, height, goal), fridge and shopping list are stored only in your browser.",
+          "The app works without an account. Your profile (age, weight, height, sex, activity, goal, diet), fridge, shopping list, favourites, stamps and water log are then stored only in your browser.",
           "They are never sent anywhere and we can't see them.",
           "To delete them, clear this site's data in your browser."
+        ]
+      },
+      {
+        "h": "App account (optional)"
+      },
+      {
+        "ul": [
+          "You create an account yourself if you want your data on all your devices and to collect stamps. You sign in with a link sent to your email – there is no password.",
+          "What we store: your email, profile (age, weight, height, sex, activity, goal and diet – e.g. vegetarian or gluten-free), avatar, favourite recipes, stamps, plan, fridge and shopping list. We don't store your daily water log.",
+          "Why: only so the app works the same on your phone and computer. We don't use the data for advertising, never share or sell it, and nobody looks through it.",
+          "Weight, height and diet say something about you (e.g. “gluten-free”). That's why we store them only with your explicit consent, which you give by creating an account and filling in your profile. You can withdraw it at any time by deleting your account.",
+          "Where: with Supabase, on servers in the European Union. Every signed-in user can only see their own data – the database itself enforces this.",
+          "How long: as long as you have the account. The “Delete account” button in the app deletes the account and all its data immediately and permanently.",
+          "The “Download my data” button gives you a copy of everything in your account at any time.",
+          "To sign in, the app loads the Supabase library from jsDelivr (a file delivery network), which sees your device's IP address. It is not loaded without an account."
         ]
       },
       {
@@ -446,7 +461,7 @@
         "h": "Your rights"
       },
       {
-        "p": "Since we store nothing about you, there's nothing to hand over, correct or delete. Once we start collecting data (newsletter, shop), we'll explain your GDPR rights here and how to use them."
+        "p": "For everything we hold about you (your newsletter email, your app account) you have the right to know what it is, get a copy, have it corrected or deleted, withdraw your consent and complain to the Czech data protection authority (uoou.gov.cz). You can download and delete your account data directly in the app; for the newsletter, just reply to any email."
       }
     ]
   },
