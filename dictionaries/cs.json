@@ -236,6 +236,11 @@
     "filterAll": "Vše",
     "filterAllSub": "všechny články",
     "readMore": "Číst článek",
+    "didYouKnow": "Víš, že…?",
+    "source": "Zdroj",
+    "tryNow": "Vyzkoušej hned",
+    "tryRecipe": "Recept k tomu",
+    "alsoRead": "Přečti si i",
     "goalTiles": {
       "hubnout": { "name": "Fit", "sub": "chci zhubnout" },
       "udrzet": { "name": "Normal", "sub": "chci udržet formu" },

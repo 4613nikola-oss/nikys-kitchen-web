@@ -236,6 +236,11 @@
     "filterAll": "All",
     "filterAllSub": "every article",
     "readMore": "Read the article",
+    "didYouKnow": "Did you know?",
+    "source": "Source",
+    "tryNow": "Try it now",
+    "tryRecipe": "A recipe for this",
+    "alsoRead": "Also read",
     "goalTiles": {
       "hubnout": { "name": "Fit", "sub": "I want to lose weight" },
       "udrzet": { "name": "Normal", "sub": "I want to stay in shape" },

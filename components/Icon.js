@@ -5,6 +5,8 @@ const g = (d, listek = true) => `<g fill="none" stroke="currentColor" stroke-wid
 
 export const ICONS = {
   cas: g('<circle cx="11" cy="13" r="8"/><path d="M11 8.5V13l3 2"/>'),
+  // žárovka = zajímavost
+  zarovka: g('<path d="M8.5 15.5c-1.6-1.2-2.8-3-2.8-5.2a6.3 6.3 0 0 1 12.6 0c0 2.2-1.2 4-2.8 5.2v2h-7z"/><path d="M9 20.5h6M12 2.2v.8"/>'),
   // ikonky kroků postupu
   nuz: g('<path d="M3 20h18"/><path d="M5 16.5 16.5 5a2.1 2.1 0 0 1 3 3L8 19.5z"/><path d="M8.5 13l2.5 2.5"/>', false),
   misa: g('<path d="M3 11.5h18a9 9 0 0 1-18 0z"/><path d="M14.5 11.5 19 3M17 4.5c1.2-.2 2.3.4 2.6 1.4"/>'),

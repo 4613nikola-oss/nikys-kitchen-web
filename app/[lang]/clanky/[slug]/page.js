@@ -2,7 +2,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getDictionary, getLang } from "@/lib/i18n";
 import { alternates } from "@/lib/site";
-import { getArticles, getArticle, recipesFor } from "@/lib/content";
+import Image from "next/image";
+import { getArticles, getArticle, recipesFor, getRecipes } from "@/lib/content";
+import { asset } from "@/lib/asset";
+import Icon from "@/components/Icon";
+import Tecka from "@/components/Tecka";
 import RecipeCard from "@/components/RecipeCard";
 import ComicPanel from "@/components/ComicPanel";
 import ArticleCard from "@/components/ArticleCard";
@@ -20,10 +24,51 @@ export async function generateMetadata({ params }) {
   return a ? { title: a[lang].nazev, description: a[lang].perex, alternates: alternates(lang, `clanky/${slug}/`) } : {};
 }
 
-// Blok textu článku: nadpis, odstavec nebo seznam
-function Block({ b }) {
+// Blok textu článku: nadpis, odstavec, seznam, „Věděla jsi?“, „Vyzkoušej hned“, recept nebo článek v textu
+function Block({ b, d, lang, recepty, clanky }) {
   if (b.h) return <h2>{b.h}</h2>;
   if (b.ul) return <ul>{b.ul.map((x, i) => <li key={i}>{x}</li>)}</ul>;
+  if (b.fakt) {
+    return (
+      <aside className="fact-box">
+        <p className="fact-box-title"><Icon name="zarovka" size={24} /> {d.didYouKnow}</p>
+        <p>{b.fakt}</p>
+        {b.url && <p className="fact-box-source">{d.source}: <a href={b.url} rel="noopener" target="_blank">{b.zdroj}</a></p>}
+      </aside>
+    );
+  }
+  if (b.tipy) {
+    return (
+      <aside className="try-box">
+        <p className="try-box-title">{d.tryNow}</p>
+        <ol>{b.tipy.map((x, i) => <li key={i}>{x}</li>)}</ol>
+      </aside>
+    );
+  }
+  if (b.recept) {
+    const r = recepty.find((x) => x.slug === b.recept);
+    if (!r) return null;
+    return (
+      <Link className="inline-recipe" href={`/${lang}/recepty/${r.slug}/`}>
+        {r.obrazek
+          ? <Image src={asset(`/images/recepty/${r.obrazek}`)} alt="" width={120} height={120} className="inline-recipe-img" />
+          : <span className="inline-recipe-img inline-recipe-tecka"><Tecka podoba={r.tecka || "talir"} size={70} /></span>}
+        <span className="inline-recipe-text">
+          <span className="inline-recipe-kicker">{d.tryRecipe}</span>
+          <strong>{r[lang].nazev}</strong>
+          <span className="inline-recipe-meta">{r.cas} min{r.kcal ? ` · ~${r.kcal} kcal` : ""}</span>
+        </span>
+        <span className="inline-recipe-arrow" aria-hidden="true">→</span>
+      </Link>
+    );
+  }
+  if (b.clanek) {
+    const a = clanky.find((x) => x.slug === b.clanek);
+    if (!a) return null;
+    return (
+      <p className="inline-article"><Link href={`/${lang}/clanky/${a.slug}/`}>{d.alsoRead}: <strong>{a[lang].nazev}</strong> →</Link></p>
+    );
+  }
   return <p>{b.p}</p>;
 }
 
@@ -37,6 +82,8 @@ export default async function ArticlePage({ params }) {
   const t = article[lang];
   const d = dict.articles;
   const related = await recipesFor(article);
+  const vsechnyRecepty = await getRecipes();
+  const vsechnyClanky = await getArticles();
   // 3 další články – víc společných cílů = výš, jinak v pořadí webu
   const spolecne = (a) => a.cile.filter((c) => article.cile.includes(c)).length;
   const doporucene = (await getArticles())
@@ -58,13 +105,10 @@ export default async function ArticlePage({ params }) {
         <ul>{t.vKostce.map((x, i) => <li key={i}>{x}</li>)}</ul>
       </section>
 
-      {/* Celý text po rozkliknutí – funguje i s klávesnicí a čtečkou */}
-      <details className="more">
-        <summary>{d.more}</summary>
-        <div className="prose">
-          {t.telo.map((b, i) => <Block key={i} b={b} />)}
-        </div>
-      </details>
+      {/* Celý text hned vidět (dřív byl schovaný za „Chci vědět víc“) */}
+      <div className="prose article-body">
+        {t.telo.map((b, i) => <Block key={i} b={b} d={d} lang={lang} recepty={vsechnyRecepty} clanky={vsechnyClanky} />)}
+      </div>
 
       {article.zdroje.length > 0 && (
         <section aria-labelledby="zdroje" className="sources">

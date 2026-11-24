@@ -849,6 +849,36 @@ main section { margin-bottom: 4.5rem; }
 .btn .icon { color: currentColor; }
 .btn .icon path[fill="#5e7769"] { fill: currentColor; opacity: 0.6; }
 
+/* ===== Článek: Víš, že…?, Vyzkoušej hned, recept a článek v textu ===== */
+.article-body { margin-top: 2rem; }
+.fact-box {
+  margin: 2rem 0; padding: 1.1rem 1.25rem; background: #fef3c7; border: 2px solid #f59e0b; border-radius: var(--radius);
+  position: relative;
+}
+.fact-box-title { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.4rem !important; font-weight: 900; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.85rem; color: #8a5a00; }
+.fact-box-title .icon { color: #8a5a00; }
+.fact-box p { margin: 0 0 0.5rem; font-size: 1.1rem; font-weight: 600; }
+.fact-box-source { font-size: 0.85rem !important; font-weight: 500 !important; color: var(--color-muted); margin: 0 !important; }
+.try-box { margin: 2rem 0; padding: 1.1rem 1.25rem; background: var(--card-salvej); border: 2px solid var(--ink); border-radius: var(--radius); box-shadow: 4px 4px 0 var(--ink); }
+.try-box-title { margin: 0 0 0.5rem !important; font-family: var(--font-heading-stack); font-weight: 900; font-size: 1.3rem; color: var(--color-primary); }
+.try-box ol { margin: 0; padding-left: 1.3rem; }
+.try-box li { margin-bottom: 0.5rem; }
+.try-box li::marker { font-weight: 900; color: var(--color-terracotta); }
+.inline-recipe {
+  display: flex; align-items: center; gap: 1rem; margin: 1.75rem 0; padding: 0.75rem 1rem; text-decoration: none; color: var(--ink);
+  background: var(--card-med); border: 2px solid var(--ink); border-radius: var(--radius); box-shadow: 4px 4px 0 var(--ink); transition: transform 0.12s, box-shadow 0.12s;
+}
+.inline-recipe:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink); color: var(--ink); }
+.inline-recipe-img { width: 5.5rem; height: 5.5rem; flex: none; border-radius: 50%; object-fit: cover; border: 2px solid var(--ink); background: #fff; }
+.inline-recipe-tecka { display: grid; place-items: center; overflow: hidden; }
+.inline-recipe-text { display: grid; gap: 0.15rem; flex: 1; }
+.inline-recipe-kicker { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: #8e4129; }
+.inline-recipe-text strong { font-family: var(--font-heading-stack); font-size: 1.2rem; }
+.inline-recipe-meta { font-size: 0.9rem; color: var(--color-muted); }
+.inline-recipe-arrow { font-size: 1.6rem; font-weight: 900; color: var(--color-primary); }
+.inline-article { margin: 1.5rem 0 !important; }
+.inline-article a { font-weight: 600; color: var(--color-primary); }
+
 /* Uvařit: rámeček s textem, nákup do appky + tisk */
 .recipe-head .allergens { margin-bottom: 0; }
 .recipe-actions-row {
