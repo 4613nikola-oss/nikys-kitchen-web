@@ -146,6 +146,8 @@
       "note": "Free, no sign-up needed."
     },
     "bridge": {
+      "leadTitle": "Going to cook this?",
+      "lead": "I'll send the ingredients to your shopping list in the app in one click. Or print the recipe for the kitchen.",
       "addToShop": "Add to the app's shopping list",
       "backToApp": "Back to the app",
       "openApp": "Open the app",

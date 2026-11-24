@@ -179,7 +179,9 @@ export default async function RecipePage({ params }) {
           </section>
 
           {/* propojení s appkou: přidat suroviny do nákupu, zpět do appky */}
+          {/* Uvařit: suroviny do nákupu v appce nebo vytisknout – v jednom výrazném rámečku */}
           <div className="recipe-actions-row">
+            <p className="recipe-actions-lead"><Icon name="nakup" size={26} /> <span><strong>{d.bridge.leadTitle}</strong> {d.bridge.lead}</span></p>
             <AppBridge items={recipe.cs?.nakup || []} labels={d.bridge} />
             <PrintButton label={d.print} />
           </div>
@@ -199,7 +201,7 @@ export default async function RecipePage({ params }) {
               <p className="for-whom-note">{d.forWhomNote}</p>
             </section>
           )}
-          {recipe.status === "ukazka" && <p className="note">{d.draft}</p>}
+          {recipe.status === "ukazka" && <p className="note draft-note">{d.draft}</p>}
         </div>
         <div className="recipe-media">
           {recipe.obrazek ? (

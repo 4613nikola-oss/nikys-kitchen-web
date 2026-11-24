@@ -847,10 +847,18 @@ main section { margin-bottom: 4.5rem; }
 .btn .icon { color: currentColor; }
 .btn .icon path[fill="#5e7769"] { fill: currentColor; opacity: 0.6; }
 
-/* Tlačítka u receptu v jedné řadě: nákup do appky + tisk */
-.recipe-actions-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin-top: 1.25rem; }
+/* Uvařit: rámeček s textem, nákup do appky + tisk */
+.recipe-head .allergens { margin-bottom: 0; }
+.recipe-actions-row {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin-top: 1rem;
+  background: var(--card-salvej); border: 2px solid var(--ink); border-radius: var(--radius); box-shadow: 4px 4px 0 var(--ink); padding: 1rem 1.15rem;
+}
+.recipe-actions-lead { flex-basis: 100%; display: flex; align-items: flex-start; gap: 0.6rem; margin: 0; max-width: none; }
+.recipe-actions-lead .icon { flex: none; color: var(--color-primary); margin-top: 0.1rem; }
 .recipe-actions-row .app-bridge { margin: 0; }
 .recipe-actions-row .app-bridge-msg { order: 10; }
+/* Ukázkový recept: odstup od karty, vlastní štítek */
+.draft-note { display: inline-block; margin: 1.25rem 0 0 !important; background: #fff8e6; border: 1.5px dashed #8e4129; border-radius: 999px; padding: 0.2rem 0.9rem; font-size: 1.1rem !important; }
 
 /* Propojení receptu s appkou */
 .app-bridge { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin: 1.25rem 0 0; }

@@ -146,6 +146,8 @@
       "note": "Zdarma a bez registrace."
     },
     "bridge": {
+      "leadTitle": "Chystáš se to uvařit?",
+      "lead": "Suroviny ti jedním klikem pošlu do nákupního seznamu v appce. Nebo si recept vytiskni do kuchyně.",
       "addToShop": "Přidat do nákupu v appce",
       "backToApp": "Zpět do appky",
       "openApp": "Otevřít appku",
