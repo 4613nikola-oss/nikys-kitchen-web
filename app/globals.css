@@ -882,6 +882,10 @@ main section { margin-bottom: 4.5rem; }
 .faq-q { flex: 1; font-weight: 700; }
 .faq .faq-item > p { margin: 0 0 0.5rem; padding: 0.25rem 1rem 0 3.65rem; max-width: none; }
 
+/* Políčka (e-mail, hledání) světlejší než karta, ať nesplývají */
+.signup-row input, .search, input[type="search"], .search-field input { background-color: #f6faf3; }
+.signup-row input:focus, input[type="search"]:focus, .search-field input:focus { background-color: #fff; }
+
 /* Od babičky */
 .grandma-link { font-weight: 800; color: var(--color-terracotta); }
 .grandma-empty { display: flex; flex-wrap: wrap; gap: 1.25rem; align-items: center; background-color: var(--card-ruzova); }
