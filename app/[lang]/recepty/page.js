@@ -32,9 +32,16 @@ export default async function RecipesPage() {
   return (
     <>
       <div className="page-intro">
-        <div>
+        <div className="page-intro-text">
+          <p className="intro-kicker">{dict.recipes.kicker}</p>
           <h1>{dict.recipes.title}</h1>
-          <p className="lead">{dict.recipes.lead}</p>
+          <p className="intro-lead">{dict.recipes.lead}</p>
+          {/* čísla rubriky jako barevné štítky */}
+          <ul className="intro-stats">
+            <li className="intro-stat-1"><b>{recipes.length}</b> {dict.recipes.statRecipes}</li>
+            <li className="intro-stat-2"><b>{recipes.filter((r) => r.vegetarianske).length}</b> {dict.recipes.statVege}</li>
+            <li className="intro-stat-3"><b>{recipes.filter((r) => r.cas <= 15).length}</b> {dict.recipes.statQuick}</li>
+          </ul>
         </div>
         <ComicPanel {...dict.comics.recipes} size={140} />
       </div>

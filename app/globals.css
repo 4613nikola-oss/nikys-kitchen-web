@@ -988,8 +988,39 @@ main section { margin-bottom: 4.5rem; }
 .book-recipe-head { display: flex; align-items: center; gap: 1rem; }
 .book-recipe-head .book-h { margin: 0; }
 
-/* Komiks: ocásek bubliny nesmí zasahovat do postavičky (byla „useknutá“) */
-.comic-hero { margin-top: 1.4rem; }
+/* Komiks: ocásek bubliny nesmí zasahovat do postavičky a postavička se nikdy neořízne okrajem panelu */
+.comic-hero { margin-top: 1.4rem; overflow: visible; }
+.comic-panel { overflow: visible; }
+.comic-hero img, .comic-hero .morph { margin-bottom: 0 !important; max-height: 100%; }
+
+/* Komiks dne: každý panel jinak */
+/* 1) bublina vlevo nahoře, postavička vpravo dole, panel nakřivo */
+.comic-layout-vpravo { transform: rotate(-1deg); }
+.comic-layout-vpravo .comic-bubble { margin: 0.9rem auto 0 0.9rem; max-width: 78%; }
+.comic-layout-vpravo .comic-bubble::after { left: auto; right: 22%; }
+.comic-layout-vpravo .comic-hero { justify-content: flex-end; padding-right: 1rem; }
+/* 2) výkřik: zubatá bublina, postavička vlevo */
+.comic-layout-vykrik { transform: rotate(0.8deg); }
+.comic-layout-vykrik .comic-bubble {
+  border-radius: 0; border: 0; background: transparent; padding: 1.6rem 1.8rem; margin: 0.5rem 0.5rem 0 auto; max-width: 92%;
+  filter: drop-shadow(0 0 0 var(--ink));
+}
+.comic-layout-vykrik .comic-bubble::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; background: #fff;
+  clip-path: polygon(0% 18%, 9% 12%, 6% 0%, 20% 9%, 30% 0%, 38% 10%, 50% 2%, 58% 11%, 70% 0%, 76% 12%, 92% 4%, 90% 18%, 100% 26%, 93% 40%, 100% 52%, 92% 62%, 98% 80%, 84% 80%, 84% 98%, 70% 86%, 60% 100%, 50% 88%, 38% 98%, 30% 86%, 16% 96%, 14% 82%, 0% 84%, 7% 66%, 0% 52%, 8% 40%);
+  outline: none;
+}
+.comic-layout-vykrik .comic-bubble::after { display: none; }
+.comic-layout-vykrik .comic-bubble p { color: #8e4129; font-size: 1.45rem; }
+.comic-layout-vykrik .comic-hero { justify-content: flex-start; padding-left: 1rem; }
+/* 3) myšlenka: obláčková bublina s kolečky místo ocásku */
+.comic-layout-mysleni .comic-bubble { border-radius: 2.5rem; margin-left: 0.9rem; margin-right: 2.5rem; }
+.comic-layout-mysleni .comic-bubble::after {
+  width: 1rem; height: 1rem; border: 3px solid var(--ink); border-radius: 50%; transform: none; left: 55%; bottom: -1.3rem;
+  box-shadow: 0.9rem 1rem 0 -0.15rem #fff, 0.9rem 1rem 0 0.05rem var(--ink);
+}
+.comic-layout-mysleni .comic-hero { justify-content: center; padding-left: 3rem; }
+@media (prefers-reduced-motion: reduce) { .comic-layout-vpravo, .comic-layout-vykrik { transform: none; } }
 
 /* Ikonky místo emoji */
 .newsletter-perks li { display: flex; align-items: center; gap: 0.55rem; }
@@ -1068,6 +1099,46 @@ main section { margin-bottom: 4.5rem; }
 .article-card .card-link { display: flex; flex-direction: column; }
 .article-card .card-body { display: flex; flex-direction: column; flex: 1; }
 .article-card .card-cta { margin-top: auto; padding-top: 0.85rem; align-self: flex-start; border-bottom: 0; text-decoration: underline; text-underline-offset: 3px; }
+
+/* ===== Hero na úvodu: úvodník, slovo zvýrazněné fixou, vzduch, nálepka, čísla ===== */
+.hero-v2 { gap: 2.5rem; padding-top: 1.5rem; align-items: center; }
+.hero-v2 .hero-text { display: grid; gap: 1.1rem; justify-items: start; }
+.hero-v2 .headline { margin: 0; line-height: 1.05; }
+.hero-mark {
+  background: linear-gradient(104deg, transparent 0.4em, #f3d067 0.4em, #f3d067 calc(100% - 0.3em), transparent calc(100% - 0.3em));
+  color: var(--color-primary); padding: 0 0.15em; border-radius: 0.2em; box-decoration-break: clone; -webkit-box-decoration-break: clone;
+}
+.hero-lead { margin: 0; font-size: 1.2rem; line-height: 1.65; max-width: 34rem; color: #3b342d; }
+.hero-v2 .actions { margin-top: 0.25rem; }
+.hero-stats { margin-top: 0.5rem; }
+.hero-visual { position: relative; }
+.hero-sticker {
+  position: absolute; left: -1.2rem; bottom: -1.2rem; z-index: 3; display: grid; place-items: center; text-align: center;
+  width: 7.5rem; height: 7.5rem; border-radius: 50%; padding: 0.8rem; font-weight: 900; font-size: 0.88rem; line-height: 1.15;
+  background: var(--color-terracotta); color: #fff; border: 3px solid var(--ink); box-shadow: 4px 4px 0 var(--ink); transform: rotate(-12deg);
+}
+@media (max-width: 799px) { .hero-sticker { width: 6rem; height: 6rem; font-size: 0.75rem; left: auto; right: -0.4rem; bottom: -1rem; } }
+@media (prefers-reduced-motion: reduce) { .hero-sticker { transform: none; } }
+
+/* ===== Hlavičky rubrik (Recepty, Články): štítek, velký nadpis, popis, barevná čísla ===== */
+.page-intro-text { display: grid; gap: 0.75rem; align-content: center; }
+.intro-kicker {
+  justify-self: start; margin: 0; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
+  color: #fff; background: var(--color-terracotta); border: 2px solid var(--ink); border-radius: 999px; padding: 0.2rem 0.85rem;
+  transform: rotate(-2deg); box-shadow: 2px 2px 0 var(--ink);
+}
+.page-intro-text h1 { margin: 0; font-size: clamp(2.6rem, 7vw, 4.4rem); font-weight: 900; line-height: 1; }
+.intro-lead { margin: 0; font-size: 1.15rem; line-height: 1.6; max-width: 34rem; color: #3b342d; }
+.intro-stats { list-style: none; padding: 0; margin: 0.4rem 0 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.intro-stats li {
+  display: inline-flex; align-items: baseline; gap: 0.35rem; font-weight: 700; font-size: 0.95rem;
+  border: 2px solid var(--ink); border-radius: var(--radius); padding: 0.45rem 0.85rem; box-shadow: 3px 3px 0 var(--ink);
+}
+.intro-stats b { font-family: var(--font-heading-stack); font-size: 1.6rem; font-weight: 900; line-height: 1; }
+.intro-stat-1 { background: var(--card-med); transform: rotate(-1deg); }
+.intro-stat-2 { background: var(--card-salvej); transform: rotate(0.8deg); }
+.intro-stat-3 { background: var(--card-ruzova); transform: rotate(-0.6deg); }
+@media (prefers-reduced-motion: reduce) { .intro-stats li, .intro-kicker { transform: none; } }
 
 /* Obchod: úvod s odstupem od produktů */
 .shop-intro { margin-bottom: 3rem; }

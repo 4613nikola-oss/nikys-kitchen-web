@@ -27,26 +27,39 @@ export default async function HomePage() {
     <>
       {/* Úvod */}
       {/* Titulní strana novin: velký titulek, perex, vedle komiksový panel */}
-      <section className="hero">
+      <section className="hero hero-v2">
         <div className="hero-text">
-          <h1 className="headline">{h.title}</h1>
-          <p className="lead dropcap">{h.lead}</p>
+          <p className="intro-kicker">{h.editorial}</p>
+          {/* titulek s jedním slovem zvýrazněným jako fixou */}
+          <h1 className="headline">{h.titleA} <mark className="hero-mark">{h.titleMark}</mark>{h.titleB}</h1>
+          <p className="hero-lead">{h.lead}</p>
           <div className="actions">
             <Link className="btn btn-primary" href={`/${lang}/recepty/`}>{h.ctaRecipes}</Link>
             <a className="btn btn-accent" href={APP_URL}>{h.ctaApp}</a>
           </div>
+          {/* co tu najdeš – čísla jako štítky */}
+          <ul className="intro-stats hero-stats">
+            <li className="intro-stat-1"><b>{recipes.length}</b> {h.statRecipes}</li>
+            <li className="intro-stat-2"><b>{articles.length}</b> {h.statArticles}</li>
+            <li className="intro-stat-3"><b>1</b> {h.statApp}</li>
+          </ul>
         </div>
-        <ComicPanel text={h.heroBubble} label={h.kicker} tone="med" className="hero-panel">
-          <TeckaMorph size={220} />
-        </ComicPanel>
+        <div className="hero-visual">
+          <ComicPanel text={h.heroBubble} label={h.kicker} tone="med" className="hero-panel">
+            <TeckaMorph size={220} />
+          </ComicPanel>
+          {/* nálepka nakřivo */}
+          <span className="hero-sticker" aria-hidden="true">{h.sticker}</span>
+        </div>
       </section>
 
       {/* Komiks dne: tři panely s hláškami */}
       <section aria-labelledby="komiks">
         <h2 id="komiks" className="rubrika">{h.comicTitle} <small>{h.comicSub}</small></h2>
         <div className="comic-strip">
-          {h.comics.map((c) => (
-            <ComicPanel key={c.text} text={c.text} podoba={c.podoba} tone={c.tone} />
+          {/* každý panel jinak: bublina vlevo / výkřik / myšlenka */}
+          {h.comics.map((c, i) => (
+            <ComicPanel key={c.text} text={c.text} podoba={c.podoba} tone={c.tone} layout={["vpravo", "vykrik", "mysleni"][i % 3]} />
           ))}
         </div>
       </section>
