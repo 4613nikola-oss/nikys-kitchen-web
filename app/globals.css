@@ -840,6 +840,14 @@ main section { margin-bottom: 4.5rem; }
 .tip-highlight { border: 3px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); }
 .tip-highlight h2 { color: var(--color-terracotta); text-transform: uppercase; letter-spacing: 0.04em; }
 
+/* Od babičky */
+.grandma-link { font-weight: 800; color: var(--color-terracotta); }
+.grandma-empty { display: flex; flex-wrap: wrap; gap: 1.25rem; align-items: center; background-color: var(--card-ruzova); }
+.grandma-empty > div { flex: 1 1 16rem; }
+.grandma-soon ol, .grandma-soon ul { margin-bottom: 0; }
+.chip-grandma { display: inline-flex; text-decoration: none; background: var(--card-ruzova); color: var(--ink); border: 1.5px solid var(--ink); font-weight: 800; }
+.story { margin: 0 0 2rem; }
+
 @media (prefers-reduced-motion: reduce) {
   .recipe-card:hover, .recipe-card:focus-within { transform: none; }
   .card-bubble, .suggest, .search-field .search-icon, .search-field input { transition: none; animation: none; }

@@ -4,7 +4,7 @@ import { SITE_URL } from "@/lib/site";
 
 export const dynamic = "force-static";
 
-const STATICKE = ["", "recepty/", "clanky/", "aplikace/", "obchod/", "o-mne/", "soukromi/", "pristupnost/"];
+const STATICKE = ["", "recepty/", "od-babicky/", "clanky/", "aplikace/", "obchod/", "o-mne/", "soukromi/", "pristupnost/"];
 
 export default async function sitemap() {
   const [recepty, clanky, produkty] = await Promise.all([getRecipes(), getArticles(), getProducts()]);

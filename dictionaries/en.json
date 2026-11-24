@@ -137,6 +137,27 @@
     "photoBy": "Photo:",
     "photoNote": "illustrative photo, the dish may differ from this recipe"
   },
+  "grandma": {
+    "title": "From Grandma",
+    "lead": "Recipes from family cookbooks – the ones that smell of Sundays and memories. Slightly updated to fit into today.",
+    "listTitle": "Grandma's recipes",
+    "emptyTitle": "Grandma's cookbook is just opening.",
+    "emptyText": "The first recipes are coming soon, together with the story of where they come from. Meanwhile, have a look at the other recipes.",
+    "toRecipes": "Browse recipes",
+    "soonTitle": "Coming soon: send your grandma's recipe",
+    "soonText": "Got a recipe that runs in the family? Soon you'll be able to send it here.",
+    "soonSteps": [
+      "Sign in to the app (just your email, no password).",
+      "Write down the recipe and a short story of where it comes from.",
+      "Niky reads it, cooks it and publishes it – with your first name under the recipe."
+    ],
+    "linkFromRecipes": "Grandma's recipes",
+    "badge": {
+      "babicka": "From Grandma",
+      "ctenar": "From a reader"
+    },
+    "storyTitle": "The story behind it"
+  },
   "articles": {
     "title": "Articles",
     "lead": "The short version first, more if you want it.",
@@ -493,6 +514,11 @@
       "podoba": "varecka",
       "tone": "ruzova",
       "text": "Head chef? No, that's Niky. I'm the boss around here."
+    },
+    "grandma": {
+      "podoba": "kolac",
+      "tone": "ruzova",
+      "text": "Grandma had no calculator. She had a good eye, a spoon and Sunday cake."
     }
   }
 }

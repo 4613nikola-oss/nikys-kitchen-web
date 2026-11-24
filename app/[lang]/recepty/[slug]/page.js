@@ -84,6 +84,9 @@ export default async function RecipePage({ params }) {
 
       <header className="recipe-head">
         <div>
+          {recipe.puvod !== "niky" && (
+            <Link className="chip chip-grandma" href={`/${lang}/od-babicky/`}>👵 {dict.grandma.badge[recipe.puvod]}</Link>
+          )}
           <h1>{t.nazev}</h1>
           {/* V kostce: úvod a hlavní údaje na první pohled */}
           <section className="in-short" aria-label={d.inShort}>
@@ -169,6 +172,17 @@ export default async function RecipePage({ params }) {
           )}
         </div>
       </header>
+
+      {/* Příběh receptu – jako lísteček z rodinné kuchařky */}
+      {t.pribeh && (
+        <aside className="tip story" aria-labelledby="pribeh">
+          <Tecka podoba="kolac" size={90} />
+          <div>
+            <h2 id="pribeh">{dict.grandma.storyTitle}</h2>
+            <p>{t.pribeh}</p>
+          </div>
+        </aside>
+      )}
 
       <div className="recipe-body">
         <section aria-labelledby="suroviny" className="card pad sticker">

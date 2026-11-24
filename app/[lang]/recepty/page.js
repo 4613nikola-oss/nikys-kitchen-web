@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getDictionary, getLang } from "@/lib/i18n";
 import { alternates } from "@/lib/site";
 import { getRecipes, getAllergenNames } from "@/lib/content";
@@ -32,6 +33,7 @@ export default async function RecipesPage() {
         <div>
           <h1>{dict.recipes.title}</h1>
           <p className="lead">{dict.recipes.lead}</p>
+          <p><Link className="grandma-link" href={`/${lang}/od-babicky/`}>👵 {dict.grandma.linkFromRecipes} →</Link></p>
         </div>
         <ComicPanel {...dict.comics.recipes} size={140} />
       </div>

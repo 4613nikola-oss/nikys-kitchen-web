@@ -28,6 +28,7 @@ CREATE TABLE recepty (
   cile        text[] NOT NULL DEFAULT '{}',     -- pro koho: hubnout (Fit), udrzet (Normal), nabrat (Svaly) – orientačně
   bilkoviny   integer CHECK (bilkoviny >= 0),   -- g bílkovin na 1 porci, orientačně
   vegetarianske boolean NOT NULL DEFAULT false, -- bez masa a ryb
+  puvod       text NOT NULL DEFAULT 'niky' CHECK (puvod IN ('niky', 'babicka', 'ctenar')), -- čí je recept (rubrika Od babičky)
   obrazek     text,                             -- soubor v public/images/recepty/
   obrazek_ai  boolean NOT NULL DEFAULT false,   -- fotka je zatím AI ilustrace
   obrazek_zdroj jsonb,                                  -- volná fotka: autor, licence, odkaz
@@ -51,6 +52,7 @@ CREATE TABLE recepty_texty (
   postup    jsonb NOT NULL DEFAULT '[]',        -- [{ "text": "...", "obrazek": "..." }]
   varianty  jsonb,                              -- [{ "nazev": "A – sytá", "text": "..." }]
   tip       text,
+  pribeh    text,                               -- příběh receptu (hlavně Od babičky)
   PRIMARY KEY (recept, jazyk)
 );
 

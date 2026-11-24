@@ -137,6 +137,27 @@
     "photoBy": "Foto:",
     "photoNote": "ilustrační fotka, jídlo nemusí být přesně podle receptu"
   },
+  "grandma": {
+    "title": "Od babičky",
+    "lead": "Recepty z rodinných kuchařek – ty, co voní nedělí a vzpomínkami. Trochu upravené, aby se vešly do dnešního dne.",
+    "listTitle": "Recepty od babičky",
+    "emptyTitle": "Babiččina kuchařka se právě otevírá.",
+    "emptyText": "První recepty sem brzy přidám i s příběhem, odkud pocházejí. Zatím mrkni na ostatní recepty.",
+    "toRecipes": "Prohlédnout recepty",
+    "soonTitle": "Brzy: pošli recept od své babičky",
+    "soonText": "Máš doma recept, který se dědí? Brzy ho sem budeš moct poslat.",
+    "soonSteps": [
+      "Přihlásíš se v appce (stačí e-mail, žádné heslo).",
+      "Napíšeš recept a krátký příběh, odkud je.",
+      "Niky ho přečte, uvaří a zveřejní – pod receptem bude tvoje křestní jméno."
+    ],
+    "linkFromRecipes": "Recepty od babičky",
+    "badge": {
+      "babicka": "Od babičky",
+      "ctenar": "Od čtenáře"
+    },
+    "storyTitle": "Příběh receptu"
+  },
   "articles": {
     "title": "Články",
     "lead": "Krátce v kostce, víc po rozkliknutí.",
@@ -493,6 +514,11 @@
       "podoba": "varecka",
       "tone": "ruzova",
       "text": "Šéfkuchařka? Ne, to je Niky. Šéf jsem tady já."
+    },
+    "grandma": {
+      "podoba": "kolac",
+      "tone": "ruzova",
+      "text": "Babička neměla kalkulačku. Měla oko, lžíci a nedělní koláč."
     }
   }
 }
