@@ -1,7 +1,7 @@
 import { getDictionary, getLang } from "@/lib/i18n";
 import { alternates } from "@/lib/site";
 import { getArticles } from "@/lib/content";
-import ArticleCard from "@/components/ArticleCard";
+import ArticleBrowser from "@/components/ArticleBrowser";
 import ComicPanel from "@/components/ComicPanel";
 
 export async function generateMetadata() {
@@ -22,11 +22,7 @@ export default async function ArticlesPage() {
         </div>
         <ComicPanel {...dict.comics.articles} size={140} />
       </div>
-      <div className="grid">
-        {articles.map((a) => (
-          <ArticleCard key={a.slug} article={a} lang={lang} dict={dict} />
-        ))}
-      </div>
+      <ArticleBrowser articles={articles} lang={lang} dict={dict} />
     </>
   );
 }

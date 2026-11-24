@@ -43,6 +43,11 @@
     "aboutTitle": "Who is Niky",
     "aboutLead": "I cook healthy food without guilt. I test recipes in my own kitchen and write the way I'd advise a friend.",
     "aboutCta": "More about me",
+    "aboutFacts": [
+      "I test every recipe in my own kitchen",
+      "One base, three versions – less cooking",
+      "A sweet treat is part of the plan"
+    ],
     "kicker": "Exclusive",
     "heroBubble": "Who said healthy eating can't include cake?",
     "comicTitle": "Comic of the day",
@@ -137,6 +142,17 @@
     "photoBy": "Photo:",
     "photoNote": "illustrative photo, the dish may differ from this recipe"
   },
+  "newsletter": {
+    "title": "Want recipes and a gift for free?",
+    "lead": "Join the newsletter – it's {free} and you can unsubscribe with one click.",
+    "free": "free",
+    "perks": [
+      "📗 Starter booklet to download right away: 7 recipes in 15 minutes",
+      "🏷️ 10% off your first order in the shop",
+      "✉️ One recipe and tip every 14 days – no spam",
+      "🙌 Be the first to see new recipes and app features"
+    ]
+  },
   "grandma": {
     "title": "From Grandma",
     "lead": "Recipes from family cookbooks – the ones that smell of Sundays and memories. Slightly updated to fit into today.",
@@ -162,6 +178,10 @@
     "title": "Articles",
     "lead": "The short version first, more if you want it.",
     "readTime": "{n} min read",
+    "filterLabel": "Who it's for",
+    "filterAll": "All",
+    "filterCount": "Articles: {n}",
+    "recommended": "You might also like",
     "inShort": "In short",
     "more": "Tell me more",
     "sources": "Sources",

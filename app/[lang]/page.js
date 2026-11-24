@@ -7,6 +7,7 @@ import ArticleCard from "@/components/ArticleCard";
 import Tecka from "@/components/Tecka";
 import TeckaMorph from "@/components/TeckaMorph";
 import ComicPanel from "@/components/ComicPanel";
+import NewsletterBox from "@/components/NewsletterBox";
 
 export async function generateMetadata() {
   return { alternates: alternates(await getLang()) };
@@ -110,12 +111,25 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* O Niky */}
-      <section className="about-teaser" aria-labelledby="niky">
-        <h2 id="niky">{h.aboutTitle}</h2>
-        <p>{h.aboutLead}</p>
-        <Link href={`/${lang}/o-mne/`}>{h.aboutCta} →</Link>
+      {/* Kdo je Niky: polaroid jako na stránce O mně, krátce a s tlačítkem */}
+      <section className="about-teaser card pad" aria-labelledby="niky">
+        <figure className="polaroid about-teaser-photo">
+          <span className="pin" aria-hidden="true" />
+          <Tecka podoba="vari" size={150} />
+          <figcaption className="hand">{dict.about.photoCaption}</figcaption>
+        </figure>
+        <div>
+          <h2 id="niky">{h.aboutTitle}</h2>
+          <p>{h.aboutLead}</p>
+          <ul className="about-facts">
+            {h.aboutFacts.map((f) => <li key={f}>{f}</li>)}
+          </ul>
+          <Link className="btn btn-primary" href={`/${lang}/o-mne/`}>{h.aboutCta}</Link>
+        </div>
       </section>
+
+      {/* Newsletter s dárkem */}
+      <NewsletterBox dict={dict} lang={lang} id="newsletter-uvod" />
     </>
   );
 }

@@ -43,6 +43,11 @@
     "aboutTitle": "Kdo je Niky",
     "aboutLead": "Vařím zdravě, ale bez výčitek. Recepty zkouším ve vlastní kuchyni a píšu tak, jak bych radila kamarádce.",
     "aboutCta": "Víc o mně",
+    "aboutFacts": [
+      "Recepty zkouším ve vlastní kuchyni",
+      "Jeden základ, tři varianty – méně vaření",
+      "Sladká tečka patří do plánu"
+    ],
     "kicker": "Exkluzivně",
     "heroBubble": "Kdo říkal, že zdravé jídlo nemůže mít dort?",
     "comicTitle": "Komiks dne",
@@ -137,6 +142,17 @@
     "photoBy": "Foto:",
     "photoNote": "ilustrační fotka, jídlo nemusí být přesně podle receptu"
   },
+  "newsletter": {
+    "title": "Chceš recepty a dárek zdarma?",
+    "lead": "Přihlas se k newsletteru – je {free} a odhlásíš se jedním kliknutím.",
+    "free": "zdarma",
+    "perks": [
+      "📗 Startovací knížka hned ke stažení: 7 receptů do 15 minut",
+      "🏷️ 10% sleva na první nákup v obchodě",
+      "✉️ Jednou za 14 dní recept a tip – žádný spam",
+      "🙌 Jako první uvidíš nové recepty a appku"
+    ]
+  },
   "grandma": {
     "title": "Od babičky",
     "lead": "Recepty z rodinných kuchařek – ty, co voní nedělí a vzpomínkami. Trochu upravené, aby se vešly do dnešního dne.",
@@ -162,6 +178,10 @@
     "title": "Články",
     "lead": "Krátce v kostce, víc po rozkliknutí.",
     "readTime": "čtení na {n} min",
+    "filterLabel": "Pro koho",
+    "filterAll": "Vše",
+    "filterCount": "Článků: {n}",
+    "recommended": "Mohlo by tě zajímat",
     "inShort": "V kostce",
     "more": "Chci vědět víc",
     "sources": "Zdroje",

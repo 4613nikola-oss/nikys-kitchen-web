@@ -1,10 +1,8 @@
-import Link from "next/link";
 import { getDictionary, getLang } from "@/lib/i18n";
 import { alternates } from "@/lib/site";
 import { getProducts } from "@/lib/content";
-import Tecka from "@/components/Tecka";
 import ProductCard from "@/components/ProductCard";
-import SignupForm from "@/components/SignupForm";
+import NewsletterBox from "@/components/NewsletterBox";
 import ComicPanel from "@/components/ComicPanel";
 
 export async function generateMetadata() {
@@ -19,7 +17,6 @@ export default async function ShopPage() {
   const lang = await getLang();
   const s = dict.shop;
   const products = await getProducts();
-  const darek = products.find((p) => p.typ === "darek");
 
   return (
     <>
@@ -37,17 +34,7 @@ export default async function ShopPage() {
         ))}
       </div>
 
-      <section id="newsletter" className="band band-honey newsletter-box" aria-labelledby="darek">
-        <div className="band-grid">
-          <Tecka podoba="slavi" size={160} />
-          <div>
-            <h2 id="darek">{s.newsletterTitle}</h2>
-            <p>{s.newsletterText}</p>
-            <SignupForm typ="newsletter" lang={lang} f={s.form} />
-            {darek && <p><Link href={`/${lang}/obchod/${darek.slug}/`}>{s.newsletterLink}</Link></p>}
-          </div>
-        </div>
-      </section>
+      <NewsletterBox dict={dict} lang={lang} />
     </>
   );
 }

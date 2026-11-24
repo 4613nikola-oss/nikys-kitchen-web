@@ -840,6 +840,48 @@ main section { margin-bottom: 4.5rem; }
 .tip-highlight { border: 3px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); }
 .tip-highlight h2 { color: var(--color-terracotta); text-transform: uppercase; letter-spacing: 0.04em; }
 
+/* ===== Dávka 3 (24. 11.): články, newsletter, Kdo je Niky, FAQ ===== */
+
+/* Články: filtr a souměrná mřížka (3+3 na počítači, 2+2+2 na tabletu) */
+.article-filters { margin: 0 0 1.5rem; }
+.filter-count { margin-left: auto; font-weight: 700; color: var(--color-muted); }
+@media (min-width: 1000px) { .grid-articles { grid-template-columns: repeat(3, 1fr); } }
+.article .grid-articles { grid-template-columns: 1fr; }
+@media (min-width: 640px) { .article .grid-articles { grid-template-columns: repeat(3, 1fr); } }
+.article .grid-articles .article-card h3 { font-size: 1.05rem; }
+.article .grid-articles .hand-sm { display: none; }
+.article .newsletter-box { margin-top: 3rem; }
+
+/* Newsletter: „zdarma“ zeleně a tučně, výhody v odrážkách */
+.free { color: var(--color-primary); font-weight: 900; background: var(--comic-green); padding: 0 0.3em; border-radius: 0.25em; }
+.newsletter-perks { list-style: none; padding: 0; margin: 0 0 1rem; display: grid; gap: 0.45rem; }
+.newsletter-perks li { font-weight: 600; }
+.newsletter-more { margin: 0.75rem 0 0; font-size: 0.95rem; }
+
+/* Kdo je Niky na úvodu: polaroid + text */
+.about-teaser { display: grid; gap: 1.5rem; align-items: center; border-top: 2px solid var(--ink); background-color: var(--card-ruzova); }
+@media (min-width: 700px) { .about-teaser { grid-template-columns: auto 1fr; padding: 2rem; } }
+.about-teaser-photo { width: 12rem; justify-self: center; text-align: center; }
+.about-teaser-photo img { margin: 0 auto; }
+.about-teaser h2 { margin-top: 0; }
+.about-facts { list-style: none; padding: 0; margin: 0 0 1.25rem; display: grid; gap: 0.35rem; }
+.about-facts li::before { content: "✓ "; color: var(--color-primary); font-weight: 900; }
+
+/* FAQ: řádky přes celou šířku, otazník vlevo, +/− vpravo */
+.faq .faq-item { margin: 0 0 0.75rem; }
+.faq .faq-item summary {
+  display: flex; align-items: center; gap: 0.75rem; width: 100%; text-align: left; border-radius: var(--radius);
+  padding: 0.7rem 1rem; justify-content: flex-start;
+}
+.faq .faq-item summary::after { content: "+"; margin-left: auto; font-size: 1.4rem; font-weight: 900; line-height: 1; }
+.faq .faq-item[open] summary::after { content: "−"; }
+.faq-icon {
+  flex: none; display: grid; place-items: center; width: 1.9rem; height: 1.9rem; border-radius: 50%;
+  background: var(--color-primary); color: #fff; font-weight: 900; border: 2px solid var(--ink);
+}
+.faq-q { flex: 1; font-weight: 700; }
+.faq .faq-item > p { margin: 0 0 0.5rem; padding: 0.25rem 1rem 0 3.65rem; max-width: none; }
+
 /* Od babičky */
 .grandma-link { font-weight: 800; color: var(--color-terracotta); }
 .grandma-empty { display: flex; flex-wrap: wrap; gap: 1.25rem; align-items: center; background-color: var(--card-ruzova); }

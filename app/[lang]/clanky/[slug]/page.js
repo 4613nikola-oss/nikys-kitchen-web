@@ -5,6 +5,8 @@ import { alternates } from "@/lib/site";
 import { getArticles, getArticle, recipesFor } from "@/lib/content";
 import RecipeCard from "@/components/RecipeCard";
 import ComicPanel from "@/components/ComicPanel";
+import ArticleCard from "@/components/ArticleCard";
+import NewsletterBox from "@/components/NewsletterBox";
 
 export const dynamicParams = false;
 export async function generateStaticParams() {
@@ -35,6 +37,14 @@ export default async function ArticlePage({ params }) {
   const t = article[lang];
   const d = dict.articles;
   const related = await recipesFor(article);
+  // 3 další články – víc společných cílů = výš, jinak v pořadí webu
+  const spolecne = (a) => a.cile.filter((c) => article.cile.includes(c)).length;
+  const doporucene = (await getArticles())
+    .filter((a) => a.slug !== article.slug)
+    .map((a, i) => ({ a, skore: spolecne(a), i }))
+    .sort((x, y) => y.skore - x.skore || x.i - y.i)
+    .slice(0, 3)
+    .map((x) => x.a);
 
   return (
     <article className="article">
@@ -80,6 +90,18 @@ export default async function ArticlePage({ params }) {
           </div>
         </section>
       )}
+
+      {/* Doporučené články: nejdřív ty se stejným cílem (Fit / Normal / Svaly) */}
+      {doporucene.length > 0 && (
+        <section aria-labelledby="doporucene">
+          <h2 id="doporucene">{d.recommended}</h2>
+          <div className="grid grid-articles">
+            {doporucene.map((a) => <ArticleCard key={a.slug} article={a} lang={lang} dict={dict} />)}
+          </div>
+        </section>
+      )}
+
+      <NewsletterBox dict={dict} lang={lang} id="newsletter-clanek" />
 
       <p><Link href={`/${lang}/clanky/`}>← {d.back}</Link></p>
     </article>

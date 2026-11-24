@@ -128,8 +128,11 @@ export default async function ProductPage({ params }) {
         <h2 id="faq">{s.faqTitle}</h2>
         {/* kurz naživo má vlastní otázky, online kurz jen obecné (bez PDF) */}
         {(product.obrazek === "kurz-nazivo" ? s.faqLive : product.obrazek ? s.faq.slice(2) : s.faq).map((f) => (
-          <details key={f.q} className="more">
-            <summary>{f.q}</summary>
+          <details key={f.q} className="more faq-item">
+            <summary>
+              <span className="faq-icon" aria-hidden="true">?</span>
+              <span className="faq-q">{f.q}</span>
+            </summary>
             <p>{f.a}</p>
           </details>
         ))}
