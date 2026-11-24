@@ -45,30 +45,38 @@ export default async function ProductPage({ params }) {
 
       <header className="recipe-head">
         <div>
-          <span className="chip">{typeLabel(product, s)}</span>
           <h1>{t.nazev}</h1>
           <p className="lead">{t.popis}</p>
-          <ProductPrice product={product} lang={lang} labels={s} />
-          {/* nahoře jen tlačítko, formulář je dole až po ukázce */}
-          <p><a className="btn btn-primary" href="#zajem">{product.typ === "darek" ? s.newsletterTitle : s.interestTitle} ↓</a></p>
+          {/* Pro koho a formát krátce, jako dva řádky s ikonkou */}
+          <ul className="product-facts">
+            {t.proKoho && <li><span aria-hidden="true">👥</span> <span><strong>{s.forWho}:</strong> {t.proKoho}</span></li>}
+            {t.format && <li><span aria-hidden="true">📄</span> <span><strong>{s.format}:</strong> {t.format}</span></li>}
+          </ul>
+          {/* cena a tlačítko v jednom boxu; formulář je dole až po ukázce */}
+          <div className="buy-box">
+            <ProductPrice product={product} lang={lang} labels={s} />
+            <a className="btn btn-primary" href="#zajem">{product.typ === "darek" ? s.newsletterTitle : s.interestTitle} ↓</a>
+          </div>
         </div>
-        <ProductCover product={product} lang={lang} typeLabel={typeLabel(product, s)} large />
+        {product.typ !== "kurz" ? (
+          // obálka jde rozkliknout → sjede na knížku, kterou jde prolistovat
+          <div className="cover-peek">
+            <a href="#kniha" className="cover-link" aria-label={`${s.book.peek}: ${t.nazev}`}>
+              <ProductCover product={product} lang={lang} typeLabel={typeLabel(product, s)} large />
+            </a>
+            <a href="#kniha" className="btn btn-ghost">👀 {s.book.peek}</a>
+          </div>
+        ) : (
+          <ProductCover product={product} lang={lang} typeLabel={typeLabel(product, s)} large />
+        )}
       </header>
 
-      <div className="recipe-body">
-        <section className="card pad" aria-labelledby="pro-koho">
-          <h2 id="pro-koho" className="h3">{s.forWho}</h2>
-          <p>{t.proKoho}</p>
-          <h2 className="h3">{s.format}</h2>
-          <p>{t.format}</p>
-        </section>
-        <section aria-labelledby="obsah">
-          <h2 id="obsah">{s.inside}</h2>
-          <ul className="variant-list">
-            {t.obsah.map((x) => <li key={x}>{x}</li>)}
-          </ul>
-        </section>
-      </div>
+      <section aria-labelledby="obsah">
+        <h2 id="obsah">{s.inside}</h2>
+        <ul className="inside-list">
+          {t.obsah.map((x) => <li key={x}>{x}</li>)}
+        </ul>
+      </section>
 
       {/* Nahlédni dovnitř: jedna dvojstrana z knížky (u kurzů ne – nejsou to knížky) */}
       {product.typ !== "kurz" && (

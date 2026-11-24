@@ -737,6 +737,11 @@ main h1::after, main h2::after { display: none !important; }
 .card h2, .card h3, .card .h3, .interest h2 { color: var(--ink); }
 .chip { color: var(--ink); }
 .fact { color: var(--ink); }
+/* štítky kategorií mají tmavé pozadí (terakota, hnědá, šalvěj) → bílé písmo musí zůstat */
+.chip.chip-cat, .chip.chip-cat .icon { color: #fff; }
+/* kontrast (WCAG ≥ 4,5 : 1): hnědá u Sladkých 4,4 → 5,5; terakota na růžové kartě 4,4 → 5,5 */
+.recipe-card.cat-sladke { --cat: #7a6644; }
+.about-teaser a, .grandma-empty a:not(.btn), .chip-grandma { color: #8e4129; }
 
 /* Víc vzduchu mezi sekcemi */
 main section { margin-bottom: 4.5rem; }
@@ -853,7 +858,16 @@ main section { margin-bottom: 4.5rem; }
 .article .newsletter-box { margin-top: 3rem; }
 
 /* Newsletter: „zdarma“ zeleně a tučně, výhody v odrážkách */
-.free { color: var(--color-primary); font-weight: 900; background: var(--comic-green); padding: 0 0.3em; border-radius: 0.25em; }
+/* „zdarma“ jako nalepený štítek, který spadl trochu nakřivo */
+.free {
+  display: inline-block; color: var(--color-primary); font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em;
+  background: var(--comic-green); border: 2px solid var(--ink); border-radius: 0.4em; box-shadow: 2px 2px 0 var(--ink);
+  padding: 0.05em 0.45em; transform: rotate(-4deg); margin: 0 0.15em;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .newsletter-box:hover .free { animation: zdarma-hop 0.5s ease-in-out; }
+}
+@keyframes zdarma-hop { 50% { transform: rotate(3deg) translateY(-3px); } }
 .newsletter-perks { list-style: none; padding: 0; margin: 0 0 1rem; display: grid; gap: 0.45rem; }
 .newsletter-perks li { font-weight: 600; }
 .newsletter-more { margin: 0.75rem 0 0; font-size: 0.95rem; }
@@ -881,6 +895,62 @@ main section { margin-bottom: 4.5rem; }
 }
 .faq-q { flex: 1; font-weight: 700; }
 .faq .faq-item > p { margin: 0 0 0.5rem; padding: 0.25rem 1rem 0 3.65rem; max-width: none; }
+
+/* ===== Detail produktu (24. 11.) ===== */
+.product-facts { list-style: none; padding: 0; margin: 0.25rem 0 1rem; display: grid; gap: 0.4rem; font-size: 0.98rem; }
+.product-facts li { display: flex; gap: 0.5rem; align-items: baseline; }
+/* cena a tlačítko v jednom zarovnaném boxu */
+.buy-box {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem 1.25rem;
+  background: var(--card-med); border: 2px solid var(--ink); border-radius: var(--radius); box-shadow: 4px 4px 0 var(--ink);
+  padding: 0.9rem 1.1rem; max-width: 30rem;
+}
+.buy-box .price { margin: 0; }
+.buy-box .price strong { font-size: 1.6rem; }
+.buy-box .btn { margin: 0; }
+.inside-list { list-style: none; padding: 0; display: grid; gap: 0.6rem; }
+@media (min-width: 700px) { .inside-list { grid-template-columns: repeat(2, 1fr); } }
+.inside-list li { background: var(--card-salvej); border: 2px solid var(--ink); border-radius: var(--radius); padding: 0.7rem 0.9rem 0.7rem 2.4rem; position: relative; }
+.inside-list li::before { content: "✓"; position: absolute; left: 0.9rem; top: 0.65rem; color: var(--color-primary); font-weight: 900; }
+
+/* Knížka: malé kulaté fotky receptů */
+.book-meals li { grid-template-columns: auto 1fr auto; align-items: center; }
+.book-meals .book-meal-text, .book-meals .book-thumb { font-size: inherit; font-weight: inherit; color: inherit; text-transform: none; letter-spacing: normal; }
+.book-meal-text { display: grid; gap: 0.1rem; }
+.book-meal-label { font-size: 0.75rem; font-weight: 700; color: var(--color-terracotta); text-transform: uppercase; letter-spacing: 0.05em; }
+.book-thumb { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; overflow: hidden; background: var(--color-honey-faint); border: 2px solid #e2d6bd; flex: none; }
+.book-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.book-thumb-big { width: 88px; height: 88px; }
+.book-recipe-head { display: flex; align-items: center; gap: 1rem; }
+.book-recipe-head .book-h { margin: 0; }
+
+/* Obálka jde rozkliknout + tlačítko Nahlédnout dovnitř */
+.cover-peek { display: grid; justify-items: center; gap: 1rem; }
+.cover-link { display: block; text-decoration: none; transition: transform 0.2s; border-radius: var(--radius); }
+.cover-link:hover, .cover-link:focus-visible { transform: rotate(-2deg) translateY(-4px); }
+#kniha { scroll-margin-top: 1rem; }
+
+/* Listování knížkou */
+.book-flip { display: grid; gap: 1rem; }
+.book-flip .book:focus-visible { outline: 3px solid var(--color-terracotta); outline-offset: 4px; }
+.book-controls { display: flex; justify-content: center; align-items: center; gap: 1rem; }
+.book-arrow { min-width: 3.2rem; font-size: 1.1rem; }
+.book-arrow:disabled { opacity: 0.35; cursor: not-allowed; transform: none; }
+.book-count { font-weight: 800; min-width: 3.5rem; text-align: center; }
+.flip-next .book-right, .flip-next .book-left { animation: listuj-dal 0.45s ease-out; }
+.flip-prev .book-right, .flip-prev .book-left { animation: listuj-zpet 0.45s ease-out; }
+@keyframes listuj-dal { from { opacity: 0; transform: perspective(900px) rotateY(-12deg) translateX(14px); } to { opacity: 1; transform: none; } }
+@keyframes listuj-zpet { from { opacity: 0; transform: perspective(900px) rotateY(12deg) translateX(-14px); } to { opacity: 1; transform: none; } }
+.book-shopping { list-style: none; padding: 0; columns: 2 9rem; margin: 0.5rem 0; }
+.book-shopping li { display: flex; gap: 0.45rem; align-items: center; break-inside: avoid; margin: 0.3rem 0; }
+.book-box { width: 0.9rem; height: 0.9rem; border: 1.5px solid var(--ink); border-radius: 3px; flex: none; }
+.book-end { display: grid; justify-items: center; text-align: center; gap: 0.5rem; padding-top: 1rem; }
+.book-end p { max-width: 22rem; }
+.book-h4-first { margin-top: 0 !important; }
+@media (prefers-reduced-motion: reduce) {
+  .flip-next .book-right, .flip-next .book-left, .flip-prev .book-right, .flip-prev .book-left { animation: none; }
+  .cover-link:hover { transform: none; }
+}
 
 /* Políčka (e-mail, hledání) světlejší než karta, ať nesplývají */
 .signup-row input, .search, input[type="search"], .search-field input { background-color: #f6faf3; }
