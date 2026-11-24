@@ -10,6 +10,8 @@ import ComicPanel from "@/components/ComicPanel";
 import ArticleCard from "@/components/ArticleCard";
 import Tecka from "@/components/Tecka";
 import PrintButton from "@/components/PrintButton";
+import DifficultyFace from "@/components/DifficultyFace";
+import AppBridge from "@/components/AppBridge";
 import { SITE_URL, alternates } from "@/lib/site";
 
 const APP_URL = "https://4613nikola-oss.github.io/jidlo-od-a-z/";
@@ -35,6 +37,14 @@ export async function generateMetadata({ params }) {
       ...(r.obrazek ? { images: [{ url: `${SITE_URL}/images/recepty/${r.obrazek}`, alt: r[lang].nazev }] } : {}),
     },
   };
+}
+
+// V krocích postupu zvýrazní teplotu a časy (180 °C, 12–15 minut, 1 hodina, 30 sekund)
+const DULEZITE = /(\d+(?:[,.]\d+)?(?:\s?[–-]\s?\d+)?\s?°\s?C|\d+(?:\s?[–-]\s?\d+)?\s?(?:minut[a-zěščřžýáíéůú]*|min\b|hodin[a-zěščřžýáíéůú]*|hod\b|sekund[a-zěščřžýáíéůú]*|minutes?|hours?|seconds?))/gi;
+function zvyrazni(text) {
+  return text.split(DULEZITE).map((kus, i) =>
+    i % 2 === 1 ? <strong key={i} className={`step-key${kus.includes("°") ? " step-temp" : ""}`}>{kus}</strong> : kus
+  );
 }
 
 // Data receptu pro Google (schema.org/Recipe): čas, porce, kcal, suroviny a postup ve výsledcích hledání
@@ -109,11 +119,7 @@ export default async function RecipePage({ params }) {
                   <dt>{d.difficulty}</dt>
                   {/* 1–3 vařečky; slovo vedle nese význam i bez obrázku */}
                   <dd className="difficulty">
-                    <span className="spoons" aria-hidden="true">
-                      {[1, 2, 3].map((n) => (
-                        <Icon key={n} name="babicka" size={20} className={n <= recipe.narocnost ? "spoon-on" : "spoon-off"} />
-                      ))}
-                    </span>
+                    <DifficultyFace level={recipe.narocnost} />
                     {d.difficultyNames[recipe.narocnost]}
                   </dd>
                 </div>
@@ -136,6 +142,9 @@ export default async function RecipePage({ params }) {
             )}
           </section>
 
+          {/* propojení s appkou: přidat suroviny do nákupu, zpět do appky */}
+          <AppBridge items={recipe.cs?.nakup || []} labels={d.bridge} />
+
           {/* Pro koho to je: štítky Fit / Normal / Svaly a jednou větou proč */}
           {recipe.cile.length > 0 && (
             <section className="for-whom" aria-labelledby="pro-koho">
@@ -143,8 +152,8 @@ export default async function RecipePage({ params }) {
               <ul>
                 {recipe.cile.map((c) => (
                   <li key={c}>
-                    <span className={`goal goal-${c}`}>{d.goals[c]}</span>{" "}
-                    {d.goalWhy[c]}
+                    <span className={`goal goal-${c}`}>{d.goals[c]}</span>
+                    <span>{d.goalWhy[c]}</span>
                   </li>
                 ))}
               </ul>
@@ -201,7 +210,7 @@ export default async function RecipePage({ params }) {
           <ol className="steps steps-clippings">
             {t.postup.map((s, i) => (
               <li key={i}>
-                <p>{s.text}</p>
+                <p>{zvyrazni(s.text)}</p>
                 {s.obrazek && (
                   <Image src={asset(`/images/recepty/${s.obrazek}`)} alt="" width={560} height={306} loading="lazy" />
                 )}
@@ -244,12 +253,20 @@ export default async function RecipePage({ params }) {
       )}
 
       {/* konec receptu: komiksová hláška a cesta do appky */}
-      <div className="page-intro recipe-outro">
-        <ComicPanel {...dict.comics.recipe} size={140} />
-        <p>
-          <a className="btn btn-accent" href={APP_URL}>{d.toApp}</a>
-        </p>
-      </div>
+      <section className="band band-honey recipe-outro" aria-labelledby="kolik-snist">
+        <ComicPanel {...dict.comics.recipe} size={130} />
+        <div className="recipe-outro-text">
+          <h2 id="kolik-snist">{d.outro.title}</h2>
+          <p>{d.outro.lead}</p>
+          <ul className="outro-perks">
+            <li><Icon name="kcal" size={22} /> <span>{d.outro.perks[0]}</span></li>
+            <li><Icon name="porce" size={22} /> <span>{d.outro.perks[1]}</span></li>
+            <li><Icon name="nakup" size={22} /> <span>{d.outro.perks[2]}</span></li>
+          </ul>
+          <a className="btn btn-accent" href={APP_URL}>{d.outro.cta} →</a>
+          <p className="outro-note">{d.outro.note}</p>
+        </div>
+      </section>
 
       {related.length > 0 && (
         <section aria-labelledby="clanky-k-receptu">

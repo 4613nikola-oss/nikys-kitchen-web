@@ -131,6 +131,26 @@
     },
     "print": "Vytisknout / uložit PDF",
     "protein": "Bílkoviny na porci",
+    "outro": {
+      "title": "Kolik z toho sníst?",
+      "lead": "Appka Jídlo od A–Z spočítá, kolik energie potřebuješ, a řekne ti, kolik porcí tohohle receptu sníst – podle toho, jestli chceš zhubnout, udržet formu, nebo nabrat.",
+      "perks": [
+        "Tvůj denní příjem za minutu",
+        "Porce na míru tvému cíli",
+        "Suroviny rovnou do nákupního seznamu"
+      ],
+      "cta": "Spočítat v appce",
+      "note": "Zdarma a bez registrace."
+    },
+    "bridge": {
+      "addToShop": "Přidat do nákupu v appce",
+      "backToApp": "Zpět do appky",
+      "openApp": "Otevřít appku",
+      "signedIn": "Přihlášeno v appce – nákup se uloží i do účtu",
+      "added": "Hotovo! Nových položek v nákupu: {n}.",
+      "already": "Všechny suroviny už v nákupu máš.",
+      "noStorage": "Tenhle prohlížeč nedovolí ukládat – otevři recept v běžném okně."
+    },
     "difficulty": "Náročnost",
     "difficultyNames": ["", "snadné", "zvládneš", "na víkend"],
     "forWhom": "Pro koho to je",

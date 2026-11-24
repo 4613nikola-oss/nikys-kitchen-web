@@ -20,12 +20,13 @@ export default async function ShopPage() {
 
   return (
     <>
-      <div className="band-grid">
-        <ComicPanel {...dict.comics.shop} size={170} />
+      {/* úvod jako na ostatních stránkách: text vlevo, komiks vpravo, pod tím vzduch */}
+      <div className="page-intro shop-intro">
         <div>
           <h1>{s.title}</h1>
           <p className="lead">{s.lead}</p>
         </div>
+        <ComicPanel {...dict.comics.shop} size={150} />
       </div>
 
       <div className="grid">

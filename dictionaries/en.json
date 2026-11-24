@@ -131,6 +131,26 @@
     },
     "print": "Print / save as PDF",
     "protein": "Protein per serving",
+    "outro": {
+      "title": "How much should you eat?",
+      "lead": "The Jídlo od A–Z app works out how much energy you need and tells you how many servings of this recipe to eat – depending on whether you want to lose weight, stay in shape or bulk up.",
+      "perks": [
+        "Your daily intake in a minute",
+        "Portions tailored to your goal",
+        "Ingredients straight to your shopping list"
+      ],
+      "cta": "Work it out in the app",
+      "note": "Free, no sign-up needed."
+    },
+    "bridge": {
+      "addToShop": "Add to the app's shopping list",
+      "backToApp": "Back to the app",
+      "openApp": "Open the app",
+      "signedIn": "Signed in to the app – the list is saved to your account too",
+      "added": "Done, {n} new ingredients are on your shopping list.",
+      "already": "All ingredients are already on your list.",
+      "noStorage": "This browser doesn't allow saving – open the recipe in a normal window."
+    },
     "difficulty": "Difficulty",
     "difficultyNames": ["", "easy", "you've got this", "weekend project"],
     "forWhom": "Who it's for",

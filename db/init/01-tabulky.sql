@@ -211,7 +211,8 @@ SELECT
   r.poradi,
   r.bilkoviny,
   r.vegetarianske              AS vege,
-  ARRAY(SELECT a.alergen FROM recepty_alergeny a WHERE a.recept = r.slug ORDER BY a.alergen) AS alergeny
+  ARRAY(SELECT a.alergen FROM recepty_alergeny a WHERE a.recept = r.slug ORDER BY a.alergen) AS alergeny,
+  r.obrazek
 FROM recepty r
 JOIN recepty_texty t ON t.recept = r.slug AND t.jazyk = 'cs'
 WHERE r.zverejneno;

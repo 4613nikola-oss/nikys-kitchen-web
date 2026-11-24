@@ -806,12 +806,36 @@ main section { margin-bottom: 4.5rem; }
 .spoon-on { color: var(--color-terracotta); }
 .spoon-off { color: #b8ad9c; opacity: 0.6; }
 
-/* Pro koho to je */
-.for-whom { margin: 1.25rem 0 0; padding: 1rem 1.25rem; background: #fffdf6; border: 2px dashed var(--ink); border-radius: var(--radius); }
-.for-whom h2 { margin: 0 0 0.5rem; }
-.for-whom ul { list-style: none; padding: 0; margin: 0 0 0.5rem; }
-.for-whom li { margin-bottom: 0.45rem; }
-.for-whom-note { font-size: 0.9rem; color: var(--color-muted); margin: 0; }
+/* Konec receptu: komiks + pozvánka do appky jako jeden pás */
+.recipe-outro { display: grid; gap: 1.5rem; align-items: center; margin: 2.5rem 0; }
+@media (min-width: 800px) { .recipe-outro { grid-template-columns: minmax(15rem, 20rem) 1fr; gap: 2.5rem; } }
+.recipe-outro .comic-panel { max-width: 22rem; width: 100%; justify-self: center; }
+.recipe-outro-text h2 { margin-top: 0; }
+.outro-perks { list-style: none; padding: 0; margin: 0 0 1.25rem; display: grid; gap: 0.5rem; }
+.outro-perks li { display: flex; align-items: center; gap: 0.6rem; font-weight: 700; }
+.outro-perks .icon { flex: none; color: var(--color-primary); }
+.outro-note { margin: 0.6rem 0 0; font-size: 0.9rem; color: var(--color-muted); }
+
+/* Důležité údaje v krocích: čas a teplota jako štítek */
+.step-key { display: inline-block; white-space: nowrap; font-weight: 800; background: #f7e2a6; border: 1.5px solid var(--ink); border-radius: 0.4em; padding: 0 0.4em; line-height: 1.5; }
+.step-temp { background: #f6d2c4; }
+
+/* Náročnost jako obličej */
+.difficulty-face { flex: none; }
+
+/* Propojení receptu s appkou */
+.app-bridge { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin: 1.25rem 0 0; }
+.app-bridge-status { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; font-weight: 700; color: var(--color-primary); }
+.online-dot { width: 0.65rem; height: 0.65rem; border-radius: 50%; background: #3f8f4f; box-shadow: 0 0 0 3px rgba(63, 143, 79, 0.25); }
+.app-bridge-msg { flex-basis: 100%; margin: 0; font-weight: 700; background: var(--comic-green); border: 2px dashed var(--ink); border-radius: var(--radius); padding: 0.6rem 0.9rem; }
+
+/* Pro koho to je: medová karta, štítky v jednom sloupci, text zarovnaný vedle */
+.for-whom { margin: 1.5rem 0 0; padding: 1.25rem 1.5rem; background: var(--card-med); border: 2px solid var(--ink); border-radius: var(--radius); box-shadow: 4px 4px 0 var(--ink); }
+.for-whom h2 { margin: 0 0 0.9rem; }
+.for-whom ul { list-style: none; padding: 0; margin: 0 0 0.9rem; display: grid; gap: 0.75rem; }
+.for-whom li { display: grid; grid-template-columns: 5.5rem 1fr; gap: 0.75rem; align-items: center; margin: 0; }
+.for-whom li .goal { justify-content: center; }
+.for-whom-note { font-size: 0.9rem; color: var(--color-muted); margin: 0; padding-top: 0.75rem; border-top: 1px dashed rgba(31, 29, 26, 0.3); }
 
 /* Suroviny jako lepicí štítek s páskou */
 .sticker { position: relative; background: #fffdf6 !important; transform: rotate(-0.8deg); overflow: visible; }
@@ -1007,6 +1031,10 @@ main section { margin-bottom: 4.5rem; }
 .article-card .card-link { display: flex; flex-direction: column; }
 .article-card .card-body { display: flex; flex-direction: column; flex: 1; }
 .article-card .card-cta { margin-top: auto; padding-top: 0.85rem; align-self: flex-start; border-bottom: 0; text-decoration: underline; text-underline-offset: 3px; }
+
+/* Obchod: úvod s odstupem od produktů */
+.shop-intro { margin-bottom: 3rem; }
+.page-intro { margin-bottom: 2.5rem; }
 
 /* Lákadlo na Od babičky na stránce Recepty */
 .grandma-teaser {
